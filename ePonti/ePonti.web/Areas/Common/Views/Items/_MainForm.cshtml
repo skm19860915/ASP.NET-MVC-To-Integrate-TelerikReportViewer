@@ -1,0 +1,59 @@
+﻿@using ePonti.BLL.Common
+@using ePonti.BOL;
+@model ePonti.BOL.GetItemInfoByMasterItemID_Result
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "items", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal edit-details", id = "main-form" }))
+{
+    @Html.AntiForgeryToken()
+    if (Model != null)
+    {
+        @Html.HiddenFor(p => p.ViewID)
+    }
+
+    <div class="form-group">
+        <div class="headerText"></div>
+    </div>
+    <div class="col-sm-offset-2 custom-font">
+        @Html.ValidationSummary()
+        <div class="main-form-alert alert soft-hide"></div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText">Group</label>
+        <div class="col-sm6 col-lg-5 formFeildText">
+            @Html.DropDownList("GroupID", ViewBag.Group as SelectList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText">Manufacturer</label>
+        <div class="col-sm-6 col-lg-5 formFeildText">
+            @Html.DropDownList("ManufacturerID", ViewBag.Manufacturer as SelectList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText">Model</label>
+        <div class="col-sm-6 col-lg-5 formFeildText">
+            @Html.TextBoxFor(p => p.Model, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText">SKU</label>
+        <div class="col-sm-4 col-lg-4 formFeildText">
+            @Html.TextBoxFor(p => p.SKU, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText"></label>
+        <div class="col-sm-4 col-lg-3 formFeildText">
+            @Html.CheckBox("UseOrderingName")
+            @Html.LabelFor(p => p.UseOrderingName, new { @class = "control-label formLabelText" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText"></label>
+        <div class="col-sm-4 col-lg-3 formFeildText">
+            @Html.CheckBox("Discontinued")
+            @Html.LabelFor(p => p.Discontinued, new { @class = "control-label formLabelText" })
+        </div>
+    </div>
+
+}

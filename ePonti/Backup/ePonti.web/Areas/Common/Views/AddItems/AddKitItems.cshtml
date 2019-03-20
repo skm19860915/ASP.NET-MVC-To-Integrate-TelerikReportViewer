@@ -1,0 +1,106 @@
+﻿@using ePonti.BOL
+@using System.Data.Entity.Core.Objects
+@using GridMvc.Html;
+@{
+    ViewBag.Title = "Select Items";
+}
+@using (Html.BeginForm("UpdateCoKitItems", "AddItems", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "Add-KitItems-form" }))
+{
+<div id="viewArea">
+    <div class="container-fluid">
+        <div class="col-sm-12 col-lg-12 pageHeader">
+            <div class="col-sm-10 col-lg-10 homeMenuText">@ViewBag.Title</div>
+            <div>
+                <a href="#" class="homeLinks add-kit-items"><img src="~/images/Save.png" width="20"></a>
+                <span><a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+            <div class="main-form-alert alert soft-hide"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-11 col-lg-11 list-group">
+                <div class="item-list">
+                    @Html.Grid(ViewBag.Parts as List<GetItemsBySiteCoID_Result>).Columns(columns =>
+           {
+               columns.Add().Encoded(false).Sanitized(false).SetWidth(20).RenderValueAs(s => "<input type=\"checkbox\" class=\"checkitem\" data-id=\"" + s.ViewID + "\" /><input type =\"hidden\" class=\"item-id\" value=\"" + s.ViewID + "\" />");
+               columns.Add(s => s.Group).Sortable(true).Css("subText col-sm-3 col-lg-3").Titled("Group").Filterable(true);
+               columns.Add(s => s.Manufacturer).Sortable(true).Css("subText col-sm-3 col-lg-2").Titled("Manufacturer");
+               columns.Add(s => s.Model).Sortable(true).Css("subText").Titled("Model");
+               columns.Add(s => s.Stage).Sortable(true).Css("subText col-sm-2 col-lg-1").Titled("Stage").Filterable(true);
+           }).SetRowCssClasses(s => "item-row")
+                </div>
+
+                @*<table class="table table-hover grids item-list">
+                    <tr>
+                        <th width="20"></th>
+                        <th class="col-sm-3 col-lg-3">Group</th>
+                        <th class="col-sm-3 col-lg-2">Manufacturer</th>
+                        <th>Model</th>
+                        <th class="col-sm-2 col-lg-1">Stage</th>
+                    </tr>
+                    @if (ViewBag.CoItems != null)
+                    {
+                        foreach (GetItemsBySiteCoID_Result item in ViewBag.CoItems)
+                        {
+                            <tr class="item-row">
+                                <td height="50">
+                                 
+                                    <input type="hidden" class="item-id" value="@item.ViewID" />
+                                    <input class="checkitem" type="checkbox" data-id="@item.ViewID" />
+                                </td>
+                                <td>@item.Group</td>
+                                <td>@item.Manufacturer</td>
+                                <td>@item.Model</td>
+                                <td>@item.Stage</td>
+                            </tr>
+                        }
+                    }
+                </table>*@
+            </div>
+        </div>
+    </div>
+</div>
+}
+@section scripts{
+    <script>
+        $(document).on('click', '.add-kit-items', function () {
+            
+        var items = $('.item-list').find('.item-row .checkitem:checked').siblings('.item-id').map(function () { return $(this).val() }).get();
+        var url = document.URL.split('/');      
+        var data = {
+            id: url[url.length-1].trimRight('#') ,
+            items: items
+        };
+        var $alert = $('.main-form-alert');
+            @*$.post('@Url.Action("UpdateProjectItems")', data, function (res) {
+            if (res && res.status === true ) {
+                document.location = '@Url.ActionPrev()';
+            }
+        });*@
+            $.ajax({
+                url: '@Url.Action("UpdateCoKitItems")',
+                type: 'POST',
+                data:data,
+                success: function (res) {
+                   
+                    if (res.status == 'error') {
+
+                        var errors = 'Enter correct data and retry.'
+                        if (res.errors && res.errors.length > 0) {
+                            errors = res.errors.join('<br>');
+                        }
+                        $alert.html(errors);
+                        showAlert($alert, 'danger', -1);
+                    }
+                    else if (res.status = 'success') {
+                        $alert.html('Note saved.');
+                        showAlert($alert, 'success');
+                        document.location = '/Common/kits/details/' + res.KitID;
+                    }
+                }
+            });
+    });
+    </script>
+}

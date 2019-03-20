@@ -1,0 +1,60 @@
+﻿@model ePonti.BOL.CoKits
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "kits", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+{
+    @Html.AntiForgeryToken()
+    if (Model != null)
+    {
+        @Html.HiddenFor(model => model.MasterKitID)
+    }
+    <div class="form-group">
+        <div class="headerText"></div>
+    </div>
+    <div class="col-sm-offset-2 custom-font">
+        @Html.ValidationSummary()
+        <div class="main-form-alert alert soft-hide"></div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText">Name</label>
+        <div class="col-sm6 col-lg-5 formFeildText">
+            @Html.TextBoxFor(model => model.KitName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText">SKU</label>
+        <div class="col-sm-6 col-lg-5 formFeildText">
+            @Html.TextBoxFor(model => model.KitSku, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-lg-2 control-label formLabelText">Description</label>
+        <div class="col-sm-6 col-lg-5 formFeildText">
+            <textarea class="form-control" rows="4" name="KitDescription">@Html.DisplayFor(model => model.KitDescription)</textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-3 col-lg-3 formFeildText">
+            @Html.CheckBox("KitSummarize")
+            @Html.LabelFor(model => model.KitSummarize, new { @class = "control-label formLabelText" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-3 col-lg-3 formFeildText">
+            @Html.CheckBox("Discontinued")
+            @Html.LabelFor(model => model.Discontinued, new { @class = "control-label formLabelText" })
+        </div>
+    </div>
+
+}

@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "blog";
+}
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-lg-8">
+                <article>
+                    <div class="post-video">
+                        <div class="post-heading">
+                            <h3><a href="#">Our Latest Whiteboard Video</a></h3>
+                        </div>
+                        <div class="video-container">
+                            <div class="col-lg-10" id="player"></div>
+                            <script>
+                                var tag = document.createElement('script');
+
+                                tag.src = "https://www.youtube.com/iframe_api";
+                                var firstScriptTag = document.getElementsByTagName('script')[0];
+                                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                                var player;
+                                function onYouTubeIframeAPIReady() {
+                                    player = new YT.Player('player', {
+                                        height: '263',
+                                        width: '480',
+                                        videoId: 'd84ch4sjd5Q',
+                                        events: {
+                                            'onReady': onPlayerReady,
+                                            'onStateChange': onPlayerStateChange
+                                        }
+                                    });
+                                }
+                                function onPlayerReady(event) {
+                                    event.target.playVideo();
+                                }
+                                var done = false;
+                                function onPlayerStateChange(event) {
+                                    if (event.data == YT.PlayerState.PLAYING && !done) {
+                                        setTimeout(stopVideo, 000);
+                                        done = true;
+                                    }
+                                }
+                                function stopVideo() {
+                                    player.stopVideo();
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <p>
+                        This is our latest video WhiteBoard helping to introduce our application.
+                    </p>
+                    <div class="bottom-article">
+                        <ul class="meta-post">
+                            <li><i class="icon-calendar"></i><a href="#"> Aug 23, 2017</a></li>
+                            <li><i class="icon-user"></i><a href="#"> Bill</a></li>
+                            <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
+                        </ul>
+                        @*<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>*@
+                    </div>
+                </article>
+                <article>
+                    <div class="post-image">
+                        <div class="post-heading">
+                            <h2>Construction Based Software What Is It?</h2>
+                        </div>
+                        @*<img src="~/images/dummies/blog/img1.jpg" alt="" />*@
+                    </div>
+                    <p>
+                        Construction based software is the umbrella title given to a software package
+                        designed to help with the day to day duties of construction managers, building
+                        owners, private contractors and more. By offering a full suite of facilities
+                        for those involved in the construction industry, these revolutionary software
+                        packages make it possible to automate all manners of essential processes. From
+                        the production of estimates to complex project scheduling and right through to
+                        the management of budgets and accounts, the right software package can lighten
+                        the load enormously by handling all manners of essential duties.
+                    </p>
+                    <h3>
+                        How Construction Base Software Can Help
+                    </h3>
+                    <p>
+                        There are dozens of ways in which software can assist those working in the
+                        construction industry, including the following key examples:
+                    </p>
+                    <p>
+                        <b>Estimating</b> – From costs to build times all manner of budget considerations,
+                        software can help estimators reach realistic forward projections.
+                    </p>
+                    <p>
+                        <b>Bib Management</b> – Software can also play a crucial role in the procurement of the
+                        essential materials, goods and services that are crucial to the project as a whole.
+                    </p>
+                    <p>
+                        <b>Scheduling</b> – All tasks and resources must be carefully and ideally scheduled in order to
+                        get the very best out of all available assets, which is something that software
+                        helps facilitate.
+                    </p>
+                    <p>
+                        <b>Project Management</b> – Every element of project management can be made simpler and more accurate
+                        with the right software. From budgeting to the tracking of costs to the
+                        production of essential documents and more, its potential applications are near
+                        limitless.
+                    </p>
+                    <p>
+                        <b>Accounts</b> – All accounting duties can be simplified extraordinarily with the right software
+                        package. From monitoring labor costs to paying invoices to staff expenses and so on, its
+                        versatility is again unparalleled.
+                    </p>
+                    <h3>
+                        The Benefits of Leading Construction Software
+                    </h3>
+                    <p>
+                        In terms of hard and fast benefits, to bring a solid software suite into a
+                        construction business is to revolutionize its operation and output. For example,
+                        the way in which the business is able to make the most accurate and firm projections
+                        and estimates immediately takes it to another level in the eyes of prospective
+                        clients.  What’s more, accurate estimating means a much lower risk of facing a
+                        shortfall further down the line due to scheduling or budgeting errors.
+                    </p>
+                    <p>
+                        The accuracy of computer automation in the field of accounts and general cost control
+                        can also help the business bring down its expenses and make the very most of all
+                        finances to hand. This in turn can mean cheaper and more efficient builds than would
+                        otherwise be possible.
+                    </p>
+                    <p>
+                        Accurate projections and meticulous scheduling mean builds that are completed on time
+                        and within budget, which is an attractive prospect for both the business and its clients
+                        alike. It’s also worth bearing in mind that software suites enable a business to keep a
+                        better watch out for any errors, oversights or defects in operation that come to pass,
+                        which of course must be noted and acted upon to improve future performance.
+                    </p>
+                    <p>
+                        Construction software not to augment its initial purchase and installation cost several
+                        times over by way of savings and improved performance for the business as a whole…it’s
+                        that simple.
+                    </p>
+                    <h4>
+                        Article Summary:
+                    </h4>
+                    <p>
+                        This article looks into the various ways in which construction Software can be utilize by
+                        those in the industry, paying reference to a series of the benefits the right software
+                        package can bring.
+                    </p>
+                    <div class="bottom-article">
+                        <ul class="meta-post">
+                            <li> May 23, 2017</a></li>
+                            <li> Bill Battaglia</a></li>
+                            <li> Blog</a></li>
+                        </ul>
+                        <!--<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>-->
+                    </div>
+                </article>
+                @*<article>
+                    <div class="post-slider">
+                        <div class="post-heading">
+                            <h3><a href="#">This is an example of slider post format</a></h3>
+                        </div>
+                        <!-- start flexslider -->
+                        <div id="post-slider" class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="~/images/dummies/blog/img1.jpg" alt="" />
+                                </li>
+                                <li>
+                                    <img src="~/images/dummies/blog/img2.jpg" alt="" />
+                                </li>
+                                <li>
+                                    <img src="~/images/dummies/blog/img3.jpg" alt="" />
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end flexslider -->
+                    </div>
+                    <p>
+                        Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed.
+                    </p>
+                    <div class="bottom-article">
+                        <ul class="meta-post">
+                            <li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
+                            <li><i class="icon-user"></i><a href="#"> Admin</a></li>
+                            <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
+                        </ul>
+                        <a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+                    </div>
+                </article>*@
+                @*<article>
+                    <div class="post-quote">
+                        <div class="post-heading">
+                            <h3><a href="#">Nice example of quote post format below</a></h3>
+                        </div>
+                        <blockquote>
+                            <i class="icon-quote-left"></i> Lorem ipsum dolor sit amet, ei quod constituto qui. Summo labores expetendis ad quo, lorem luptatum et vis. No qui vidisse signiferumque...
+                        </blockquote>
+                    </div>
+                    <div class="bottom-article">
+                        <ul class="meta-post">
+                            <li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
+                            <li><i class="icon-user"></i><a href="#"> Admin</a></li>
+                            <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
+                        </ul>
+                        <a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+                    </div>
+                </article>*@
+                
+                @*<div id="pagination">
+                    <span class="all">Page 1 of 3</span>
+                    <span class="current">1</span>
+                    <a href="#" class="inactive">2</a>
+                    <a href="#" class="inactive">3</a>
+                </div>*@
+            </div>
+            <div class="col-sm-4 col-lg-4">
+                <aside class="right-sidebar">
+                    @*<div class="widget">
+                        <h5 class="widgetheading">Categories</h5>
+                        <ul class="cat">
+                            <li><i class="icon-angle-right"></i><a href="#">Web design</a><span> (20)</span></li>
+                            <li><i class="icon-angle-right"></i><a href="#">Online business</a><span> (11)</span></li>
+                            <li><i class="icon-angle-right"></i><a href="#">Marketing strategy</a><span> (9)</span></li>
+                            <li><i class="icon-angle-right"></i><a href="#">Technology</a><span> (12)</span></li>
+                            <li><i class="icon-angle-right"></i><a href="#">About finance</a><span> (18)</span></li>
+                        </ul>
+                    </div>*@
+                    <div class="widget">
+                        <h5 class="widgetheading">Latest posts</h5>
+                        <ul class="recent">
+                            <li>
+                                <a href="#"><img src="~/images/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt="" /></a>
+                                <h6><a href="#">Our Latest Whiteboard Video</a></h6>
+                                <p>
+                                    This is our latest video WhiteBoard helping to introduce our application
+                                </p>
+                            </li>
+                            <li>
+                                <img src="~/images/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
+                                <h6><a href="#">Construction Based Software What Is It?</a></h6>
+                                <p>
+                                    Construction based software is the umbrella title given to a software package 
+                                    designed to help ...
+                                </p>
+                            </li>
+                            @*<li>
+                                <a href="#"><img src="~/images/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt="" /></a>
+                                <h6><a href="#">Et mei iusto dolorum</a></h6>
+                                <p>
+                                    Mazim alienum appellantur eu cu ullum officiis pro pri
+                                </p>
+                            </li>*@
+                        </ul>
+                    </div>
+                    @*<div class="widget">
+                        <h5 class="widgetheading">Popular tags</h5>
+                        <ul class="tags">
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Trends</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Internet</a></li>
+                            <li><a href="#">Tutorial</a></li>
+                            <li><a href="#">Development</a></li>
+                        </ul>
+                    </div>*@
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

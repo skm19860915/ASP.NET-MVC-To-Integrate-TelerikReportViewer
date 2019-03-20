@@ -1,0 +1,114 @@
+﻿@model ePonti.BOL.CoContacts
+@using System.Data.Entity.Core.Objects
+@using ePonti.BOL
+@using ePonti.BLL.Common
+@using ePonti.web.Common
+@{
+    ViewBag.Title = "Contact Info";
+    Layout = "~/Areas/Mobile/Views/Shared/_ContactInfoLayout.cshtml";
+    var nav = Url.Nav(EnumWrapper.Pages.ContactDetails, Model.ContactID);
+
+    string displayName = string.Join(", ", new List<string>() { Model.ContactLastName, Model.ContactFirstName }.Where(p => !string.IsNullOrWhiteSpace(p)));
+    if (Model.ContactCoID != 0)
+    {
+        displayName += " - " + (Model.CoContactCompanies != null ? Model.CoContactCompanies.ContactCoName : "");
+    }
+    string phone = Model.CoContactPhones.Where(p => p.PhoneTypeID == 1 && p.IsDefault == true).Select(p => p.Phone).FirstOrDefault() ?? "";
+    string email = Model.CoContactEmails.Select(p => p.EmailAddress).FirstOrDefault();
+    string type = Model.CoContactTypes != null ? Model.CoContactTypes.ContactTypeName : "";
+    string status = Model.SiteContactStatus != null ? Model.SiteContactStatus.Status : "";
+
+    var address = Model.CoContactAddresses.FirstOrDefault() ?? new ePonti.BOL.CoContactAddresses();
+    var country = ViewBag.Country;
+
+}
+<div class="editableArea" id="editableArea"></div>
+<!-- This is the Viewable Area of the page -->
+<div class="container-fluid" id="viewArea">
+    <div class="row">
+        <div class="col-xs-offset-5 col-xs-2 dropdown buttons">
+            <button class="btn btn-default" onclick="openEdit()" id="open-edit-popup" role="button">Edit</button>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="headerText">@displayName</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10">
+                <div class="row">
+                    <div class="subText">@type</div>
+                </div>
+                <div class="row">
+                    <div class="subText format-phone">@phone</div>
+                </div>
+                <div class="row">
+                    <div class="subText"><a href="mailto:@email">@email</a></div>
+                </div>
+                <div class="row">
+                    <div class="subText">@address.Address1</div>
+                </div>
+                <div class="row">
+                    <div class="subText">@address.Address2</div>
+                </div>
+                <div class="row">
+                    <div class="subText">@address.City, @address.State, @address.Zip</div>
+                </div>
+                <div class="row">
+                    <div class="subText">@country</div>
+                </div>
+                <div class="row">
+                    <div class="headerText"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $('#open-edit-popup').on('click', function () {
+            $('#editableArea').load('@Url.Action("edit",new { id=Model.ContactID})', function () {
+                initInputFormats();
+            });
+        })
+    </script>
+
+    <script>
+        $('body').on('click', '.save-contact', function () {
+            var $form = $('#formEditContact');
+            if ($form.valid()) {
+                var contactid = '@Model.ContactID';
+                $('.validation-summary-errors').find('li').remove();
+                var $alert = $('.new-cotnact-alert');
+
+                $.ajax({
+                    url: $form.attr('action'),
+                    type: 'POST',
+                    data: $form.serialize(),
+                    success: function (res) {
+
+                        if (res.status == 'error') {
+                            var errors = 'Enter correct data and retry.'
+                            if (res.errors && res.errors.length > 0) {
+                                errors = res.errors.join('<br>');
+                            }
+                            $alert.html(errors);
+                            showAlert($alert, 'danger', -1);
+                        }
+                        else if (res.status = 'success') {
+                            $alert.html('Contact saved.');
+                            showAlert($alert, 'success');
+                            location.reload();
+                            //closeEdit();
+                        }
+                    }
+                });
+                //.fail(function () {
+                //    $alert.html('Some error occurred while processing your request. Please retry.');
+                //    showAlert($alert, 'error');
+                //});
+            }
+        })
+    </script>
+}

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ePonti.BOL.GetTimeEmployeesBySiteCoIDnDates_Result>
+@using ePonti.BOL
+@using ePonti.BLL.Common
+@{
+    ViewBag.Title = "Timekeeper";
+    var nav = Url.Nav(EnumWrapper.Pages.Timekeeper);
+    decimal? TotalHrs = 0.0M;
+}
+
+
+<div class="col-sm-6 list-group">
+    <table class="employee-grids table table-hover grids">
+        <tr>
+            <th width="20"></th>
+            <th width="30"></th>
+            <th>Resource</th>
+            <th class="col-sm-1">Hours</th>
+        </tr>
+        @if (Model != null)
+        {
+            int counter = Model.Count();
+            List<int?> existingviewId = new List<int?>();
+            foreach (GetTimeEmployeesBySiteCoIDnDates_Result item in Model)
+            {
+                int cnt = 1;
+                decimal? TotalHrsInner = 0.0M;
+                TotalHrs += item.Hours;
+
+
+                if (!existingviewId.Contains(item.ViewID))
+                {
+                    var innerModel = Model.Where(p => p.ViewID == item.ViewID).ToList();
+                    foreach (GetTimeEmployeesBySiteCoIDnDates_Result innerItem in innerModel)
+                    {
+                        TotalHrsInner = TotalHrsInner + innerItem.Hours;
+                        if (cnt == innerModel.Count())
+                        {
+                            <tr class="employee-item-row">
+                                <td>
+                                    <input class="employeecheck" type="checkbox" />
+                                    <input type="hidden" class="PayrollID2" value="@item.PayrollID" />
+                                    <input type="hidden" class="ViewID" value="@item.ViewID" />
+                                </td>
+                                <td>
+                                    <a class="empinfo" href="@Url.Action("PayEmployeeInfo", "Timekeeper", new { area = "sections", id = item.ViewID, ab = "PERIOD", tab = "employees", nav })">
+                                        <img src="~/images/People.png" width="20">
+                                    </a>
+                                </td>
+                                <td>@item.Resource</td>
+                                <td>@TotalHrsInner.ToFormattedString(2)</td>    
+                                              
+                            </tr>              
+                        }
+
+                        cnt = cnt + 1;
+                    }
+                }
+                if (!existingviewId.Contains(item.ViewID))
+                { existingviewId.Add(item.ViewID); }
+            }
+                        <tr class="footer">
+                            <td></td>
+                            <td></td>
+                            <td><strong>Totals</strong></td>
+                            <td class="num-format total-format">@TotalHrs.ToFormattedString(2)</td>
+                        </tr>
+                        }
+    </table>
+</div>
+

@@ -1,0 +1,324 @@
+﻿@using ePonti.BLL.Common
+@using ePonti.BOL;
+@model ePonti.BOL.GetItemInfoByMasterItemID_Result
+
+@{
+    ViewBag.Title = "Item Info";
+
+}
+
+<div class="editableArea" id="editableArea"></div>
+<!-- This is the Viewable Area of the page -->
+<div class="container body-content" id="viewArea">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            @if (ViewBag.AcctItemID == null || ViewBag.AcctItemID == "")
+            {
+                <a style="cursor:pointer;" onclick="$('#myModal').modal('show');" class="SuncItem homeLinks"><img src="~/images/QbButton.png" width="20"></a>
+            }
+            <span><a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="row">
+                <div class="col-sm-offset-8 col-sm-2 dropdown buttons">
+                    <button class="btn btn-default" onclick="openEdit()" id="open-edit-popup" role="button">Edit</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="headerText">@Model.Model</div>
+                    </div>
+                    <div class="row">
+                        <div class="subText">@Model.Group</div>
+                    </div>
+                    <div class="row">
+                        <div class="subText">@Model.Manufacturer</div>
+                    </div>
+                    <div class="row">
+                        <div class="subText">@Model.SKU</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="bs-component">
+                <ul class="nav nav-tabs tabText">
+                    <li class="active"><a href="#descriptions" data-toggle="tab">Descriptions</a></li>
+                    <li><a href="#price" data-toggle="tab">Price</a></li>
+                    <li><a href="#labor" data-toggle="tab">Labor</a></li>
+                    <li><a href="#image" data-toggle="tab">Image</a></li>
+                </ul>
+                <div id="contactInfoTabs" class="tab-content">
+                    <div class="tab-pane fade active in" id="descriptions">
+                        @using (Html.BeginForm("UpdateItemDescription", "items", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "update-desc-form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(Model => Model.ViewID)
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Product</label>
+                                <div class="col-sm-8 formFeildText">
+                                    <textarea class="form-control" name="ProductDescription" rows="4">@Model.ProductDescription</textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Sales</label>
+                                <div class="col-sm-8 formFeildText">
+                                    <textarea class="form-control" name="SalesDescription" rows="6">@Model.SalesDescription</textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-offset-7 col-sm-2 dropdown buttons">
+                                    <a role="button" class="homeLinks .editItem update-desc"><img src="~/images/Save.png" width="20"></a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="tab-pane fade" id="price">
+                        @using (Html.BeginForm("UpdateItemPriceDetails", "items", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "update-price-form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            @Html.HiddenFor(Model => Model.ViewID)
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Cost Codes</label>
+                                <div class="col-sm-4 formFeildText">
+                                    @Html.DropDownListFor(p => p.CostCodeID, ViewBag.CostCodes as SelectList, new { @class = "form-control" })
+
+                                </div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.CheckBox("SalesTax")
+                                    @Html.LabelFor(p => p.SalesTax, new { @class = "control-label formLabelText" })
+                                </div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.CheckBox("PurchasedTaxed")
+                                    @Html.LabelFor(p => p.PurchasedTaxed, new { @class = "control-label formLabelText" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 formLabelText">Default Vendor</label>
+                                <div class="col-sm-4 formFeildText">
+                                    @Html.DropDownListFor(p => p.ContactID, ViewBag.Vendors as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1 formFeildText"></div>
+                                <label class="col-sm-2 formLabelText">Unit Cost</label>
+                                <label class="col-sm-2 formLabelText">Unit Price</label>
+                                <label class="col-sm-2 formLabelText">Margin %</label>
+                                <label class="col-sm-2 formLabelText">Markup %</label>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-2 formFeildText"></div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.UnitCost, new { @class = "form-control num-format format-decimal4" })
+                                </div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.UnitPrice, new { @class = "form-control num-format format-decimal4" })
+                                </div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.Margin, new { @class = "form-control num-format", data_value = Model.Margin, data_val = "false" })
+                                </div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.Markup, new { @class = "form-control num-format", data_value = Model.Markup, data_val = "false" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 formFeildText"></div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.CheckBox("ExcludePor")
+                                    @Html.LabelFor(p => p.ExcludePor, new { @class = "control-label formLabelText" })
+                                </div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.CheckBox("WarranteePart")
+                                    @Html.LabelFor(p => p.WarranteePart, new { @class = "control-label formLabelText" })
+                                </div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.CheckBox("OneOffItem")
+                                    @Html.LabelFor(p => p.OneOffItem, new { @class = "control-label formLabelText" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Sales UOM</label>
+                                <div class="col-sm-4 formFeildText">
+                                    @Html.DropDownListFor(p => p.SaleUomID, ViewBag.SalesUom as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Order UOM</label>
+                                <div class="col-sm-4 formFeildText">
+                                    @Html.DropDownListFor(p => p.OrderUomID, ViewBag.OrderUom as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Lead Time</label>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.LeadTime, new { @class = "form-control num-format number-spinner1" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Order Qty</label>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.OrderQty, new { @class = "form-control num-format number-spinner1" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Ordering Price</label>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.OrderPrice, new { @class = "form-control num-format format-decimal4" })
+                                </div>
+                            </div>
+                            <div class="row form-group"></div>
+                            <div class="row form-group">
+                                <div class="col-sm-offset-7 col-sm-2 dropdown buttons">
+                                    <a role="button" class="homeLinks update-price-item"><img src="~/images/Save.png" width="20"></a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="tab-pane fade" id="labor">
+                        @using (Html.BeginForm("UpdateLaborInfoItem", "Items", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-formlbr" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(p => p.ViewID)
+                            <div class="form-group">
+                                <div class="headerText"></div>
+                            </div>
+                            <div class="custom-font">
+                                <div class="main-form-alert alert soft-hide"></div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Stage</label>
+                                <div class="col-sm-4 formFeildText">
+                                    @Html.DropDownListFor(p => p.StageID, ViewBag.CoStages as SelectList, new { @class = "form-control drpstage" })
+                                </div>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.CheckBox("LaborTax")
+                                    @Html.LabelFor(p => p.LaborTax, new { @class = "control-label formLabelText" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-2 control-label formLabelText">Unit Hours</label>
+                                <div class="col-sm-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.Hours, new { @class = "form-control num-format format-decimal2 number-spinner" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="laborDetails" class="col-sm-offset-2 col-sm-6 list-group">
+                                    @{
+                                        var q = ViewBag.Labors as ePonti.web.Models.StageModels.StageMasterEdit;
+
+                                        if (q != null)
+                                        {
+                                            @Html.Partial("_ItemLaborPartial", q)
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-offset-7 col-sm-2 dropdown buttons">
+                                    <input type="hidden" name="flagval" id="flagval" />
+                                    <a role="button" class="homeLinks update-labor" data-url="@Url.Action("UpdateLaborInfo")"><img src="~/images/Save.png" width="20"></a>
+                                </div>
+                            </div>
+                                        }
+                    </div>
+                    <div class="tab-pane fade" id="image">
+                        <div class="form-group">
+                            <div class="headerText"></div>
+                        </div>
+                        <p class="tabTextBody">This displays an Image which could be include in Reports</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Select Item Type</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <select id="selectType" class="form-control">
+                        <option value="Inventory">Inventory</option>
+                        <option value="NonInventory">Non Inventory</option>
+                        <option value="Service">Service</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="syncItem()">Sync</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+
+        $('#open-edit-popup').on('click', function () {
+            $('#editableArea').load('@Url.Action("edit",new { id=Model.ViewID })', function () {
+            });
+        })
+
+        $('.datetime-picker').removeAttr("data-val-date");//disable date validation
+
+    </script>
+
+    <script src="@Url.Content("~/Scripts/pages/iteminfo.js")" type="text/javascript"></script>
+}
+<script>
+    function syncItem() {
+        $('.btn-primary').attr("disabled", "disabled");
+        $('.btn-primary').text('Please wait....')
+        document.location = '/Common/items/SyncToQBItems/' + '@Model.ViewID' + "?type=" + $('#selectType').val();;
+    }
+</script>

@@ -1,0 +1,160 @@
+﻿@using ePonti.web.Common
+@using GridMvc.Html
+@model ePonti.web.Models.QBModels
+
+@{
+    ViewBag.Title = "People";
+    var nav = Url.Nav(ePonti.BLL.Common.EnumWrapper.Pages.PeopleGrid, null);
+    var syncIdentifier = Model.SyncObjectsModel.Id;
+}
+
+<div class="col-sm-12 container-fluid">
+    <div class="row">
+        <div class="col-sm-5 mainGridText">@ViewBag.Title</div>
+        <div class="col-sm-3 buttons formLabelText">
+            @Html.ActionLink("New", "create", "contactinfo", new { area = "Pages", nav }, new { @class = "btn btn-default" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-lg-2">
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="leftfilters">
+                @using (Html.BeginForm("Index", "People", FormMethod.Post, new { id = "LeftFiltersForm", onsubmit = "loadPagingForm(this)" }))
+                {
+                    @Html.CheckBox("getall", false, new { id = "chkGetAll" })<label> All Owners</label>
+                    @Html.TextBox("LastName", "", new { id = "txtLastName", placeholder = "Enter search text", @class = "srch_text" })
+                    <h4>Company</h4>
+                    <div class="checklists">
+                        @Html.Hidden("SelectedCompanies", "", new { @class = "SelectedCompanies" })
+                        @foreach (var item in ViewBag.CompanyList)
+                        {
+                            <div class="filtercheckbox">
+                                <label>
+                                    <input type="checkbox" value="@item.ViewID" /> @item.Company
+                                </label>
+                            </div>
+                        }
+                    </div>
+                    <h4>Types</h4>
+                    <div class="checklists">
+                        @Html.Hidden("SelectedTypes", "", new { @class = "SelectedTypes" })
+                        @foreach (var item in ViewBag.ContactTypeList)
+                        {
+                            <div class="filtercheckbox">
+                                <label>
+                                    <input type="checkbox" name="SelectedTypes" value="@item.ContactTypeID" class="SelectedTypes" /> @item.ContactTypeName
+                                </label>
+                            </div>
+                        }
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="buttons formLabelText">
+                        <input type="button" class="btn btn-default clearleftfilter" value="Clear" />
+                        <input type="button" class="btn btn-default updateleftfilter" value="Update" />
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-sm-8 col-lg-9 sectionGrids">
+            @(Html.Kendo().Grid<ePonti.web.Models.ContactList>()
+                .Name("Grid")
+
+                .Columns(columns =>
+                 {
+                     columns.Bound(p => p.ContactID).Title("").ClientTemplate("<a href=\"" + Url.Action("details", "contactinfo", new { area = "pages", id = "#=ContactID#", nav }) + "\"><img src=\"" + Url.Content("~/images/People.png") + "\" width=\"25\"></a>").Width(50);
+                     columns.Bound(p => p.ContactLastName).Title("Last");
+                     columns.Bound(p => p.ContactFirstName).Title("First").Width("20em");
+                     columns.Bound(p => p.ContactCoName).Title("Company").Width("30em");
+                     columns.Bound(p => p.ContactTypeName).Title("Type").Width("15em");
+                     columns.Bound(p => p.SubtypeName).Title("Subtype").Width("10em");
+                 })
+
+               .Editable(editable => editable.Mode(GridEditMode.InLine))
+                .Navigatable()
+                .Pageable()
+                //.Pageable(pageable =>
+                //{
+                //    pageable.PageSizes(new int[] {15, 20 });
+                //})
+                .Sortable()
+                .Scrollable(scr => scr.Height("auto"))
+                .DataSource(dataSource => dataSource  // Configure the grid data source
+                .Ajax()
+                .Model(model =>
+                {
+                    model.Id(x => x.ContactID);
+                })
+                  .Read(read => read.Action("GetContacts", "People").Data("ProductsFilterData")) // Set the action method which will return the data in JSON format
+                  .PageSize(25)
+
+                 )
+            )
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function getSubTypes(TypeIdArray) {
+            var selSubTypes = $(".SelectedSubTypes").val().split(",");
+            console.log(selSubTypes);
+            if (TypeIdArray.length > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "/sections/people/getSubTypes", //get SubTypes
+                    data: { TypeIdArray: TypeIdArray },
+                    success: function (data) {
+                        console.log(data);
+                        $(".subtypes").html("");
+                        $.each(data, function (index, value) {
+                            if (selSubTypes.indexOf(value.ID.toString()) >= 0) {
+                                $(".subtypes").append('<div class="filtercheckbox"><label><input type="checkbox" checked="checked" name="SelectedTypes" value="' + value.ID + '" /> ' + value.Name + '</label></div>');
+                            }
+                            else {
+                                $(".subtypes").append('<div class="filtercheckbox"><label><input type="checkbox" name="SelectedTypes" value="' + value.ID + '" /> ' + value.Name + '</label></div>');
+                            }
+                        });
+                        var checkids = [];
+                        $(".subtypes").find('input[type="checkbox"]:checked').each(function () {
+                            checkids.push($(this).val());
+                        });
+                        $(".subtypes").parents(".checklists").find('input[type="hidden"]').val(checkids.join(","));
+                    }
+                });
+            }
+        }
+        $(document).ready(function () {
+            loadFilterFunctions();
+            loadPagingForm();
+        });
+        $(".updateleftfilter").on("click", function () {
+
+            $('#Grid').data('kendoGrid').dataSource.read();
+            $('#Grid').data('kendoGrid').refresh();
+            return;
+        })
+        function ProductsFilterData() {
+            var SelectedTypes = $("#SelectedTypes").val();
+            var SelectedCompanies = $("#SelectedCompanies").val();
+            // var selSubTypes = $(".SelectedSubTypes").val().split(",");
+            var LastName = $("#txtLastName").val();
+            var getall = false;
+            if ($("#chkGetAll").prop("checked") == true) {
+                getall = true;
+            }
+            return {
+                LastName: LastName,
+                SelectedTypes: SelectedTypes,
+                getall: getall,
+                SelectedCompanies: SelectedCompanies
+            };
+        }
+    </script>
+}

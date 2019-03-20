@@ -1,0 +1,128 @@
+﻿@using ePonti.BOL
+@using ePonti.BLL.Common
+
+@{
+    ViewBag.Title = "Adding Licenses";
+
+    Layout = "~/Areas/Common/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="javascript:void(0);" class="homeLinks save-license-form"><img src="~/images/Save.png" width="20"></a>
+            <span><a href="@Url.Action("Index","CoAccount")" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="main-form-alert alert soft-hide"></div>
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        @using (Html.BeginForm("AddingLicenses", "CoAccount", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label class="col-sm-2 control-label formLabelText">Duration</label>
+                <div class="col-sm-1 list-group">
+                    @Html.DropDownList("duration", ViewBag.duration as SelectList, new { onchange = "this.form.submit();", @class = "form-control", @id = "duration" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-10 list-group">
+            <table class="table table-hover grids" id="licenses-grid">
+                <tr>
+                    <th width="10"></th>
+                    <th class="col-sm-2">Version</th>
+                    <th>Description</th>
+                    <th class="col-sm-1">Price</th>
+                    <th class="col-sm-1">Quantity</th>
+                    <th class="col-sm-1">Extension</th>
+                    <th width="10"></th>
+                </tr>
+                @if (ViewBag.AddingLicenses != null)
+                {
+                    int index = 0;
+                    foreach (GetLicensesInfo_Result item in ViewBag.AddingLicenses)
+                    {
+                        <tr class="item-row">
+                            <td>
+                                <input type="hidden" class="index" value="@index" /><input type="hidden" value="@item.LicenseID" class="LicenseID" />
+                                <input type="hidden" class="LicensePriceID" value="@item.LicensePriceID" />
+                            </td>
+                            <td class="Version">@item.Version</td>
+                            <td class="Description">@item.Description</td>
+                            <td class="Price">@item.Price</td>
+                            <td>@Html.TextBox("quantity", "", new { @class = "form-control qty" })</td>
+                            <td class="extension"></td>
+                            <td></td>
+                        </tr>
+                        index++;
+                    }
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $(".qty").focusout(function () {
+                var $row = $(this).closest('.item-row');
+                var index = 0;
+                $e = $($row);
+                $($row).find('.data-index').text();
+                var data = [];
+                data.Index = index;
+                data[index] = {};
+                data[index].Index = index;
+                data[index].LicenseID = $e.find('.LicenseID').val();
+                data[index].LicensePriceID = $e.find('.LicensePriceID').val();
+                data[index].Version = $e.find('.Version').text();
+                data[index].Description = $e.find('.Description').text();
+                data[index].Price = $e.find('.Price').text();
+                data[index].Quantity = $e.find('.qty').val();
+                data[index].extension = $e.find('.extension').text(parseFloat($e.find('.Price').text()) * parseFloat($e.find('.qty').val()));
+
+            });
+
+            $(".save-license-form").click(function () {
+                debugger
+                var data = [];
+                var DurationID = $('#duration').val();
+                debugger
+                $('#licenses-grid .item-row').each(function (i, e) {
+
+                    var $e = $(e);
+                    var index = $e.find('.index').val();
+                    data.Index = index;
+                    data[index] = {};
+                    data[index].Index = index;
+                    data[index].LicenseID = $e.find('.LicenseID').val();
+                    data[index].LicensePriceID = $e.find('.LicensePriceID').val();
+                    data[index].Version = $e.find('.Version').text();
+                    data[index].Description = $e.find('.Description').text();
+                    data[index].Price = $e.find('.Price').text();
+                    data[index].Quantity = $e.find('.qty').val();
+                    data[index].extension = $e.find('.extension').text();
+                    data[index].DurationID = DurationID;
+                });
+                $.post("saveLicense", { Data: data }, function (res) {
+                    if (res && res.status !== 'nodata') {
+                        document.location = '/Options/CoAccount'
+                    }
+                });
+
+            });
+
+        });
+    </script>
+}

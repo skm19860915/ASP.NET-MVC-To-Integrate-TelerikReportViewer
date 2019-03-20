@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <title>@ViewBag.Title - ePonti.terms.Resource1.AppName</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Custom CSS -->
+    <link href="~/Content/ePontiV9Prototype.css" rel="stylesheet" type="text/css" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Special Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--Calendar -->
+    <link href='~/Content/fullcalendar.min.css' rel='stylesheet' />
+    <link href='~/Content/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+
+</head>
+<body>
+    <div class="pageLayout">
+        @*This is the Navigation Menu which opens to the left*@
+        <div id="ePontiSideNav" class="sideNav">
+            <ul class="sidebarNav">
+                <li>
+                    <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+                </li>
+                @*This displays the User's Company Logo, by default it will display the Applicaiton Logo*@
+                <li>
+                    <img src="http://eponti.com/wp-content/uploads/2016/08/AzRenewLlcLogo6.png">
+                </li>
+                @*This Displays the Logged In User's Display Name and the link opens their Profile Form*@
+                <li>@Html.ActionLink(Session["displayusername"].ToString(), "Index", "../Manage")</li>
+                <li>@Html.ActionLink("Dashboard", "Index", "Dashboard")</li>
+                <li>@Html.ActionLink("People", "Index", "People")</li>
+                <li>@Html.ActionLink("Jobs", "Index", "Jobs")</li>
+                <li>@Html.ActionLink("Service", "Index", "Service")</li>
+                <li>@Html.ActionLink("Reports", "Index", "Reports")</li>
+                <li>@Html.ActionLink("PostIt", "Index", "PostIts")</li>
+                <li>
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "homeLinks" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div>
+                                <a href="javascript:document.getElementById('logoutForm').submit()" class="homeMenuText">Log off</a>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "homeLinks" })
+                        </div>
+                    }
+                </li>
+            </ul>
+        </div>
+        @*This is the Header above the Main body of the Page which opens the Side Navigation*@
+        <div class="col-sm-12 col-lg-12 container-fluid" id="header">
+            <div class="row">
+                @*Link to open Nav*@
+                <div class="col-sm-2 col-lg-2 dropdown">
+                    <a class="menuBtn" onclick="openNav()">
+                        <img src="~/images/ePontiDecLogoV10.png" height="30">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pageLayout">
+            @RenderBody()
+
+            <footer>
+                <div class="col-sm-11 pageFooter">&copy; @ePonti.terms.Resource1.AppStdFooter</div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/ePontiV9Prototype.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src='~/Scripts/jquery.min.js'></script>
+    <script src='~/Scripts/moment.min.js'></script>
+    <script src='~/Scripts/fullcalendar.js'></script>
+
+    <script>
+
+        $(document).ready(function () {
+            var SiteUserIdArray = [];
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today ',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                //theme: true,
+                defaultDate: new Date(),
+                defaultView :'agendaWeek',
+                nextDayThreshold: '00:00:00',
+                //displayEventTime: false,
+                editable: true,
+                eventLimit: true,
+                navLinks: true,
+                events: "/Dashboard/getDashboard/",
+                eventClick: function (calEvent, jsEvent, view) {
+                    if (calEvent.description == "EV") {
+                        window.location.href = "/Common/events/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "CL") {
+                        window.location.href = "/Common/calls/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "CA") {
+                        window.location.href = "/Common/cases/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "WO") {
+                        window.location.href = "/Common/workorders/details/" + calEvent.id + "?nav=db"
+                    }
+                },
+                eventMouseover: function (calEvent, jsEvent, view) {
+                    if (view.name != 'basicDay') {
+                        $(jsEvent.target).attr('title', calEvent.title);
+                    }
+                }
+            });
+            $('#calendarScheduling').fullCalendar({
+                header: {
+                    left: 'prev,next today ',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                // theme: true,
+                defaultDate: new Date(),
+                defaultView: 'agendaWeek',
+                nextDayThreshold: '00:00:00',
+                //displayEventTime: false,
+                editable: true,
+                eventLimit: true,
+                navLinks: true,
+                eventClick: function (calEvent, jsEvent, view) {
+                    if (calEvent.description == "EV") {
+                        window.location.href = "/Common/events/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "CL") {
+                        window.location.href = "/Common/calls/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "CA") {
+                        window.location.href = "/Common/cases/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "WO") {
+                        window.location.href = "/Common/workorders/details/" + calEvent.id + "?nav=db"
+                    }
+                },
+                eventMouseover: function (calEvent, jsEvent, view) {
+                    if (view.name != 'basicDay') {
+                        $(jsEvent.target).attr('title', calEvent.title);
+                    }
+                }
+            });
+            $(".siteuser").change(function () {
+                SiteUserIdArray = [];
+                $("input:checkbox[name=SiteUserIdArray]:checked").each(function () {
+                    SiteUserIdArray.push($(this).val());
+                });
+                getdata(SiteUserIdArray);
+            });
+            getdata(SiteUserIdArray);
+            function getdata(SiteUserIdArray) {
+                $("#calendarScheduling").fullCalendar('removeEvents');//remove the old filtered events
+                if (SiteUserIdArray.length > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Scheduling/getFilteredSchedulingEvents/", //get events
+                        data: { SiteUserIdArray: SiteUserIdArray },
+                        success: function (data) {
+                            $.each(data, function (index, value) {//for each event, I will compare the value with the filter, if true, render it.
+                                console.log(value.color);
+                                $("#calendarScheduling").fullCalendar('renderEvent', value, true);
+                            })
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        type: "GET",
+                        url: "/Dashboard/getDashboard/",
+                        success: function (data) {
+
+                            $.each(data, function (index, value) {//for each event, I will compare the value with the filter, if true, render it.
+                                $("#calendarScheduling").fullCalendar('renderEvent', value, true);
+                            })
+                        }
+                    });
+                }
+            }
+
+
+
+            $('#calendar').on("change", function () {
+
+
+
+            })
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>

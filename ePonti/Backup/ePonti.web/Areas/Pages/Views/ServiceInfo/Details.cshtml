@@ -1,0 +1,521 @@
+﻿@model ePonti.BOL.GetProjectInfoByProjectID_Result
+@using System.Data.Entity.Core.Objects
+@using ePonti.BOL
+@using ePonti.BLL.Common;
+@using GridMvc.Html;
+@using Dropbox.Api.Files;
+
+@{
+    ViewBag.Title = "Service Info";
+    var nav = Url.Nav(EnumWrapper.Pages.ServiceDetails, Model.ProjectID);
+}
+<div class="editableArea" id="editableArea">Loading...</div>
+<!-- This is the Viewable Area of the page -->
+<div id="viewArea">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-11 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a class="homeLinks" href="@Url.ActionPrev()"><img src="~/images/Cancel.png" width="20"></a>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="row">
+                <div class="headerText">@Model.Project</div>
+                <input type="hidden" id="ServiceID" value="@Model.ProjectID" />
+            </div>
+            <div class="row">
+                <div>
+                    <div class="row">
+                        <div class="subText">@Model.ClientName</div>
+                    </div>
+                    <div class="row">
+                        <div class="subText format-phone">@Model.Phone</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText">@Model.Email</div>
+                        <div class="subText">@Model.Status</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText">@Model.ProjectAddress1 @Model.ProjectAddress2</div>
+                        <div class="subText">@Model.Date.ToCustomDateString()</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText">@Model.ProjectCity, @Model.ProjectState, @Model.ProjectZip</div>
+                        <div class="subText">@Model.SalesPerson</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText">@Model.ProjectCountry</div>
+                        <div class="subText">@Model.ProjectMgr</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText"></div>
+                        <div class="subText">@Model.ProjectDesgner</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-lg-6 headerText"></div>
+                <div class="col-sm-5 col-lg-4 dropdown buttons">
+                    <button class="btn btn-default" id="open-edit-popup" onclick="openEdit()" role="button">Edit</button>
+                    <span>
+                        <button class="btn btn-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New</button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Call", "create", new { controller = "calls", area = "common", projectid = Model.ProjectID, nav })</li>
+                            <li>@Html.ActionLink("Event", "create", new { controller = "events", area = "common", projectid = Model.ProjectID, nav })</li>
+                            <li>@Html.ActionLink("Note", "create", new { controller = "notes", area = "common", projectid = Model.ProjectID, nav })</li>
+                            <li>@Html.ActionLink("Case", "create", new { controller = "cases", area = "common", projectid = Model.ProjectID, nav })</li>
+                            <li>@Html.ActionLink("Punch List", "create", new { controller = "punchlists", area = "common", projectid = Model.ProjectID, nav })</li>
+                            <li>@Html.ActionLink("TimeIt", "create", new { controller = "timeits", area = "common", projectid = Model.ProjectID, nav })</li>
+                            <li>@Html.ActionLink("Quote", "create", new { controller = "corinfo", area = "pages", projectid = Model.ProjectID, Type = "Service Quote Info", nav })</li>
+                            <li>@Html.ActionLink("Sales Order", "create", new { controller = "soinfo", area = "Pages", projectid = Model.ProjectID, nav })</li>
+                        </ul>
+                    </span>
+                    <span>
+                        @Html.ActionLink("Reports", "index", "reports", new { area = "sections", nav }, new { @class = "btn btn-default" })
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="bs-component">
+            <ul class="nav nav-tabs tabText">
+                <li class="active"><a href="#activities" data-toggle="tab">Activities</a></li>
+                <li><a href="#parts" data-toggle="tab">Parts</a></li>
+                <li><a href="#quotes" data-toggle="tab">Quotes</a></li>
+                <li><a href="#work" data-toggle="tab">Work</a></li>
+                <li><a href="#punch" data-toggle="tab">Punch List</a></li>
+                <li><a href="#contacts" data-toggle="tab">Contacts</a></li>
+                <li><a href="#purchasing" data-toggle="tab">Purchasing</a></li>
+                <li><a href="#deliveries" data-toggle="tab">Deliveries</a></li>
+                <li><a href="#sales" data-toggle="tab">Sales</a></li>
+                <li><a href="#files" data-toggle="tab">Files</a></li>
+            </ul>
+            <div id="contactInfoTabs" class="tab-content">
+                <div class="tab-pane fade active in" id="activities">
+                    <div class="col-sm-6 list-group">
+                        @(Html.Kendo().Grid<GetProjectInfoActivitiesByProjectID_Result>()
+                               .Name("Grid_Avtivities")
+                               .Columns(columns =>
+                               {
+                                   columns.Bound(p => p.ViewID).Title("").ClientTemplate("<a href=\"" + @Url.Action("details", "#=ActivityType#", new { area = "common", id = "#=ViewID#", quoteid = Model.ProjectID, Model.ProjectID, nav }) + "\">" +
+                           "<img src='#=ViewImage#' width=\"30\"></a>").Width(50);
+                                   columns.Bound(p => p.Date).Title("Date").Format("{0:MM/dd/yyyy}").Width("10em");
+                                   columns.Bound(p => p.Info).Title("Info");
+                                   columns.Bound(p => p.Status).Title("Status").Width("15em");
+                               })
+                                     .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                     .Navigatable()
+                                     .Pageable()
+                                        //.Pageable(pageable =>
+                                        //{
+                                        //    pageable.PageSizes(new int[] {15, 20 });
+                                        //})
+                                        .Sortable()
+                                        .Scrollable(scr => scr.Height("auto"))
+                                        .DataSource(dataSource => dataSource  // Configure the grid data source
+                                        .Ajax()
+                                        .Model(model =>
+                                        {
+                                            model.Id(x => x.ViewID);
+                                        })
+                                       // Set the action method which will return the data in JSON format
+                                       .PageSize(20)
+                                       .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'Activities'}"))
+                                 )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="parts">
+                    <div class="row">
+                        <div class="col-sm-5 dropdown buttons"></div>
+                        <div class="dropdown buttons">
+                            @Html.ActionLink("Add", "list", new { controller = "AddItems", area = "Common", projectid = Model.ProjectID, nav }, new { @class = "btn btn-default" })
+                            <span>
+                                <button type="button" class="btn btn-default part-delete" role="button" data-url="@Url.Action("DeleteProjectItems",new { controller = "AddItems", area = "Common"})">Delete</button>
+                            </span>
+                            <span>
+                                <button class="btn btn-default parts-por" type="button" data-url="@Url.Action("create","porinfo",new { area= "procurement", items="ITEMID", projectid = Model.ProjectID, nav})" role="button">POR</button>
+                            </span>
+                            <span>
+                                <button class="btn btn-default parts-delivery" type="button" data-url="@Url.Action("create","deliveryinfo",new { area="procurement",items="ITEMID", projectid = Model.ProjectID, nav})" role="button">Delivery</button>
+                            </span>
+                            <span>
+                                <button class="btn btn-default parts-assign" type="button" data-url="@Url.Action("assign","workorders",new { area="common",items="ITEMID", pid=Model.ProjectID, wotype=(int)EnumWrapper.WorkOrderTypes.Scheduled, nav})" role="button">Assign</button>
+                            </span>
+                            <span>
+                                <button class="btn btn-default parts-refresh" type="button" role="button">Refresh</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-11 list-group">
+                        @(Html.Kendo().Grid<GetProjectInfoPartsByProjectID_Result>()
+                            .Name("Grid_Parts")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(p => p.ViewID).Title("").ClientTemplate("<input class='item - id' type='checkbox' data-id='#=ViewID#'></a>").Width(50);
+                                columns.Bound(p => p.ViewID).Title("").ClientTemplate("<a href=\"" + @Url.Action("short", "items", new { area = "common", id = "#=ViewID#", nav }) + "\"><img src=\"" + Url.Content("~/images/View.png") + "\" width=\"20\"></a>").Width(50);
+                                columns.Bound(p => p.Item).Title("Task").Width("40em");
+                                columns.Bound(p => p.Area).Title("Area").Width("15em");
+                                columns.Bound(p => p.Stage).Title("Stage").Format("{0:MM/dd/yyyy}").Width("10em");
+                                columns.Bound(p => p.Hrs).Title("Hours").Format("{0:n2}");
+                            })
+                                .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                .Navigatable()
+                                .Pageable()
+                                //.Pageable(pageable =>
+                                //{
+                                //    pageable.PageSizes(new int[] {15, 20 });
+                                //})
+                                .Sortable()
+                                .Scrollable(scr => scr.Height("auto"))
+                                .DataSource(dataSource => dataSource  // Configure the grid data source
+                                .Ajax()
+                                .Model(model =>
+                                {
+                                    model.Id(x => x.ViewID);
+                                })
+                                // Set the action method which will return the data in JSON format
+                                .PageSize(20)
+                                .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'Parts'}"))
+                                )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="quotes">
+                    <div class="col-sm-10 list-group">
+                        @(Html.Kendo().Grid<GetProjectCorByProjectID_Result>()
+                            .Name("Grid_Cor")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(p => p.View).Title("").ClientTemplate("<a href=\"" + @Url.Action("details", "corinfo", new { area = "pages", id = "#=View#", nav }) + "\"><img src=\"" + Url.Content("~/images/View.png") + "\" width=\"20\"></a>").Width(50);
+                                columns.Bound(p => p.Cor_).Title("SO#").Width("10em");
+                                columns.Bound(p => p.Name).Title("Type").Width("15em");
+                                columns.Bound(p => p.Type).Title("Name");
+                                columns.Bound(p => p.Status).Title("Status").Width("10em");
+                                columns.Bound(p => p.Created).Title("Created").Format("{0:MM/dd/yyyy}").Width("10em");
+                                columns.Bound(p => p.Creator).Title("Creator").Width("15em");
+                                columns.Bound(p => p.Approved_).Title("Approved_").Width("5em");
+                            })
+                                .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                .Navigatable()
+                                .Pageable()
+                                //.Pageable(pageable =>
+                                //{
+                                //    pageable.PageSizes(new int[] {15, 20 });
+                                //})
+                                .Sortable()
+                                .Scrollable(scr => scr.Height("auto"))
+                                .DataSource(dataSource => dataSource  // Configure the grid data source
+                                .Ajax()
+                                .Model(model =>
+                                {
+                                    model.Id(x => x.View);
+                                })
+                                // Set the action method which will return the data in JSON format
+                                .PageSize(20)
+                                .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'Cor'}"))
+                                )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="work">
+                    <div class="col-sm-9 col-lg-8 list-group">
+                        @(Html.Kendo().Grid<GetProjectWorkByProjectID_Result>()
+                            .Name("Grid_Work")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(p => p.ViewID).Title("").ClientTemplate("<a href=\"" + @Url.Action("details", "workorders", new { area = "common", id = "#=ViewID#", nav }) + "\"><img src=\"" + Url.Content("~/images/View.png") + "\" width=\"20\"></a>").Width(50);
+                                columns.Bound(p => p.WO_).Title("Work Order #").Width("15em");
+                                columns.Bound(p => p.AssignedTo).Title("Resource");
+                                columns.Bound(p => p.Status).Title("Status").Width("15em");
+                                columns.Bound(p => p.AssignedDate).Title("Date").Format("{0:MM/dd/yyyy}").Width("10em");
+                            })
+                                .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                .Navigatable()
+                                .Pageable()
+                                //.Pageable(pageable =>
+                                //{
+                                //    pageable.PageSizes(new int[] {15, 20 });
+                                //})
+                                .Sortable()
+                                .Scrollable(scr => scr.Height("auto"))
+                                .DataSource(dataSource => dataSource  // Configure the grid data source
+                                .Ajax()
+                                .Model(model =>
+                                {
+                                    model.Id(x => x.ViewID);
+                                })
+                                // Set the action method which will return the data in JSON format
+                                .PageSize(20)
+                                .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'Work'}"))
+                                )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="punch">
+                    <div class="row">
+                        <div class="col-sm-5 dropdown buttons"></div>
+                        <div class="dropdown buttons">
+                            <button class="btn btn-default pl-assign" type="button" data-url="@Url.Action("assign","workorders",new { area="common",items="ITEMID", pid=Model.ProjectID, wotype=(int)EnumWrapper.WorkOrderTypes.Punchlist, nav})" role="button">Assign</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 list-group punch-lists">
+                        @(Html.Kendo().Grid<GetProjectPunchListByProjectID_Result>()
+                            .Name("Grid_PunchList")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(p => p.View).Title("").ClientTemplate("<input type='checkbox' class='item-id' data-id='#=View#' />").Width(50);
+                                columns.Bound(p => p.View).Title("").ClientTemplate("<a href=\"" + @Url.Action("details", "punchlists", new { area = "common", id = "#=View#", projectid = Model.ProjectID, nav }) + "\"><img src=\"" + Url.Content("~/images/View.png") + "\" width=\"20\"></a>").Width(50);
+                                columns.Bound(p => p.Pl_).Title("Punch List#").Width("10em");
+                                columns.Bound(p => p.Description).Title("Description");
+                                columns.Bound(p => p.Status).Title("Status").Width("15em");
+                                columns.Bound(p => p.DueDate).Title("Due").Format("{0:MM/dd/yyyy}").Width("10em");
+                            })
+                                .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                .Navigatable()
+                                .Pageable()
+                                //.Pageable(pageable =>
+                                //{
+                                //    pageable.PageSizes(new int[] {15, 20 });
+                                //})
+                                .Sortable()
+                                .Scrollable(scr => scr.Height("auto"))
+                                .DataSource(dataSource => dataSource  // Configure the grid data source
+                                .Ajax()
+                                .Model(model =>
+                                {
+                                    model.Id(x => x.View);
+                                })
+                                // Set the action method which will return the data in JSON format
+                                .PageSize(20)
+                                .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'PunchList'}"))
+                                )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="contacts">
+                    <div class="col-sm-8 list-group">
+                        @(Html.Kendo().Grid<GetProjectContactsByProjectID_Result>()
+                            .Name("Grid_Contacts")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(p => p.ViewID).Title("").ClientTemplate("<a href=\"" + @Url.Action("details", "contactinfo", new { area = "pages", id = "#=ViewID#", quoteid = Model.ProjectID, nav }) + "\"><img src=\"" + Url.Content("~/images/People.png") + "\" width=\"30\"></a>").Width(50);
+                                columns.Bound(p => p.Contact).Title("Contact");
+                                columns.Bound(p => p.Relationship).Title("Relationship").Width("30em");
+                            })
+                                .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                .Navigatable()
+                                .Pageable()
+                                //.Pageable(pageable =>
+                                //{
+                                //    pageable.PageSizes(new int[] {15, 20 });
+                                //})
+                                .Sortable()
+                                .Scrollable(scr => scr.Height("auto"))
+                                .DataSource(dataSource => dataSource  // Configure the grid data source
+                                .Ajax()
+                                .Model(model =>
+                                {
+                                    model.Id(x => x.ViewID);
+                                })
+                                // Set the action method which will return the data in JSON format
+                                .PageSize(20)
+                                .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'Contacts'}"))
+                                )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="purchasing">
+                    <div class="col-sm-9 list-group">
+
+                        @(Html.Kendo().Grid<GetProjectPorListByProjectID_Result>()
+                            .Name("Grid_Purchasing")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(p => p.ViewID).Title("").ClientTemplate("<a href=\"" + @Url.Action("details", "porinfo", new { area = "procurement", id = "#=ViewID#", nav }) + "\"><img src=\"" + Url.Content("~/images/View.png") + "\" width=\"20\"></a>").Width(50);
+                                columns.Bound(p => p.Por_).Title("Por#").Width("10em");
+                                columns.Bound(p => p.Project).Title("Project");
+                                columns.Bound(p => p.Status).Title("Status").Width("15em");
+                                columns.Bound(p => p.Order).Title("Order").Format("{0:MM/dd/yyyy}").Width("10em");
+                                columns.Bound(p => p.Requested).Title("Due").Format("{0:MM/dd/yyyy}").Width("10em");
+                                columns.Bound(p => p.EstArrival).Title("Arr").Format("{0:MM/dd/yyyy}").Width("10em");
+                            })
+                                .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                .Navigatable()
+                                .Pageable()
+                                //.Pageable(pageable =>
+                                //{
+                                //    pageable.PageSizes(new int[] {15, 20 });
+                                //})
+                                .Sortable()
+                                .Scrollable(scr => scr.Height("auto"))
+                                .DataSource(dataSource => dataSource  // Configure the grid data source
+                                .Ajax()
+                                .Model(model =>
+                                {
+                                    model.Id(x => x.ViewID);
+                                })
+                                // Set the action method which will return the data in JSON format
+                                .PageSize(20)
+                                .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'Purchasing'}"))
+                                )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="deliveries">
+                    <div class="col-sm-6 list-group">
+
+                        @(Html.Kendo().Grid<GetProjectDeliveryListByProjectID_Result>()
+                            .Name("Grid_Deliveries")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(p => p.ViewID).Title("").ClientTemplate("<a href=\"" + @Url.Action("details", "deliveryinfo", new { area = "procurement", id = "#=ViewID#", nav }) + "\"><img src=\"" + Url.Content("~/images/View.png") + "\" width=\"20\"></a>").Width(50);
+                                columns.Bound(p => p.Delivery_).Title("Delivery#");
+                                columns.Bound(p => p.RequestedDate).Title("Date").Format("{0:MM/dd/yyyy}").Width("10em");
+                                columns.Bound(p => p.Status).Title("Status").Width("15em");
+                            })
+                                .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                .Navigatable()
+                                .Pageable()
+                                //.Pageable(pageable =>
+                                //{
+                                //    pageable.PageSizes(new int[] {15, 20 });
+                                //})
+                                .Sortable()
+                                .Scrollable(scr => scr.Height("auto"))
+                                .DataSource(dataSource => dataSource  // Configure the grid data source
+                                .Ajax()
+                                .Model(model =>
+                                {
+                                    model.Id(x => x.ViewID);
+                                })
+                                // Set the action method which will return the data in JSON format
+                                .PageSize(20)
+                                .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'Deliveries'}"))
+                                )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="sales">
+                    <div class="col-sm-8 list-group">
+
+                        @(Html.Kendo().Grid<GetProjectSoByProjectID_Result>()
+                            .Name("Grid_Sales")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(p => p.View).Title("").ClientTemplate("<a href=\"" + @Url.Action("details", "soinfo", new { area = "procurement", id = "#=View#", nav }) + "\"><img src=\"" + Url.Content("~/images/View.png") + "\" width=\"20\"></a>").Width(50);
+                                columns.Bound(p => p.DisplayName).Title("Name");
+                                columns.Bound(p => p.Terms).Title("Terms").Width("20em");
+                                columns.Bound(p => p.Status).Title("Status").Width("15em");
+                                columns.Bound(p => p.Created).Title("Created").Format("{0:MM/dd/yyyy}").Width("10em");
+                                columns.Bound(p => p.Approved_).Title("Approved_").Width("5em");
+                            })
+                                .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                .Navigatable()
+                                .Pageable()
+                                //.Pageable(pageable =>
+                                //{
+                                //    pageable.PageSizes(new int[] {15, 20 });
+                                //})
+                                .Sortable()
+                                .Scrollable(scr => scr.Height("auto"))
+                                .DataSource(dataSource => dataSource  // Configure the grid data source
+                                .Ajax()
+                                .Model(model =>
+                                {
+                                    model.Id(x => x.View);
+                                })
+                                // Set the action method which will return the data in JSON format
+                                .PageSize(20)
+                                .Read(read => read.Action("GetDetails", "ServiceInfo").Data("{id:" + ViewBag.id + ", List: 'Sales'}"))
+                                )
+                        )
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="files">
+                    <div class="col-sm-5 list-group">
+                        <div class="row">
+                            <div class="headerText"></div>
+                        </div>
+                        <div class="col-sm-offset-1 col-sm-3 tabText dropContainer">
+                            <div id="dropzoneform" class="dropzone_div"
+                                 style="background-color:#ffffff">
+                                Drop or click to select files here
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="headerText"></div>
+                        </div>
+                        @{
+                            if (ViewBag.FilesList != null)
+                            {
+                                <table class="col-sm-8 table table-hover grids">
+                                    <tr>
+                                        <th class="tabText">Name</th>
+                                        <th class="col-sm-3 tabText"> Modified</th>
+                                        <th class="col-sm-1 tabText">Download</th>
+                                    </tr>
+                                    @if (ViewBag.LocalFolder == true)
+                                    {
+                                        foreach (var files in ViewBag.FilesList)
+                                        {
+                                            <tr>
+                                                <td>@files.Name</td>
+                                                <td>@files.ClientModified</td>
+                                                <td>
+                                                    <a href="@(String.Format("{0}{1}", "/Pages/JobInfo/DownloadLocalFiles?path=", files.FilePath))">
+                                                        <img src="~/images/Download.png" width="30" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        foreach (var files in ViewBag.FilesList)
+                                        {
+                                            <tr>
+                                                <td>@files.Name</td>
+                                                <td>@files.ClientModified</td>
+                                                <td>
+                                                    <a id="dropdownload" href="@(String.Format("{0}{1}", "/Pages/JobInfo/DownloadFiles?path=", files.PathDisplay))">
+                                                        <img src="~/images/Download.png" width="30" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+        var _isCreate = false;
+        var _addServiceContactUrl = '@Url.Action("AddServiceContact")';
+        var _getContactDataUrl = '@Url.Action("GetContactData")';
+        var _serviceEditViewUrl = '@Url.Action("edit", new { id = Model.ProjectID })';
+        var _serviceDetailUrl = '@Url.Action("details",new {id="SERVICEID",nav=Request.QueryString["nav"] })';
+        var _getStageDetailsUrl = '@Url.Action("GetStageDetails")';
+        var _postStagesUrl = '@Url.Action("SaveProjectStages")';
+        var _postStagesDetailsUrl = '@Url.Action("SaveProjectStageDetails")';
+        var _getServicePartsUrl = '@Url.Action("GetServiceParts")';
+        $(document).ready(function () {
+            loaddropzone("dropzoneform", "/Pages/jobinfo/details/@Model.ProjectID", "image/jpg, image/jpeg, image/png, application/pdf, application/docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document","@Url.Content("~/images/loader.gif")");
+        });
+    </script>
+
+    <script src="@Url.Content("~/Scripts/pages/serviceinfo.js")" type="text/javascript"></script>
+}

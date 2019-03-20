@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "E-Mail Options";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-11 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="@Url.Action("Index","../Sections/Dashboard")" class="homeLinks close-page"><img src="~/images/Cancel.png" width="20"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-3 row">
+            <div class="row">
+                <div class="optionGridHeaderText">Defaults</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <div class="row">
+                        <label class="col-sm-3 control-label formLabelText">Work Order</label>
+                        <div class="col-sm-8 formFeildText">
+                            <select class="form-control">
+                                <option>[EmailName]</option>
+                                <option>[EmailName]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 control-label formLabelText">POR</label>
+                        <div class="col-sm-8 formFeildText">
+                            <select class="form-control">
+                                <option>[EmailName]</option>
+                                <option>[EmailName]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 control-label formLabelText">Delivery</label>
+                        <div class="col-sm-8 formFeildText">
+                            <select class="form-control">
+                                <option>[EmailName]</option>
+                                <option>[EmailName]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 control-label formLabelText">Work Request</label>
+                        <div class="col-sm-8 formFeildText">
+                            <select class="form-control">
+                                <option>[EmailName]</option>
+                                <option>[EmailName]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 control-label formLabelText">Activities</label>
+                        <div class="col-sm-8 formFeildText">
+                            <select class="form-control">
+                                <option>[EmailName]</option>
+                                <option>[EmailName]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-4 col-sm-6 col-lg-offset-6 col-lg-4 dropdown buttons">
+                            <button type="button" class="btn btn-default add-item" role="button">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-7 row">
+            <div class="row">
+                <div class="col-sm-9 optionGridHeaderText">E-Mails</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-offset-9 col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids">
+                        <tr>
+                            <th class="col-sm-2">Grouping</th>
+                            <th>Name</th>
+                            <th width="20"></th>
+                        </tr>
+                        <tr>
+                            <td>Accounting</td>
+                            <td>Sales Order</td>
+                            <td><img src="~/images/Delete.png" height="15" /></td>
+                        </tr>
+                        <tr>
+                            <td>Quotes</td>
+                            <td>Budget</td>
+                            <td><img src="~/images/Delete.png" height="15" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

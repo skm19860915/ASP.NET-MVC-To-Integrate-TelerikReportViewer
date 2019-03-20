@@ -1,0 +1,183 @@
+﻿@using ePonti.BOL
+@using ePonti.BLL.Common
+@model ePonti.web.Models.WorkOrderModels.AssignWorkOrder
+
+
+@{
+    ViewBag.Title = "Assigning Work";
+    var woTypeID = ((int?)ViewBag.WOType) ?? 1;
+    var woType = (EnumWrapper.WorkOrderTypes)woTypeID;
+}
+
+<div class="container body-content wo-assign @("wo-"+woType)">
+    <div class="container-fluid">
+        <div class="col-sm-12 pageHeader">
+            <div class="col-sm-10 homeMenuText">@ViewBag.Title</div>
+            <div>
+                <a href="#" class="homeLinks save-main-form" data-save="@Url.Action("Assign")" data-previous="@Url.ActionPrev()"><img src="~/images/Save.png" width="20"></a>
+                <span><a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+            </div>
+        </div>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="headerText"></div>
+        </div>
+        <div class="custom-font">
+            @Html.ValidationSummary()
+            <div class="main-form-alert alert soft-hide"></div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(p => p.EstimatedHours, new { @class = "col-sm-2 control-label formLabelText" })
+                <div class="col-sm-2 formFeildText">
+                    @Html.TextBoxFor(p => p.EstimatedHours, new { @class = "form-control number-spinner" })
+                </div>
+                @Html.LabelFor(p => p.StatusID, new { @class = "col-sm-1 control-label formLabelText" })
+                <div class="col-sm-3 formFeildText">
+                    @Html.DropDownListFor(p => p.StatusID, ViewBag.Status as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6">
+                @if (woType == EnumWrapper.WorkOrderTypes.Scheduled)
+                {
+                    <table class="table table-hover grids resources">
+                        <tr>
+                            <th width="20"></th>
+                            <th class="col-sm-3">Resources</th>
+                            <th>Schedule</th>
+                        </tr>
+                        @foreach (var item in ViewBag.Resources as List<GetCoUsersBySiteCoID_Result>)
+                        {
+                            <tr class="resource">
+                                <td>
+                                    <input type="checkbox" class="check" />
+                                    <input type="hidden" name="siteUserID" class="siteUserID" value="@item.UserID" />
+                                </td>
+                                <td>@item.User</td>
+                                <td><input class="form-control multi-datepicker dates"></td>
+                            </tr>
+                        }
+                    </table>
+                }
+                else if (woType == EnumWrapper.WorkOrderTypes.Punchlist)
+                {
+                    <table class="table table-hover grids resources">
+                        <tr>
+                            <th class="col-sm-3">Resource</th>
+                            <th>Schedule</th>
+                        </tr>
+
+                        <tr class="resource">
+                            <td>
+                                <input type="checkbox" class="check soft-hide" checked />@*add hidden placedholder checkbox and check by default, to resuse the same code as for 'Scheduled' work order*@
+                                @Html.DropDownList("siteUserID",
+                                   new SelectList(ViewBag.Resources as List<GetCoUsersBySiteCoID_Result>, nameof(GetCoUsersBySiteCoID_Result.UserID), nameof(GetCoUsersBySiteCoID_Result.User)),
+                                   new { @class = "form-control siteUserID" }
+                                   )
+                            </td>
+                            <td><input class="form-control multi-datepicker dates"></td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="headerText"></div>
+        </div>
+        @*Want to display a Calendar like on the Schedule section view when I check a Resource it displays their info*@
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 sectionGrids" id="calendarAssign">"This is where Calendar needs to appear"</div>
+        </div>
+        <div class="form-group">
+            <div class="headerText"></div>
+        </div>
+</form>
+</div>
+
+@section scripts{
+
+    <script src="@Url.Content("~/Scripts/pages/workorder.js")"></script>
+
+}
+
+<script>
+        $(document).ready(function () {
+            var SiteUserIdArray = [];
+            $('#calendarAssign').fullCalendar({
+                header: {
+                    left: 'prev,next today ',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                // theme: true,
+                defaultDate: new Date(),
+                defaultView: 'agendaWeek',
+                nextDayThreshold: '00:00:00',
+                //displayEventTime: false,
+                editable: true,
+                eventLimit: true,
+                navLinks: true,
+                eventClick: function (calEvent, jsEvent, view) {
+                    if (calEvent.description == "EV") {
+                        window.location.href = "/Common/events/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "CL") {
+                        window.location.href = "/Common/calls/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "CA") {
+                        window.location.href = "/Common/cases/details/" + calEvent.id + "?nav=db"
+                    }
+                    if (calEvent.description == "WO") {
+                        window.location.href = "/Common/workorders/details/" + calEvent.id + "?nav=db"
+                    }
+                },
+                eventMouseover: function (calEvent, jsEvent, view) {
+                    if (view.name != 'basicDay') {
+                        $(jsEvent.target).attr('title', calEvent.title);
+                    }
+                }
+            });
+            $(".siteuser").change(function () {
+                SiteUserIdArray = [];
+                $("input:checkbox[name=SiteUserIdArray]:checked").each(function () {
+                    SiteUserIdArray.push($(this).val());
+                });
+                getdata(SiteUserIdArray);
+            });
+            getdata(SiteUserIdArray);
+            function getdata(SiteUserIdArray) {
+                $("#calendarAssign").fullCalendar('removeEvents');//remove the old filtered events
+                if (SiteUserIdArray.length > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/workorders/getFilteredAssignEvents/", //get events
+                        data: { SiteUserIdArray: SiteUserIdArray },
+                        success: function (data) {
+                            $.each(data, function (index, value) {//for each event, I will compare the value with the filter, if true, render it.
+                                console.log(value.color);
+                                $("#calendarScheduling").fullCalendar('renderEvent', value, true);
+                            })
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        type: "GET",
+                        url: "/Dashboard/getDashboard/",
+                        success: function (data) {
+
+                            $.each(data, function (index, value) {//for each event, I will compare the value with the filter, if true, render it.
+                                $("#calendarAssign").fullCalendar('renderEvent', value, true);
+                            })
+                        }
+                    });
+                }
+            }
+        });
+
+</script>

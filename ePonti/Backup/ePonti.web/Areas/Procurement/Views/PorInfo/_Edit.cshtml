@@ -1,0 +1,130 @@
+﻿@using ePonti.BOL
+@using ePonti.BLL.Common
+@model ePonti.web.Models.PORModels.EditPOR
+
+@{
+    //ViewBag.ClosedDateString = (Model.StartDate.HasValue ? Model.StartDate.Value.ToString("yyyy-MM-dd") : "");
+    Layout = null;
+}
+
+<div class="container body-content edit-por-page">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-10 col-lg-11 homeMenuText">Edit Purchase Order Request Info</div>
+        <div>
+            <a href="#" class="pageHeaderClose save-main-form"><img src="~/images/Save.png" width="20"></a>
+            <span><a href="javascript:closeEdit()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    @using (Html.BeginForm("edit", "porinfo", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+    {
+        <div class="custom-font">
+            @Html.ValidationSummary()
+            <div class="main-form-alert alert soft-hide"></div>
+            @Html.HiddenFor(p => p.PorID)
+        </div>
+        <div class="container-fluid">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row">
+                    <div class="headerText">@Model.PONumber</div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="row">
+                            <div class="col-sm-8 col-lg-6 subText">@ViewBag.ProjectName</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 col-lg-6 subText">@Model.Creator</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 col-lg-6 subText">@Model.CreatedDate.ToCustomDateString()</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-lg-6 subText">@Model.RequestedDate.ToCustomDateString()</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.VendorID, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-5 col-lg-5 formFeildText">
+                    @Html.DropDownListFor(p => p.VendorID, ViewBag.Vendors as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Priority, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-3 col-lg-3 formFeildText">
+                    @Html.DropDownListFor(p => p.Priority, ViewBag.Priorities as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.StatusID, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-4 col-lg-3 formFeildText">
+                    @Html.DropDownListFor(p => p.StatusID, ViewBag.Status as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+            @*<div class="form-group">
+                @Html.LabelFor(p => p.OrderDate, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-3 col-lg-2 formFeildText">
+                    @Html.TextBoxFor(p => p.OrderDate, new { @class = "form-control date-picker", data_value = Model.OrderDate.ToCustomDateStringForPicker() })
+                </div>
+            </div>*@
+            <div class="form-group">
+                @Html.LabelFor(p => p.OrderDate, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-3 col-lg-2 formFeildText">
+                    @Html.TextBoxFor(p => p.OrderDate, new { @class = "form-control date-picker", data_value = Model.OrderDate.ToCustomDateStringForPicker() })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.ArrivalDate, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-3 col-lg-2 formFeildText">
+                    @Html.TextBoxFor(p => p.ArrivalDate, new { @class = "form-control date-picker", data_value = Model.ArrivalDate.ToCustomDateStringForPicker() })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.ShippingID, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-3 col-lg-3 formFeildText">
+                    @Html.DropDownListFor(p => p.ShippingID, ViewBag.Shipping as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.PONumber, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-4 col-lg-3 formFeildText">
+                    @Html.TextBoxFor(p => p.PONumber, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.ShipToID, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-4 col-lg-3 formFeildText">
+                    @Html.DropDownListFor(p => p.ShipToID, ViewBag.ShipTo as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Tracking, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-5 col-lg-4 formFeildText">
+                    @Html.TextBoxFor(p => p.Tracking, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(p => p.Notes, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                <div class="col-sm-9 col-lg-8 formFeildText">
+                    @Html.TextBoxFor(p => p.Notes, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="headerText"></div>
+            </div>
+        </div>
+    }
+</div>
+
+@section scripts{
+    <script>
+        var _previousUrl = '@Url.ActionPrev()';
+    </script>
+    <script src="@Url.Content("~/Scripts/pages/porinfo.js?")" type="text/javascript"></script>
+}

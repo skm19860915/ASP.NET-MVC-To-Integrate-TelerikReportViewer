@@ -1,0 +1,62 @@
+﻿@using ePonti.BOL
+@{
+    ViewBag.Title = "Activities";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-8 mainGridText">Activities</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5 mainGridText"></div>
+            <div class="col-xs-2 dropdown buttons">
+                <button data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="btn btn-default">New</button>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Call", "Create", "mCall")</li>
+                    <li>@Html.ActionLink("Event", "Create", "mEvent")</li>
+                    <li>@Html.ActionLink("Case", "Create", "mCase")</li>
+                    <li>@Html.ActionLink("Punch Item", "Create", "mPunchList")</li>
+                    <li>@Html.ActionLink("TimeIt", "Create", "mTimeIt")</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-11 row">
+            <div class="list-group" id="activities">
+                <table class="table table-hover grids">
+                    <tr>
+                        <th width="30"></th>
+                        <th>Info</th>
+                    </tr>
+                    @if (ViewBag.SiteUserActivities != null)
+                    {
+                        foreach (GetActivitiesBySiteUserID_Result item in ViewBag.SiteUserActivities)
+                        {
+                            <tr>
+                                <td width="30" height="50">
+                                    @if (item.ActivityType == "EV")
+                                    {<a href="@Url.Action("details","mevent",new { area="mobile",id=item.ViewID, siteuserID=Model})">
+                                            <img src="~/images/Event.png" width="30">
+                                        </a>}
+                                    @if (item.ActivityType == "CL")
+                                    {<a href="@Url.Action("details","mcall",new { area="mobile",id=item.ViewID, siteuserID=Model})">
+                                            <img src="~/images/Call.png" width="30">
+                                        </a>}
+                                    @if (item.ActivityType == "CA")
+                                    {<a href="@Url.Action("details","mcase",new { area="mobile",id=item.ViewID, siteuserID=Model})">
+                                            <img src="~/images/Case.png" width="30">
+                                        </a>}
+                                </td>
+                                <td>@item.Info</td>
+                            </tr>
+                        }
+                    }
+                    <tr class="data-template item-row">
+                        <td></td>
+                        <td class="info"> </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

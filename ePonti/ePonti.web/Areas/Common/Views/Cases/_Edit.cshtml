@@ -1,0 +1,19 @@
+﻿@model ePonti.web.Models.CaseModels.NewCase
+
+@{
+    ViewBag.Title = "Edit Case Info";
+    ViewBag.FormAction = "edit";
+    ViewBag.DueString = (Model.Due.HasValue ? Model.Due.Value.ToString("yyyy-MM-dd") : "");
+    ViewBag.CreatedString = (Model.Created.HasValue ? Model.Created.Value.ToString("yyyy-MM-dd") : "");
+}
+
+<div class="container body-content" id="editableView">
+    <div class="col-xs-12 col-sm-12 pageHeader">
+        <div class="col-xs-9 col-sm-10 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-case"><img src="~/images/Save.png" width="20"></a>
+            <span><a onclick="closeEdit()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    @Html.Partial("_MainForm", Model)
+</div>

@@ -1,0 +1,42 @@
+﻿@using ePonti.BOL
+
+@{
+    ViewBag.Title = "PostIt";
+}
+
+<div class="col-sm-12 container-fluid">
+    <div class="row">
+        <div class="col-sm-8 mainGridText">@ViewBag.Title</div>
+        <div class="col-sm-1 buttons dropdown"></div>
+    </div>
+    <div class="col-sm-11 sectionGrids">
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <table class="table table-hover grids">
+                <tr>
+                    <th width="30"></th>
+                    <th>Discussion</th>
+                </tr>
+                @if (ViewBag.CoPostIts != null)
+                {
+                    foreach (GetPostItsBySiteCoID_Result item in ViewBag.CoPostIts)
+                    {
+                        <tr class="item-row">
+                            <td height="50"><img src="~/images/Postit.png" width="30" data-id="@item.ViewID"></td>
+                            <td>@item.Topic</td>
+                        </tr>
+                    }
+                }
+                <tr class="data-template item-row">
+                    <td height="50"></td>
+                    <td class="topic"> </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+    </div>
+</div>

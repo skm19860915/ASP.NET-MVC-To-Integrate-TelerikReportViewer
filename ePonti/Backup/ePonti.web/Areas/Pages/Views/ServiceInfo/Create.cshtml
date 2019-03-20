@@ -1,0 +1,33 @@
+﻿@model ePonti.web.Models.ServiceModels.NewService
+
+@{
+    ViewBag.Title = "New Service Info";
+    ViewBag.FormAction = "create";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-10 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-main-form"><img src="~/images/Save.png" width="20"></a>
+
+            @*<a href="@Url.Action("Edit", "WorkOrders", new { area = "common", id=1})">
+            <img src="~/images/Save.png" width="20">*@
+        </a>
+            <span><a href="javascript:history.go(-1)" onclick="return confirm('Do you want to cancel without saving data?')" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    @Html.Partial("_MainForm", Model)
+</div>
+
+@section scripts{
+    <script>
+        var _serviceDetailUrl = '@Url.Action("details",new {id="SERVICEID",nav=Request.QueryString["nav"] })';
+        var _getContactDataUrl = '@Url.Action("GetContactData")';
+        var _isCreate = true;
+        var _getStageDetailsUrl = '@Url.Action("GetStageDetails")';
+        var _postStagesUrl = '@Url.Action("SaveProjectStages")';
+        var _postStagesDetailsUrl = '@Url.Action("SaveProjectStageDetails")';
+    </script>
+    <script src="@Url.Content("~/Scripts/pages/serviceinfo.js?"+DateTime.Now.Ticks.ToString())" type="text/javascript"></script>
+}

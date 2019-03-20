@@ -1,0 +1,618 @@
+﻿@model ePonti.web.Models.ServiceModels.NewService
+@using ePonti.BOL
+@{
+    ViewBag.StartDateString = (Model.StartDate.HasValue ? Model.StartDate.Value.ToString("yyyy-MM-dd") : "");
+}
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "serviceinfo", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(p => p.ServiceID)
+    if (Request.QueryString["quoteid"] != null)
+    {
+        <text> @Html.Hidden(Html.NameFor(p => p.ParentQuoteID).ToString(), Request.QueryString["quoteid"])</text>
+    }
+<div class="form-group">
+    <div class="headerText"></div>
+</div>
+<div class="custom-font">
+    @Html.ValidationSummary()
+    <div class="main-form-alert alert soft-hide"></div>
+</div>
+<div class="container-fluid">
+    <div class="bs-component">
+        <ul class="nav nav-tabs tabText">
+            <li class="active"><a href="#info" data-toggle="tab">Service Info</a></li>
+            @*<li><a href="#stages" data-toggle="tab">Stages</a></li>*@
+            @*<li><a href="#cost" data-toggle="tab">Cost Codes</a></li>*@
+            <li><a href="#pay" data-toggle="tab">Pay Types</a></li>
+            <li><a href="#taxes" data-toggle="tab">Taxes</a></li>
+            <li><a href="#area" data-toggle="tab">Areas</a></li>
+            <li><a href="#divisions" data-toggle="tab">Divisions</a></li>
+            <li><a href="#comm" data-toggle="tab">Communications</a></li>
+        </ul>
+        <div id="serviceInfoTabs" class="tab-content">
+            <div class="tab-pane fade active in" id="info">
+                <div class="content">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.ServiceName, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-9 col-lg-9 formFeildText">
+                                @Html.TextBoxFor(p => p.ServiceName, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-5 form-group">
+                            @Html.LabelFor(p => p.StatusID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-8 col-lg-6 formFeildText">
+                                @Html.DropDownListFor(p => p.StatusID, ViewBag.ProjectStatus as SelectList, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.JobNumber, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-5 col-lg-3 formFeildText">
+                                @Html.TextBoxFor(p => p.JobNumber, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-5 form-group">
+                            @Html.LabelFor(p => p.StartDate, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-4 col-lg-3 formFeildText">
+                                @Html.TextBoxFor(p => p.StartDate, new { @class = "form-control date-picker", data_value = ViewBag.StartDateString })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.ClientID, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-8 col-lg-5 formFeildText">
+                                @Html.DropDownListFor(p => p.ClientID, ViewBag.Clients as SelectList, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-5 form-group">
+                            @Html.LabelFor(p => p.SalesPersonID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-8 col-lg-6 formFeildText">
+                                @Html.DropDownListFor(p => p.SalesPersonID, ViewBag.SiteUsers as SelectList, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.Address1, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-9 col-lg-8 formFeildText">
+                                @Html.TextBoxFor(p => p.Address1, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-5 form-group">
+                            @Html.LabelFor(p => p.ProjectManagerID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-8 col-lg-6 formFeildText">
+                                @Html.DropDownListFor(p => p.ProjectManagerID, ViewBag.SiteUsers as SelectList, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.Address2, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-9 col-lg-8 formFeildText">
+                                @Html.TextBoxFor(p => p.Address2, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-5 form-group">
+                            @Html.LabelFor(p => p.DesignerID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-8 col-lg-6 formFeildText">
+                                @Html.DropDownListFor(p => p.DesignerID, ViewBag.SiteUsers as SelectList, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.City, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-8 col-lg-6 formFeildText">
+                                @Html.TextBoxFor(p => p.City, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.State, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-6 col-lg-4 formFeildText">
+                                @Html.TextBoxFor(p => p.State, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.Zip, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-5 col-lg-2 formFeildText">
+                                @Html.TextBoxFor(p => p.Zip, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.Country, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-6 col-lg-4 formFeildText">@Html.DropDownListFor(p => p.Country, ePonti.web.Models.StaticModel.Countries, "", new { @class = "form-control" })</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.ServicePhone, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-6 col-lg-3 formFeildText">
+                                @Html.TextBoxFor(p => p.ServicePhone, new { @class = "form-control format-phone" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-lg-6 form-group">
+                            @Html.LabelFor(p => p.Email, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                            <div class="col-sm-9 col-lg-6 formFeildText">
+                                @Html.TextBoxFor(p => p.Email, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="stages">
+                <div class="content">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-3">
+                            <table class="table table-hover grids">
+                                <tr>
+                                    <th>Stage</th>
+                                    <th width="10"><input type="button" class="btn btn-default add-new" value="Add" /></th>
+                                </tr>
+                                <tr class="select-new-cont soft-hide">
+                                    <td colspan="2" class="text-center">
+                                        @Html.DropDownList("select-stages", ViewBag.CoStages as SelectList, new { @class = "select-new form-control" })
+                                        <input type="button" class="btn btn-default add-confirm" value="+" />
+                                    </td>
+                                </tr>
+                                <tr class="data-template stages">
+                                    <td colspan="2" class="stage"><span class="item-name"></span><input name="StageIDs" type="hidden" class="item-id" /></td>
+                                </tr>
+                                @if (ViewBag.ProjectStages != null)
+                                {
+                                    foreach (ePonti.BOL.GetProjectStagesByProjectID_Result item in ViewBag.ProjectStages)
+                                    {
+                                        <tr class="stages">
+                                            <td colspan="2" class="stage"><span class="item-name">@item.StageName</span><input name="StageIDs" type="hidden" value="@item.StageMasterID" class="item-id" /></td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+                        <div class="col-sm-offset-1 col-sm-5 list-group">
+                            @Html.Partial("_LaborPartial");
+                            <div class="col-sm-offset-7 col-sm-2 dropdown buttons">
+                                <a role="button" class="homeLinks save-stage-details"><img src="~/images/Save.png" width="20"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade additional-tab" id="cost" data-submit="@Url.Action("savecostcode","quoteinfo",null)" data-delete="@Url.Action("deletecostcode","quoteinfo",null)">
+                <div class="content">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-5 list-group">
+                            <table class="table table-hover grids">
+                                <tr>
+                                    <th width="20"></th>
+                                    <th>Code</th>
+                                    <th class="col-sm-3 formLabelText">Project #</th>
+                                    <th width="20"></th>
+                                    <th width="20"></th>
+                                    <th width="20"></th>
+                                </tr>
+                                @if (ViewBag.ProjectCostCodes != null)
+                                {
+                                    foreach (GetProjectCostCodesByProjectID_Result item in ViewBag.ProjectCostCodes)
+                                    {
+                                        <tr class="item-row">
+                                            <td></td>
+                                            <td class="subText code">@item.CostCode</td>
+                                            <td class="subText pno">@item.Project_</td>
+                                            <th></th>
+                                            <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" value="" /><input type="hidden" value="@item.ViewID" class="row-id" /></td>
+                                            <td></td>
+                                        </tr>
+                                    }
+                                }
+                                <tr class="data-template item-row">
+                                    <td></td>
+                                    <td class="subText code"></td>
+                                    <td class="subText pno"></td>
+                                    <th></th>
+                                    <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" class="row-id" /></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-2 dropdown buttons">
+                            <button type="button" class="btn btn-default add-item" role="button">Add</button>
+                        </div>
+                    </div>
+                    <div class="row select-new-cont soft-hide">
+                        <div class="col-sm-offset-1 col-sm-4 formFeildText">
+                            @Html.DropDownList("select-costs", ViewBag.CostCodes as SelectList, new { @class = "select-new form-control" })
+                        </div>
+                        <div class="col-sm-1 dropdown buttons">
+                            <button type="button" class="btn btn-default update-item" role="button">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade additional-tab" id="pay" data-submit="@Url.Action("savepaytype","quoteinfo",null)" data-delete="@Url.Action("deletepaytype","quoteinfo",null)" data-edit="@Url.Action("updatepaytype", "quoteinfo", null)">
+                <div class="content">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-4 list-group">
+                            <table class="table table-hover grids">
+                                <tr>
+                                    <th width="20"></th>
+                                    <th>Pay Type</th>
+                                    <th class="col-sm-1 formLabelText">Default</th>
+                                    <th class="col-sm-1 formLabelText">Factor</th>
+                                    <th width="20"></th>
+                                    <th width="20"></th>
+                                    <th width="60"></th>
+                                </tr>
+                                @if (ViewBag.ProjectPayTypes != null)
+                                {
+                                    foreach (GetProjectPayTypesByProjectID_Result item in ViewBag.ProjectPayTypes)
+                                    {
+                                        <tr class="item-row">
+                                            <td></td>
+                                            <td class="subText type">@item.Pay_Type</td>
+                                            <td class="subText default editable" data-name="default" data-type="check">@((item.Default ?? false) == true ? "Yes" : "No")    </td>
+                                            <td class="subText factor editable num-format" data-name="factor">@((item.Factor ?? 0).ToString("#.##"))</td>
+                                            <th></th>
+                                            <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" value="" /><input type="hidden" value="@item.ViewID" class="row-id" /></td>
+                                            <td>
+                                                <div class="edit-container"><img class="edit" src="~/images/Edit.png" height="15" /></div>
+                                                <div class="save-container soft-hide"><img class="save" src="~/images/Save.png" height="15" />     <img class="cancel" src="~/images/Cancel.png" height="15" /></div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                <tr class="data-template item-row">
+                                    <td></td>
+                                    <td class="subText type"></td>
+                                    <td class="subText default editable" data-name="default" data-type="check"></td>
+                                    <td class="subText factor editable num-format" data-name="factor"></td>
+                                    <th></th>
+                                    <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" class="row-id" /></td>
+                                    <td>
+                                        <div class="edit-container"><img class="edit" src="~/images/Edit.png" height="15" /></div>
+                                        <div class="save-container soft-hide"><img class="save" src="~/images/Save.png" height="15" />     <img class="cancel" src="~/images/Cancel.png" height="15" /></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-2 dropdown buttons">
+                            <button type="button" class="btn btn-default add-item" role="button">Add</button>
+                        </div>
+                    </div>
+                    <div class="row select-new-cont soft-hide">
+                        <div class="col-sm-offset-1 col-sm-2 formFeildText">
+                            @Html.DropDownList("select-paytypes", ViewBag.PayTypes as SelectList, new { @class = "select-new form-control" })
+                        </div>
+                        <div class="col-sm-1 dropdown buttons">
+                            <label for="paytype-default">Is Default</label>&nbsp;<input type="checkbox" id="paytype-default" name="paytype-default" />
+                        </div>
+                        <div class="col-sm-1 dropdown buttons">
+                            <button type="button" class="btn btn-default update-item" role="button">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade additional-tab" id="taxes" data-submit="@Url.Action("savetax","quoteinfo",null)" data-delete="@Url.Action("deletetax","quoteinfo",null)" data-edit="@Url.Action("updatetaxdata", "quoteinfo", null)">
+                <div class="content">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-6 list-group">
+                            <table class="table table-hover grids">
+                                <tr>
+                                    <th width="20"></th>
+                                    <th>Tax Code</th>
+                                    <th class="col-sm-2 formLabelText">Sales Rate</th>
+                                    <th class="col-sm-2 formLabelText">Labor Rate</th>
+                                    <th width="20"></th>
+                                    <th width="20"></th>
+                                    <th width="60"></th>
+                                </tr>
+                                @{var isTaxAdded = false;}
+                                @if (ViewBag.ProjectTaxes != null)
+                                {
+                                    foreach (GetProjectTaxesByProjectID_Result item in ViewBag.ProjectTaxes)
+                                    {
+                                        isTaxAdded = true;
+                                        <tr class="item-row">
+                                            <td></td>
+                                            <td class="subText code">@item.Tax</td>
+                                            <td class="subTextRight salesRate editable num-format" data-name="sales">@item.SalesRate%</td>
+                                            <td class="subTextRight laborCode editable num-format" data-name="labor">@item.LaborRate%</td>
+                                            <th></th>
+                                            <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" value="@item.ViewID" class="row-id" /></td>
+                                            <td>
+                                                <div class="edit-container"><img class="edit" src="~/images/Edit.png" height="15" /></div>
+                                                <div class="save-container soft-hide"><img class="save" src="~/images/Save.png" height="15" />     <img class="cancel" src="~/images/Cancel.png" height="15" /></div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                <tr class="data-template item-row">
+                                    <td></td>
+                                    <td class="subText code"></td>
+                                    <td class="subTextRight salesRate editable num-format" data-name="sales"></td>
+                                    <td class="subTextRight laborCode editable num-format" data-name="labor"></td>
+                                    <th></th>
+                                    <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" class="row-id" /></td>
+                                    <td>
+                                        <div class="edit-container"><img class="edit" src="~/images/Edit.png" height="15" /></div>
+                                        <div class="save-container soft-hide"><img class="save" src="~/images/Save.png" height="15" />     <img class="cancel" src="~/images/Cancel.png" height="15" /></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-2 dropdown buttons">
+                            <button type="button" class="btn btn-default add-item" style="@(isTaxAdded?"display:none":"")" role="button">Add</button>
+                        </div>
+                    </div>
+                    <div class="row select-new-cont soft-hide">
+                        <div class="col-sm-offset-1 col-sm-4 formFeildText">
+                            @Html.DropDownList("select-taxes", ViewBag.Taxes as SelectList, new { @class = "select-new form-control" })
+                        </div>
+                        <div class="col-sm-1 dropdown buttons">
+                            <button type="button" class="btn btn-default update-item" role="button">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade additional-tab" id="area" data-submit="@Url.Action("savearea","quoteinfo",null)" data-delete="@Url.Action("deletearea","quoteinfo",null)" data-edit="@Url.Action("updatearea", "serviceinfo", null)">
+                <div class="content">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-6 list-group">
+                            <table class="table table-hover grids">
+                                <tr>
+                                    <th width="20"></th>
+                                    <th>Area</th>
+                                    <th class="col-sm-1 formLabelText">Order</th>
+                                    <th width="20"></th>
+                                    <th width="20"></th>
+                                    <th width="60"></th>
+                                </tr>
+                                @if (ViewBag.ProjectAreas != null)
+                                {
+                                    foreach (GetProjectAreasByProjectID_Result item in ViewBag.ProjectAreas)
+                                    {
+                                        <tr class="item-row">
+                                            <td></td>
+                                            <td class="subText area">@item.Area</td>
+                                            <td class="subText order editable num-format" data-name="order">@item.AreaOrder</td>
+                                            <th></th>
+                                            <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" class="row-id" value="@item.ViewID" /></td>
+                                            <td>
+                                                <div class="edit-container"><img class="edit" src="~/images/Edit.png" height="15" /></div>
+                                                <div class="save-container soft-hide"><img class="save" src="~/images/Save.png" height="15" />     <img class="cancel" src="~/images/Cancel.png" height="15" /></div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                <tr class="data-template item-row">
+                                    <td></td>
+                                    <td class="subText area"></td>
+                                    <td class="subText order editable num-format" data-name="order"></td>
+                                    <th></th>
+                                    <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" class="row-id" /></td>
+                                    <td>
+                                        <div class="edit-container"><img class="edit" src="~/images/Edit.png" height="15" /></div>
+                                        <div class="save-container soft-hide"><img class="save" src="~/images/Save.png" height="15" />     <img class="cancel" src="~/images/Cancel.png" height="15" /></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-2 dropdown buttons">
+                            <button type="button" class="btn btn-default add-item" role="button">Add</button>
+                        </div>
+                    </div>
+                    <div class="row select-new-cont soft-hide">
+                        <div class="col-sm-offset-1 col-sm-2 formFeildText">
+                            &nbsp;
+                            @Html.DropDownList("select-areas", ViewBag.Areas as SelectList, "- Enter a name -", new { @class = "select-new form-control select-new-area" })
+                        </div>
+                        <div class="col-sm-2 dropdown buttons">
+                            <div class="area-name-cont">
+                                Name:
+                                <input class="form-control" id="area-name" />
+                            </div>
+                        </div>
+                        <div class="col-sm-1 dropdown buttons">
+                            Order:
+                            <input class="form-control" id="area-order" />
+                        </div>
+                        <div class="col-sm-1 dropdown buttons">
+                            &nbsp;
+                            <button type="button" class="btn btn-default update-item form-control" role="button">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade additional-tab" id="divisions" data-submit="@Url.Action("savedivision","quoteinfo",null)" data-delete="@Url.Action("deletedivision","quoteinfo",null)" data-edit="@Url.Action("updatedivision", "serviceinfo", null)">
+                <div class="content">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-6 list-group">
+                            <table class="table table-hover grids">
+                                <tr>
+                                    <th width="20"></th>
+                                    <th>Divisions</th>
+                                    <th class="col-sm-1 formLabelText">Order</th>
+                                    <th width="20"></th>
+                                    <th width="20"></th>
+                                    <th width="60"></th>
+                                </tr>
+                                @if (ViewBag.ProjectDivisions != null)
+                                {
+                                    foreach (GetProjectDivisionsByProjectID_Result item in ViewBag.ProjectDivisions)
+                                    {
+                                        <tr class="item-row">
+                                            <td></td>
+                                            <td class="subText division">@item.Area</td>
+                                            <td class="subText order editable num-format" data-name="order">@item.DivisionOrder</td>
+                                            <th></th>
+                                            <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" value="@item.ViewID" class="row-id" /></td>
+                                            <td>
+                                                <div class="edit-container"><img class="edit" src="~/images/Edit.png" height="15" /></div>
+                                                <div class="save-container soft-hide"><img class="save" src="~/images/Save.png" height="15" />     <img class="cancel" src="~/images/Cancel.png" height="15" /></div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                <tr class="data-template item-row">
+                                    <td></td>
+                                    <td class="subText division"></td>
+                                    <td class="subText order editable num-format" data-name="order"></td>
+                                    <th></th>
+                                    <td class="delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" class="row-id" /></td>
+                                    <td>
+                                        <div class="edit-container"><img class="edit" src="~/images/Edit.png" height="15" /></div>
+                                        <div class="save-container soft-hide"><img class="save" src="~/images/Save.png" height="15" />     <img class="cancel" src="~/images/Cancel.png" height="15" /></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-2 dropdown buttons">
+                            <button type="button" class="btn btn-default add-item" role="button">Add</button>
+                        </div>
+                    </div>
+                    <div class="row select-new-cont soft-hide">
+                        <div class="col-sm-offset-1 col-sm-3 formFeildText">
+                            @Html.DropDownList("select-divisions", ViewBag.Divisions as SelectList, new { @class = "select-new form-control" })
+                        </div>
+                        <div class="col-sm-2 dropdown buttons">
+                            Order:
+                            <span>
+                                <input class="form-control" id="division-order" />
+                            </span>
+                        </div>
+                        <div class="col-sm-1 dropdown buttons">
+                            <button type="button" class="btn btn-default update-item" role="button">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade additional-tab" id="comm" data-submit="@Url.Action("savecommunication","quoteinfo",null)" data-delete="@Url.Action("deletecommunication","quoteinfo",null)">
+                <div class="content">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-8 col-lg-offset-1 col-lg-6 list-group">
+                            <table class="table table-hover grids">
+                                <tr>
+                                    <th width="20"></th>
+                                    <th>User</th>
+                                    <th width="40"></th>
+                                </tr>
+                                @if (ViewBag.ProjectComm != null)
+                                {
+                                    foreach (GetProjectCommByProjectID_Result item in ViewBag.ProjectComm)
+                                    {
+                                        <tr class="item-row">
+                                            <td></td>
+                                            <td class="subText user">@item.User</td>
+                                            <td class="subText delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" value="@item.ViewID" class="row-id" /></td>
+                                        </tr>
+                                    }
+                                }
+                                <tr class="data-template item-row">
+                                    <td></td>
+                                    <td class="subText user"></td>
+                                    <td class="delete">
+                                        <img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" class="row-id" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-2 col-lg-offset-1 col-lg-2 dropdown buttons">
+                            <button type="button" class="btn btn-default add-item" role="button">Add</button>
+                        </div>
+                    </div>
+                    <div class="row select-new-cont soft-hide">
+                        <div class="col-sm-offset-1 col-sm-4 col-lg-offset-1 col-lg-4 dropdown buttons">
+                            @Html.DropDownList("select-comm", ViewBag.SiteUsers as SelectList, new { @class = "select-new form-control" })
+                        </div>
+                        <div class="col-sm-1 col-lg-1"><span class="status custom-font"></span></div>
+                        <div class="col-sm-1 col-lg-1 dropdown buttons">
+                            <button type="button" class="btn btn-default update-item" role="button">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+}

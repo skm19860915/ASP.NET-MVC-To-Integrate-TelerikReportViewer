@@ -1,0 +1,80 @@
+﻿@model ePonti.BOL.GetContactInfoByContactID_Result
+
+@{
+    ViewBag.Title = "New Contact Info";
+    ViewBag.FormAction = "create";
+    Layout = "~/Areas/Common/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-10 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-contact"><img src="~/images/Save.png" width="20"></a>
+            <span><a href="javascript:history.go(-1)" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    @Html.Partial("_MainForm", Model)
+</div>
+
+@section scripts{
+    <script>
+        $('.save-contact').on('click', function () {
+            var $form = $('#formNewContact');
+            if ($form.valid()) {
+                $('.validation-summary-errors').find('li').remove();
+                var $alert = $('.new-cotnact-alert');
+                var text = $('#ContactTypeID option:selected').text();
+                $.ajax({
+                    url: $form.attr('action'),
+                    type: 'POST',
+                    data: $form.serialize(),
+                    success: function (res) {
+                        console.log(res);
+                        if (res.status == 'error') {
+                            var errors = 'Enter correct data and retry.'
+                            if (res.errors && res.errors.length > 0) {
+                                errors = res.errors.join('<br>');
+                            }
+                            $alert.html(errors);
+                            showAlert($alert, 'danger', -1);
+                        }
+                        else if (res.status = 'success') {
+                            $alert.html('Contact saved.');
+                            showAlert($alert, 'success');
+                            var IsQBConnected = '@ViewBag.IsQBConnected';
+                            if (IsQBConnected == "true") {
+                                if (confirm('Do you want to transfer to QuickBooks?')) {
+
+                                    document.location = '/Pages/ContactInfo/syncSingleCustomer/?type=' + text.toUpperCase() + "&&contactID=" + res.contactID + "&&nav=" + '@Request.QueryString["nav"]';
+                                }
+                                else {
+
+                                    var url = '@Url.Action("details",new {id="CONTACTID", nav=Request.QueryString["nav"]})'
+                                    document.location = url.replace('CONTACTID', res.contactID);
+                                }
+                            }
+                            else {
+                                var url = '@Url.Action("details",new {id="CONTACTID", nav=Request.QueryString["nav"]})'
+                                document.location = url.replace('CONTACTID', res.contactID);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+        $(document).ready(function () {
+            var availableTags = [];
+            $(".DDcompanylist option").each(function () {
+                var comName = $(this).text().trim();
+                if (comName != "") {
+                    availableTags.push(comName);
+                }
+            });
+            $(".con_company").autocomplete({
+                source: availableTags
+            });
+            //alert(availableTags);
+        });
+    </script>
+}

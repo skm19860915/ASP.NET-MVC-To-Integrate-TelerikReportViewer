@@ -1,0 +1,45 @@
+﻿@using ePonti.BLL.Common
+@using ePonti.BOL;
+    
+<table class="table table-hover grids stageDetails">
+    <tr>
+        <th>Labor</th>
+        <th class="col-sm-2 formLabelText">Cost/Hr</th>
+        <th class="col-sm-2 formLabelText">Price/Hr</th>
+        <th class="col-sm-2 formLabelText">%</th>
+        <th class="col-sm-2 formLabelText">Hours</th>
+        <th class="col-sm-2 formLabelText">Extension</th>
+    </tr>
+    <tr class="stageDetail data-template">
+        <td><span class="subName"></span><input type="hidden" class="substage-id" /><input type="hidden" class="projectstage-id" /><input type="hidden" class="stagemaster-id" /> <input type="hidden" class="item-id" /><input type="hidden" class="index" /></td>
+        <td class="format-decimal2 num-format cost"></td>
+        <td class="format-decimal2 num-format price" ></td>
+        <td class="num-format perc" ></td>
+        <td class="format-decimal2 num-format hours" ></td>
+        <td class="format-decimal2 num-format sell" ></td>
+    </tr>
+    <tr class="footer">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><strong>Subtotals</strong></td>
+        <td class="total-format num-format format-decimal2 subtotal-hours"></td>
+        <td class="total-format num-format format-decimal2 subtotal-sell"></td>
+    </tr>
+    <tr class="footer labortax">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><strong>Labor Tax</strong></td>
+        <td></td>
+        <td class="total-format num-format format-decimal2 labor-tax"></td>       
+    </tr>
+    <tr class="footer">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><strong>Total</strong></td>
+        <td></td>
+        <td class="total-format num-format format-decimal2 total-sell"></td>
+    </tr>
+</table>

@@ -1,0 +1,92 @@
+﻿@model ePonti.web.Models.EventModels.NewEvent
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "events", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(p => p.EventID)
+    <div class="form-group">
+        <div class="headerText"></div>
+    </div>
+    <div class="col-sm-offset-2 custom-font">
+        @Html.ValidationSummary()
+        <div class="main-form-alert alert soft-hide"></div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-2 col-sm-2 control-label formLabelText">Event</div>
+        <div class="col-xs-9 col-sm-7 formFeildText">
+            @Html.TextBoxFor(p => p.Event, new { @class = "form-control" })
+        </div>
+    </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Owner</div>
+            <div class="col-xs-9 col-sm-4 formFeildText">
+                @Html.DropDownListFor(p => p.OwnerID, ViewBag.Owners as SelectList, ViewBag.IsFieldsReadOnly == true ? (object)new { @class = "form-control", @disabled = "true" } : (object)new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Job</div>
+            <div class="col-xs-9 col-sm-7 formFeildText">
+                @Html.DropDownListFor(p => p.JobID, ViewBag.Jobs as SelectList, ViewBag.IsFieldsReadOnly == true ? (object)new { @class = "form-control", @disabled = "true" } : (object)new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Status</div>
+            <div class="col-xs-9 col-sm-4 formFeildText">
+                @Html.DropDownListFor(p => p.StatusID, ViewBag.Status as SelectList, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Date</div>
+            <div class="col-xs-9 col-sm-3 formFeildText">
+                @Html.TextBoxFor(p => p.Date, new { @class = "form-control datetime-picker", data_value = @ViewBag.DateString })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Duration</div>
+            <div class="col-xs-9 col-sm-2 formFeildText">
+                @Html.TextBoxFor(p => p.Duration, new { @class = "form-control number-spinner" })
+            </div>
+            <div class="formFeildText">
+                <label class="control-label formLabelText">hours</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Invitees</div>
+            <div class="col-xs-9 col-sm-4 formFeildText" title="Press and hold ctrl to select multiple">
+                @Html.ListBoxFor(p => p.InviteeIds, ViewBag.Invitees as MultiSelectList, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Note</div>
+            <div class="col-xs-9 col-sm-9 formFeildText">
+                @Html.TextAreaFor(p => p.Notes, new { @class = "form-control", @rows = "10", @id = "callNoteId" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+}

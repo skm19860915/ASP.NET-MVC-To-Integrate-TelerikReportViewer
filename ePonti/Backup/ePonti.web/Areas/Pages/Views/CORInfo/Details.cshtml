@@ -1,0 +1,310 @@
+﻿@using ePonti.BLL.Common
+@using ePonti.BOL
+@using GridMvc.Html;
+@using Dropbox.Api.Files;
+
+@model ePonti.BOL.GetCorInfoByCorID_Result
+
+@{
+    ViewBag.Title = Model.TypeLabel;
+    var nav = Url.Nav(EnumWrapper.Pages.CorDetails, Model.View);
+    var projectID = ViewBag.ProjectID;
+    var isApproved = ((bool?)ViewBag.IsApproved) ?? false;
+    decimal? AddedTotalHrs = 0.0M, AddedTotalPrice = 0.0M, AddedTotalLabor = 0.0M, AddedSubtotalInstalled = 0.0M;
+    decimal? RemovedTotalHrs = 0.0M, RemovedTotalPrice = 0.0M, RemovedTotalLabor = 0.0M, RemovedSubtotalInstalled = 0.0M;
+}
+<div class="editableArea" id="editableArea">Loading...</div>
+<div class="container-fluid" id="viewArea">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-11 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a>
+            @Html.Hidden("CorID", Model.View)
+            @Html.Hidden("ProjectID", (int)projectID)
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="row">
+                <div class="headerText">@Model.DisplayName</div>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="row">
+                        <div class="col-sm-8 col-lg-6 subText">@Model.Job</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText">@Model.Type</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText">@Model.Status</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText">@Model.Created.ToCustomDateString()</div>
+                        <div class="col-sm-4 col-lg-4 subText">@Model.ApprovedDate.ToCustomDateString()</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 subText">@Model.Creator</div>
+                        <div class="col-sm-4 col-lg-4 subText">@Model.Approver</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-lg-6 headerText"></div>
+                <div class="col-sm-5 col-lg-4 dropdown buttons">
+                    @if (!isApproved)
+                    {
+                        <button class="btn btn-default" id="open-edit-popup" onclick="openEdit()" role="button" data-url="@Url.Action("Edit", new { id = Model.View })">Edit</button>
+                    }
+                    <span>
+                        <button class="btn btn-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New</button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Call", "create", new { controller = "calls", area = "common", projectid = projectID, nav })</li>
+                            <li>@Html.ActionLink("Event", "create", new { controller = "events", area = "common", projectid = projectID, nav })</li>
+                            <li>@Html.ActionLink("Note", "create", new { controller = "notes", area = "common", projectid = projectID, nav })</li>
+                            <li>@Html.ActionLink("Case", "create", new { controller = "cases", area = "common", projectid = projectID, nav })</li>
+                            <li>@Html.ActionLink("Punch List", "create", new { controller = "punchlists", area = "common", projectid = projectID, nav })</li>
+                            <li>@Html.ActionLink("TimeIt", "create", new { controller = "timeits", area = "common", projectid = projectID, nav })</li>
+                            <li>@Html.ActionLink("Sales Order", "create", new { controller = "soinfo", area = "pages", projectid = projectID, nav })</li>
+                        </ul>
+                    </span>
+                    <span>
+                        @Html.ActionLink("Reports", "index", "reports", new { area = "sections", nav }, new { @class = "btn btn-default" })
+                    </span>
+                    @if (!isApproved)
+                    {
+                        <span>
+                            <input type="button" class="btn btn-default approve-cor" value="Approve" data-url="@Url.Action("ApproveCor")" />
+                        </span>
+                        <div class="approve-alert"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="bs-component">
+            <ul class="nav nav-tabs tabText">
+                <li class="active"><a href="#scope" data-toggle="tab">Scope</a></li>
+                <li><a href="#additions" data-toggle="tab">Additions</a></li>
+                @if (Model.IdType == true)
+                {
+                    <li><a href="#removed" data-toggle="tab">Removed</a></li>
+                }                
+                <li><a href="#files" data-toggle="tab">Files</a></li>
+            </ul>
+            <div id="contactInfoTabs" class="tab-content">
+                <div class="tab-pane fade active in" id="scope">
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9 col-lg-9 dropdown buttons">
+                            <div class="scope-alert alert"></div>
+                        </div>
+                        <div class="col-sm-1 col-lg-1 dropdown buttons">
+                            @if (!isApproved)
+                            {
+                                <a role="button" class="homeLinks update-scope" data-url="@Url.Action("UpdateScope")"><img src="~/images/Save.png" width="20"></a>
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label formLabelText" for="corScope">Scope</label>
+                            <div class="col-md-8 formFeildText">
+                                <textarea class="form-control" rows="10" id="corScope" name="corScope">@ViewBag.Scope</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="additions">
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 dropdown buttons"></div>
+                        <div class="dropdown buttons">
+                            @if (!isApproved)
+                            {
+                                <a class="btn btn-default" href="@Url.Action("AddItems", new { Id = Model.View, ProjectID = projectID, nav })">Add</a>
+                                <span>
+                                    <button type="button" class="btn btn-default part-duplicate" role="button" data-url="@Url.Action("DuplicateProjectItems",new { controller = "AddItems", area = "Common"})">Duplicate</button>
+                                </span>
+                                if (Model.IdType == true)
+                                {
+                                <span>
+                                    <button type="button" class="btn btn-default part-delete" role="button" data-url="@Url.Action("DeleteProjectItems", new { controller = "AddItems", area = "Common" })">Delete</button>
+                                </span>
+                                }
+                                <span>
+                                    <button type="button" class="btn btn-default part-refresh" role="button" data-url="@Url.Action("GetProjectInfoParts",new { controller = "QuoteInfo"})">Refresh</button>
+                                </span>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-sm-11 col-lg-11 list-group">
+                        @Html.Grid(ViewBag.Additions as List<GetCorInfoPartsAddedByCorID_Result>, "_CORPartsGrid").Columns(columns =>
+                   {
+                       columns.Add().Encoded(false).Sanitized(false).SetWidth(20).RenderValueAs(s => "<input type=\"checkbox\" class=\"partCheck\" /><input type =\"hidden\" class=\"part-id\" value=\"" + s.ViewID + "\" />").Css("part");
+                       columns.Add().Encoded(false).Sanitized(false).SetWidth(50).RenderValueAs(s => "<a href=\"" + @Url.Action("short", "items", new
+                       {
+                           area = "common",
+                           id = s.ViewID,
+                           nav
+                       }) + "\"><img src=\"" + Url.Content("~/images/View.png") + "\" width=\"25\"></a>");
+                       columns.Add(s => s.Item, "PartsItem").Sortable(true).Css("subText").Titled("Part");
+                       columns.Add(s => s.Area, "PartsArea").Sortable(true).Css("subText col-sm-2").Titled("Area").Filterable(true);
+                       columns.Add(s => s.Stage, "PartsStage").Sortable(true).Css("subText col-sm-2").Titled("Stage").Filterable(true);
+                       columns.Add(s => s.Qty, "PartsQty").Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Qty").RenderValueAs(s => s.Qty.ToFormattedString(2));
+                       columns.Add(s => s.Price, "PartsPrice").Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Price").RenderValueAs(s => s.Price.ToFormattedString(2));
+                       columns.Add(s => s.Hrs, "PartsHrs").Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Hrs").RenderValueAs(s => s.Hrs.ToFormattedString(2));
+                       columns.Add(s => s.Labor, "PartsLabor").Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Labor").RenderValueAs(s => s.Labor.ToFormattedString(2));
+                       columns.Add(s => s.Installed, "PartsInstalled").Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Installed").RenderValueAs(s => s.Installed.ToFormattedString(2));
+                   }).WithPaging(20, 20, "PartsList")
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="removed">
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-6 dropdown buttons"></div>
+                        <div class="dropdown buttons">
+                            @if (!isApproved)
+                            {
+                                <a class="btn btn-default" href="@Url.Action("RemoveItems", new { Id = Model.View, ProjectID = projectID, nav })">Remove</a>
+                                <span>
+                                    <button type="button" class="btn btn-default part-delete" role="button" data-url="@Url.Action("DeleteProjectItems",new { controller = "AddItems", area = "Common"})">Undo</button>
+                                </span>
+                                <span>
+                                    <button type="button" class="btn btn-default part-refresh" role="button" data-url="@Url.Action("GetProjectInfoParts",new { controller = "QuoteInfo"})">Refresh</button>
+                                </span>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-sm-11 col-lg-11 list-group">
+                        <table class="table table-hover grids">
+                            <tr>
+                                <th width="20"></th>
+                                <th width="50"></th>
+                                <th>Part</th>
+                                <th class="col-sm-2 col-lg-2">Area</th>
+                                <th class="col-sm-2 col-lg-2">Stage</th>
+                                <th class="col-sm-1 col-lg-1 num-format">Qty</th>
+                                <th class="col-sm-1 col-lg-1 num-format">Price</th>
+                                <th class="col-sm-1 col-lg-1 num-format">Hrs</th>
+                                <th class="col-sm-1 col-lg-1 num-format">Labor</th>
+                                <th class="col-sm-1 col-lg-1 num-format">Installed</th>
+                            </tr>
+                            @foreach (GetCorInfoPartsRemovedByCorID_Result item in ViewBag.Removals as List<GetCorInfoPartsRemovedByCorID_Result>)
+                            {
+                                <tr>
+                                    <td height="50"><input type="checkbox" class="partCheck" /><input type="hidden" class="part-id" value="@item.ViewID" /></td>
+                                    <td>
+                                        <a href="@Url.Action("short","items",new { area="common",id=item.ViewID, IsCorItem=1, nav})">
+                                            <img src="~/images/View.png" width="20">
+                                        </a>
+                                    </td>
+                                    <td class="subText">@item.Item</td>
+                                    <td class="subText">@item.Area</td>
+                                    <td class="subText">@item.Stage</td>
+                                    <td class="subText num-format">@item.Qty.ToFormattedString()</td>
+                                    <td class="subText num-format">@item.Price.ToFormattedString(4)</td>
+                                    <td class="subText num-format">@item.Hrs.ToFormattedString(2)</td>
+                                    <td class="subText num-format">@item.Labor.ToFormattedString(4)</td>
+                                    <td class="subText num-format">@item.Installed.ToFormattedString(4)</td>
+                                    @{
+                                        RemovedTotalPrice += item.Price * -1;
+                                        RemovedTotalHrs += item.Hrs * -1;
+                                        RemovedTotalLabor += item.Labor * -1;
+                                        RemovedSubtotalInstalled += item.Installed * -1;
+                                    }
+                                </tr>
+                                        }
+                            <tr class="footer">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><strong>Totals</strong></td>
+                                <td></td>
+                                <td class="subText num-format total-format">@RemovedTotalPrice.ToFormattedString(4)</td>
+                                <td class="subText num-format total-format">@RemovedTotalHrs.ToFormattedString(2)</td>
+                                <td class="subText num-format total-format">@RemovedTotalLabor.ToFormattedString(4)</td>
+                                <td class="subText num-format total-format">@RemovedSubtotalInstalled.ToFormattedString(4)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="files">
+                    <div class="col-sm-5 list-group">
+                        <div class="row">
+                            <div class="headerText"></div>
+                        </div>
+                        <div class="col-sm-offset-1 col-sm-3 tabText dropContainer">
+                            <div id="dropzoneform" class="dropzone_div"
+                                 style="background-color:#ffffff">
+                                Drop or click to select files here
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="headerText"></div>
+                        </div>
+                        @{
+                            if (ViewBag.FilesList != null)
+                            {
+                                <table class="col-sm-8 table table-hover grids">
+                                    <tr>
+                                        <th class="tabText">Name</th>
+                                        <th class="col-sm-3 tabText"> Modified</th>
+                                        <th class="col-sm-1 tabText">Download</th>
+                                    </tr>
+                                    @if (ViewBag.LocalFolder == true)
+                                    {
+                                        foreach (var files in ViewBag.FilesList)
+                                        {
+                                            <tr>
+                                                <td>@files.Name</td>
+                                                <td>@files.ClientModified</td>
+                                                <td>
+                                                    <a href="@(String.Format("{0}{1}", "/Pages/JobInfo/DownloadLocalFiles?path=", files.FilePath))">
+                                                        <img src="~/images/Download.png" width="30" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        foreach (var files in ViewBag.FilesList)
+                                        {
+                                            <tr>
+                                                <td>@files.Name</td>
+                                                <td>@files.ClientModified</td>
+                                                <td>
+                                                    <a id="dropdownload" href="@(String.Format("{0}{1}", "/Pages/CorInfo/DownloadFiles?path=", files.PathDisplay))">
+                                                        <img src="~/images/Download.png" width="30" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+<script>
+        $(document).ready(function () {
+            loaddropzone("dropzoneform", "/Pages/CorInfo/details?id=@Model.View&ProjectId=@ViewBag.ProjectID", "image/jpg, image/jpeg, image/png, application/pdf, application/docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document","@Url.Content("~/images/loader.gif")");
+        });
+</script>
+    <script src="@Url.Content("~/Scripts/pages/corinfo.js")" type="text/javascript"></script>
+}

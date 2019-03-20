@@ -1,0 +1,84 @@
+﻿@model ePonti.web.Models.EventModels.NewEvent
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "mevent", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(p => p.EventID)
+    <div class="form-group">
+        <div class="headerText"></div>
+    </div>
+    <div class="col-xs-offset-1 custom-font">
+        @Html.ValidationSummary()
+        <div class="main-form-alert alert soft-hide"></div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3 formLabelTextMobile">Event</div>
+        </div>
+        <div class="col-xs-11 formFeildText">
+            @Html.TextBoxFor(p => p.Event, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3 formLabelTextMobile">Owner</div>
+        </div>
+        <div class="col-xs-11 formFeildText">
+            @Html.DropDownListFor(p => p.OwnerID, ViewBag.Owners as SelectList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3 formLabelTextMobile">Job</div>
+        </div>
+        <div class="col-xs-11 formFeildText">
+            @Html.DropDownListFor(p => p.JobID, ViewBag.Jobs as SelectList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3 formLabelTextMobile">Status</div>
+        </div>
+        <div class="col-xs-8 formFeildText">
+            @Html.DropDownListFor(p => p.StatusID, ViewBag.Status as SelectList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3 formLabelTextMobile">Date</div>
+        </div>
+        <div class="col-xs-8 formFeildText">
+            @Html.TextBoxFor(p => p.Date, new { @class = "form-control datetime-picker", data_value = @ViewBag.DateString })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3 formLabelTextMobile">Duration</div>
+        </div>
+        <div class="col-xs-4 formFeildText">
+            @Html.TextBoxFor(p => p.Duration, new { @class = "form-control number-spinner" })
+        </div>
+        <div class="formFeildText">
+            <label class="col-xs-2 formLabelTextMobile">hours</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3 formLabelTextMobile">Invitees</div>
+        </div>
+        <div class="col-xs-9" title="Press and hold ctrl to select multiple">
+            @Html.ListBoxFor(p => p.InviteeIds, ViewBag.Invitees as MultiSelectList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3 formLabelTextMobile">Notes</div>
+        </div>
+        <div class="col-xs-11 formFeildText">
+            @Html.TextAreaFor(p => p.Notes, new { @class = "form-control", row = "10" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="headerText"></div>
+    </div>
+}

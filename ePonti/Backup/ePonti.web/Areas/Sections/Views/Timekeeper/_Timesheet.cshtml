@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ePonti.BOL.GetTimeSheetBySiteUserIDnDates_Result>
+@using ePonti.BOL
+@using ePonti.BLL.Common
+@{
+    ViewBag.Title = "Timekeeper";
+    var nav = Url.Nav(EnumWrapper.Pages.Timekeeper);
+    decimal? TotalHrs = 0.0M;
+}
+
+
+    <div class="col-sm-11 list-group">
+        <table class="timekeeper-grids table table-hover grids">
+            <tr>
+                <th width="20"></th>
+                <th width="30"></th>
+                <th>Job</th>
+                <th class="col-sm-3">Task</th>
+                <th class="col-sm-1">Date</th>
+                <th class="col-sm-1">Hours</th>
+                <th class="col-sm-2">CostCode</th>
+                <th class="col-sm-1">PayType</th>
+                <th width="30">Reason</th>
+            </tr>
+            @{
+                if (Model!=null)
+                {
+                    int index = 0;
+                    foreach (GetTimeSheetBySiteUserIDnDates_Result item in Model)
+                    {
+                    <tr class="timesheet-item-row">
+                        <td height="50">
+                            <input class="check" type="checkbox" />
+                            <input type="hidden" class="project-id" value="@item.ProjectID" />
+                            <input type="hidden" class="index" value="@index" />
+                            <input type="hidden" class="PayrollID" value="@item.PayrollID" />
+                        </td>
+                        <td class="action">
+                            @if (item.PayrollTypeID == 2)
+                            {<a class="payinfo" data-pid="@item.PayrollID" href="@Url.Action("payItemInfo", "timekeeper", new { area = "sections", id = item.PayrollEventID, projectid = item.ProjectID, PayrollTypeID = item.PayrollTypeID, PayrollPeriodItemID = "PERIOD", PayrollID = "PAYROLLID",tab="timesheet", nav })">
+                                                    <img src="~/images/WorkOrder.png" width="20">
+                                                </a>}
+                            @if (item.PayrollTypeID == 1)
+                            {<a class="payinfo" data-pid="@item.PayrollID"  href="@Url.Action("payItemInfo", "timekeeper", new { area = "sections", id = item.PayrollEventID, projectid = item.ProjectID, PayrollTypeID = item.PayrollTypeID, PayrollPeriodItemID = "PERIOD", PayrollID = "PAYROLLID",tab="timesheet", nav })">
+                                                    <img src="~/images/WorkOrder.png" width="20">
+                                                </a>}
+                            @if (item.PayrollTypeID == 0)
+                            {<a class="payinfo" data-pid="@item.PayrollID"  href="@Url.Action("payItemInfo", "timekeeper", new { area = "sections", id = item.PayrollEventID, projectid = item.ProjectID, PayrollTypeID = item.PayrollTypeID, PayrollPeriodItemID = "PERIOD", PayrollID = "PAYROLLID",tab="timesheet", nav })">
+                                                    <img src="~/images/TimeIt.png" width="20">
+                                                </a>}
+                        </td>
+                        <td class="subText">@item.Job</td>
+                        <td class="subText">@item.Task</td>
+                        <td class="subText">@item.Date.ToCustomDateString()</td>
+                        <td class="subText Hours">@item.Hours</td>
+                        <td class="subText">@item.CostCode</td>
+                        <td class="subText">@item.PayType</td>
+                        <td class="subText">
+                            @if (item.Reason == "0")
+                            {<a href=""></a>}
+                            @if (item.Reason == "1")
+                            {<img src="~/images/Cancel.png" width="20">}
+                        </td>
+                        @{
+                            TotalHrs += item.Hours;
+                            index = index + 1;
+                        }
+                    </tr>
+
+                            }
+                            <tr class="footer">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><strong>Totals</strong></td>
+                                <td class="num-format total-format subText" id="totalhrs">@TotalHrs.ToFormattedString(2)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                                }
+            }
+        </table>
+    </div>
+
+

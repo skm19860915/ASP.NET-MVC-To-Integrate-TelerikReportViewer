@@ -1,0 +1,66 @@
+﻿@using ePonti.BLL.Common
+@model ePonti.web.Models.NoteModels.NewNote 
+    
+@using(Html.BeginForm((string)ViewBag.FormAction, "notes", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(p => p.NoteID)
+    <div class="form-group">
+        <div class="headerText"></div>
+    </div>
+        <div class="col-xs-offset-1 col-sm-offset-2 custom-font">
+            @Html.ValidationSummary()
+            <div class="main-form-alert alert soft-hide"></div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Subject</div>
+            <div class="col-xs-9 col-sm-7 formFeildText">
+                @Html.TextBoxFor(p => p.Subject, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Contact</div>
+            <div class="col-xs-9 col-sm-4 formFeildText">
+                @Html.DropDownListFor(p => p.ContactID, ViewBag.Contacts as SelectList, ViewBag.IsFieldsReadOnly==true ? (object)new { @class = "form-control", @disabled="true" } : (object)new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Job</div>
+            <div class="col-xs-9 col-sm-7 formFeildText">
+                @Html.DropDownListFor(p => p.JobID, ViewBag.Jobs as SelectList, ViewBag.IsFieldsReadOnly == true ? (object)new { @class = "form-control jobs", @disabled = "true" } : (object)new { @class = "form-control jobs" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Date</div>
+            <div class="col-xs-4 col-sm-3 formFeildText">
+                @Html.TextBoxFor(p => p.Date, new { @class = "form-control date-picker", data_value = Model.Date.ToCustomDateStringForPicker() })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Creator</div>
+            <div class="col-xs-9 col-sm-4 formFeildText">
+                @Html.DropDownListFor(p => p.CreatorID, ViewBag.Creator as SelectList, ViewBag.IsFieldsReadOnly == true ? (object)new { @class = "form-control", @disabled = "true" } : (object)new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-2 col-sm-2 control-label formLabelText">Note</div>
+            <div class="col-xs-9 col-sm-9 formFeildText">
+                @Html.TextAreaFor(p=>p.Notes, new { @class = "form-control", @rows = "10", @id = "callNoteId" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+}

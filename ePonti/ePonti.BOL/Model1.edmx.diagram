@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be47100a55e34ede9a733d9a778472db" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="ePontiv2Model.ActivitiesCalls" Width="1.5" PointX="7.5" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ActivitiesEventInvitees" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ActivitiesEvents" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.AspNetRoles" Width="1.5" PointX="9" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.AspNetUserClaims" Width="1.5" PointX="13.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.AspNetUserLogins" Width="1.5" PointX="13.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoActivitiesStatus" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoAreas" Width="1.5" PointX="4.875" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCalendar" Width="1.5" PointX="2.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCallPurposes" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCaseTypes" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactAddresses" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactCompanies" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactEmails" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactLinkTypes" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactPhones" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContacts" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactSubtypes" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactTypes" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactWebSiteTypes" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCorStatus" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCorTypes" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCostCodes" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCreditMemoStatus" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCustodyLocations" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDataGroups" Width="1.5" PointX="11.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDataManufacturers" Width="1.5" PointX="13.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDataOptions" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDataSpecs" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDataSubGroups" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDeliveryStatus" Width="1.5" PointX="17.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDeliveryTypes" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDivisions" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoEmailOptions" Width="1.5" PointX="11.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoKitItems" Width="1.5" PointX="13.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoKits" Width="1.5" PointX="15.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoMilestoneOwners" Width="1.5" PointX="17.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoMilestoneTemplateItems" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoOptions" Width="1.5" PointX="19.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoProfileReports" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoProjectRelationships" Width="1.5" PointX="20.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoPunchListDepartments" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoPunchListTypes" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoQuoteWerks" Width="1.5" PointX="2.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoReportDefaults" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoReports" Width="1.5" PointX="4.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoShipTo" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoStagesMaster" Width="1.5" PointX="22.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoStagesPricing" Width="1.5" PointX="22.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoStagesSubs" Width="1.5" PointX="11.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoTaxes" Width="1.5" PointX="13.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.PayrollFrequencies" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.PayrollPeriodItems" Width="1.5" PointX="19.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.PayrollPeriods" Width="1.5" PointX="23.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.PayrollSecurity" Width="1.5" PointX="7.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.PayrollStatus" Width="1.5" PointX="24.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.PostIt" Width="1.5" PointX="15.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.PostItComments" Width="1.5" PointX="21.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProcurementTransferItems" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProcurementTransfers" Width="1.5" PointX="9.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectAreas" Width="1.5" PointX="25.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectCases" Width="1.5" PointX="25.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectCommunications" Width="1.5" PointX="26.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectContacts" Width="1.5" PointX="26.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectCor" Width="1.5" PointX="11.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectCostCodes" Width="1.5" PointX="25.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectDeliveryRequestItems" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectDeliveryRequests" Width="1.5" PointX="27.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectDesigns" Width="1.5" PointX="27.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectDivisions" Width="1.5" PointX="27.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectForecastStages" Width="1.5" PointX="27.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectInfo" Width="1.5" PointX="5.25" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectItemUpdates" Width="1.5" PointX="19.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectKitItems" Width="1.5" PointX="28.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectKits" Width="1.5" PointX="27.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectMilestoneOwners" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectMilestones" Width="1.5" PointX="7.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectOptions" Width="1.5" PointX="29.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectOrderQuantity" Width="1.5" PointX="29.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectPunchListHistory" Width="1.5" PointX="23.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectPunchLists" Width="1.5" PointX="29.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectSchedule" Width="1.5" PointX="30.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectScheduleItems" Width="1.5" PointX="30.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectStages" Width="1.5" PointX="31.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectTaxes" Width="1.5" PointX="9.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteCalendarLayout" Width="1.5" PointX="33.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteCompanies" Width="1.5" PointX="5.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteContactAddressTypes" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteContactEmailTypes" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteContactPhoneTypes" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteContactStatus" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteDataUom" Width="1.5" PointX="33.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteEmailTypes" Width="1.5" PointX="33.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteMilestoneMasterOwners" Width="1.5" PointX="33.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteReportGroups" Width="1.5" PointX="27.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteReports" Width="1.5" PointX="33.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteSkinNavIcons" Width="1.5" PointX="33.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteTimeZones" Width="1.5" PointX="0.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteTransferTypes" Width="1.5" PointX="7.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteUserGoogle" Width="1.5" PointX="9.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteUserGrids" Width="1.5" PointX="11.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteUserOptions" Width="1.5" PointX="13.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteUsers" Width="1.5" PointX="5.25" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteWorkOrderTypes" Width="1.5" PointX="19.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoMilestones" Width="1.5" PointX="35.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoMilestoneStatus" Width="1.5" PointX="36.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoMilestoneTemplates" Width="1.5" PointX="36.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoProjectStatus" Width="1.5" PointX="15.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectBillingInfo" Width="1.5" PointX="27.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteCoStatus" Width="1.5" PointX="37.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteMilestoneTypes" Width="1.5" PointX="37.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SitePermission" Width="1.5" PointX="37.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteProjectTypes" Width="1.5" PointX="37.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteVersions" Width="1.5" PointX="37.75" PointY="31.75" IsExpanded="true" />
+        <AssociationConnector Association="ePontiv2Model.FK_ActivitiesCalls_CoActivitiesStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_ActivitiesCalls_CoCallPurposes" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_ActivitiesCalls_CoContacts" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_ActivitiesCalls_ProjectInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_ActivitiesCalls_SiteCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_ActivitiesCalls_SiteUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContactAddresses_CoContacts" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContactAddresses_SiteContactAddressTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContacts_CoContactCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContactEmails_CoContacts" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContactEmails_SiteContactEmailTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContactPhones_CoContacts" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContactPhones_SiteContactPhoneTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContacts_CoContactSubtypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContacts_CoContactTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_CoContacts_SiteContactStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ePontiv2Model.FK_ProjectInfo_CoContacts" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoLeadProbabilities" Width="1.5" PointX="0.75" PointY="38.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoLeadRatings" Width="1.5" PointX="2.75" PointY="38.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoLeadStages" Width="1.5" PointX="18.75" PointY="38.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoLeadSystemTypes" Width="1.5" PointX="38.75" PointY="34.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoLeadTypes" Width="1.5" PointX="38.75" PointY="37.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoProjectJobTypes" Width="1.5" PointX="39.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoRmaStatus" Width="1.5" PointX="39.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.errorlog" Width="1.5" PointX="9.75" PointY="39.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectCasesComments" Width="1.5" PointX="26.75" PointY="39.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectLeadInfo" Width="1.5" PointX="28.75" PointY="39.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoWoStatus" Width="1.5" PointX="40.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.SitePromotions" Width="1.5" PointX="22.75" PointY="40.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteCountries" Width="1.5" PointX="40.375" PointY="31.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCalendarGroupMembers" Width="2.5" PointX="32.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoCalendarGroups" Width="2.5" PointX="24.375" PointY="32.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectPayTypes" Width="1.5" PointX="33.375" PointY="36.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoProfiles" Width="1.5" PointX="33.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteSecuritySections" Width="1.5" PointX="34.375" PointY="22.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectPurchaseOrders" Width="1.5" PointX="12.375" PointY="41.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectCreditMemos" Width="1.5" PointX="0.75" PointY="30.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ActivitiesNotes" Width="1.5" PointX="30.375" PointY="35.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoJobNumFormats" Width="1.5" PointX="27.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoLeadNumFormats" Width="1.5" PointX="36.375" PointY="22.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoQuoteNumFormats" Width="1.5" PointX="24.375" PointY="36.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoServiceNumFormats" Width="1.5" PointX="35.375" PointY="36.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoProcurementStatus" Width="1.5" PointX="40.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoShippingMethods" Width="1.5" PointX="40.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDropbox" Width="1.5" PointX="37.375" PointY="40.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoQuickBooks" Width="1.5" PointX="39.375" PointY="40.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectCorItems" Width="1.5" PointX="1.125" PointY="41.125" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoSalesOrderStatus" Width="1.5" PointX="16.375" PointY="28.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectSOs" Width="1.5" PointX="16.375" PointY="31.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoSalesOrderTerms" Width="1.5" PointX="31.375" PointY="39.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectSoItems" Width="1.5" PointX="30.375" PointY="21.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.AspNetUsers" Width="1.5" PointX="11.25" PointY="47.25" />
+        <AssociationConnector Association="ePontiv2Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ePontiv2Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ePontiv2Model.AspNetUserRoles" />
+        <EntityTypeShape EntityType="ePontiv2Model.PayrollItems" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.PayrollReasons" Width="1.5" PointX="10.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectTimeIts" Width="1.5" PointX="32.375" PointY="31.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectWorkOrders" Width="1.5" PointX="40.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.Payroll" Width="1.5" PointX="22.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectAssignments" Width="1.5" PointX="24.375" PointY="16.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoData" Width="1.5" PointX="16.375" PointY="41.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoDataPricing" Width="1.5" PointX="7.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoPayTypes" Width="1.5" PointX="30.375" PointY="24.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteUserEmailOptions" Width="1.5" PointX="40.375" PointY="24.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.Procurement" Width="1.5" PointX="41.375" PointY="38.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectItems" Width="1.5" PointX="42.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectItemPricing" Width="1.5" PointX="3.375" PointY="42.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteLicenseDurations" Width="1.5" PointX="12.375" PointY="31.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteLicenseOrdered" Width="1.5" PointX="18.375" PointY="41.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteLicensePricing" Width="1.5" PointX="34.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.SiteLicenses" Width="1.5" PointX="36.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactCustom" Width="1.5" PointX="36.375" PointY="12.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoContactComs" Width="1.5" PointX="36.375" PointY="16.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoLeadQuestions" Width="1.5" PointX="33.375" PointY="39.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoWoCheckListItems" Width="1.5" PointX="40.375" PointY="21.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectDeposits" Width="1.5" PointX="40.375" PointY="28.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectLeadQuestions" Width="1.5" PointX="5.375" PointY="42.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectWoCheckListItems" Width="1.5" PointX="42.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoProjectFolders" Width="1.5" PointX="42.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectFiles" Width="1.5" PointX="42.375" PointY="12.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.ProjectPunchListAssignments" Width="1.5" PointX="42.375" PointY="21.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoSecurityProfiles" Width="1.5" PointX="25.375" PointY="42.75" />
+        <EntityTypeShape EntityType="ePontiv2Model.CoSalezToolz" Width="1.5" PointX="41.375" PointY="34.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

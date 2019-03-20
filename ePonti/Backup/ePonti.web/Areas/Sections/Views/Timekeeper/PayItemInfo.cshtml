@@ -1,0 +1,207 @@
+﻿@model ePonti.BOL.Models.PayrollInfo
+@using ePonti.BOL
+@using ePonti.BLL.Common
+
+@{
+    ViewBag.Title = "Payroll Item Info";
+    Layout = "~/Areas/Common/Views/Shared/_Layout.cshtml";
+    var projectId = ViewBag.ViewID;
+    var item = ViewBag.PayReasonInfo as GetPayReasonInfo_Result;
+}
+
+<div class="container-fluid" id="createView">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-10 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-item-info"><img src="~/images/Save.png" width="20"></a>
+         
+               <span>
+                   @if (ViewBag.tab != null)
+                   {
+            <a href="#" class="homeLinks timekeeper-back"><img src="~/images/Cancel.png" width="20"></a>
+                   }
+                   else
+                   {
+                    <a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a>
+                   }
+               </span>
+        </div>
+    </div>
+    @using (Html.BeginForm("SavePayInfo", "Timekeeper", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+    {
+        <div class="container-fluid">
+            <div class="form-group clearfix">
+                <div class="headerText"></div>
+                <div class="main-form-alert alert soft-hide">
+                    @Html.HiddenFor(model => model.ViewID)
+                    @Html.HiddenFor(model => model.ProjectID)
+                    @Html.HiddenFor(model => model.PayrollPeriodItemID)
+                    @Html.HiddenFor(model => model.UserID)
+                    @Html.HiddenFor(model => model.PayrollTypeID)
+                    <input type="hidden" name="tab" id="tab" value="@ViewBag.tab" />
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-sm-2 control-label formLabelText">Job</label>
+                <div>
+                    <label class="col-sm-6 subText">@Model.Job</label>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-sm-2 control-label formLabelText">Resource</label>
+                <div>
+                    <label class="col-sm-6 subText">@Model.Resource</label>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-sm-2 control-label formLabelText">Task</label>
+                <div class="col-sm-8 col-lg-7 formFeildText">
+                    @Html.TextBoxFor(p => p.Task, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-sm-2 control-label formLabelText">Hours</label>
+                <div class="col-sm-3 formFeildText">
+                    @Html.TextBoxFor(p => p.Hours, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-sm-2 control-label formLabelText">Cost Code</label>
+                <div class="col-sm-3 formFeildText">
+                    @Html.DropDownListFor(p => p.ProjectCostCodeID, ViewBag.CostCode as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-sm-2 control-label formLabelText">Pay Type</label>
+                <div class="col-sm-3 formFeildText">
+                    @Html.DropDownListFor(p => p.ProjectPayTypeID, ViewBag.PayTypes as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-4 headerText">Rejected Reason</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-6 subText">
+            <textarea class="form-control" rows="6" id="payReason" name="payReason"></textarea>
+        </div>
+        <div class="row">
+            @if (ViewBag.PayrollID != null)
+            {
+                <input type="hidden" id="PayrollID" name="PayrollID" value="@ViewBag.PayrollID" />
+            }
+            else
+            {
+                <input type="hidden" id="PayrollID" name="PayrollID" value="0" />
+            }
+            <button class="btn btn-default project-reason formLabelText" role="button">Rejected</button>
+        </div>
+        <div class="row">
+            <div class="soft-hide margin-top-10 alert alert-success cases-alert"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-8 subText">
+            <div class="caseComments">
+                <table class="table table-hover grids">
+                    <tbody>
+                        @if (ViewBag.PayReasonInfo != null)
+                        {
+                            foreach(var itemreason in ViewBag.PayReasonInfo as List<GetPayReasonInfo_Result>)                           
+                            {
+                                <tr>
+                                    <td class="col-sm-2">@itemreason.Created.ToCustomDateString()</td>
+                                    <td class="col-sm-3">@itemreason.SubmitedBy</td>
+                                    <td>@itemreason.Reason</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $('.timekeeper-back').on('click', function () {
+            var pid = $("#PayrollPeriodItemID").val();
+            var rid = $("#UserID").val();
+            var tab = $("#tab").val();
+            document.location = '/Sections/Timekeeper/Index?pid=' + pid + '&rid=' + rid + '&tab='+tab+''
+        });
+        $('.save-item-info').on('click', function () {
+          var pid=  $("#PayrollPeriodItemID").val();
+          var rid = $("#UserID").val();
+          var tab = $("#tab").val();
+          var projectid = $("#ProjectID").val();
+            var $form = $('#main-form');
+            if ($form.valid()) {
+                $('.validation-summary-errors').find('li').remove();
+                var $alert = $('.main-form-alert');
+
+                $.ajax({
+                    url: $form.attr('action'),
+                    type: 'POST',
+                    data: $form.serialize(),
+                    success: function (res) {
+
+                        if (res.status == 'error') {
+                            var errors = 'Enter correct data and retry.'
+                            if (res.errors && res.errors.length > 0) {
+                                errors = res.errors.join('<br>');
+                            }
+                            $alert.html(errors);
+                            showAlert($alert, 'danger', -1);
+                        }
+                        else if (res.status = 'success') {
+                            $alert.html('Data saved.');
+                            showAlert($alert, 'success');
+                            document.location = '/Sections/Timekeeper/Index?pid=' + pid + '&rid=' + rid + '&projectid=' + projectid + '&tab=' + tab + ''
+                          // document.location = 'javascript:history.go(-2)'
+                        }
+                    }
+                });
+            }
+        })
+
+        $('.project-reason').on('click', function () {
+         
+            var PayrollID = $('#PayrollID').val();
+            var PayrollReasonNote = $('#payReason').val();
+
+
+            $.post('@Url.Action("SaveReasonInfo")', { PayrollID: PayrollID, PayrollReasonNote: PayrollReasonNote }, function (res) {
+
+                var $alert = $('.main-form-alert');
+                if (res.status == "success") {
+                    $('#payReason').val('');
+                    $alert.text('Saved!');
+                    showAlert($alert, 'success', 1500);
+                    document.location = "/Sections/Timekeeper";
+                } else {
+                    $alert.text('Error! Please retry!');
+                    showAlert($alert, 'danger', 3000);
+                }
+            });
+        });
+    </script>
+}

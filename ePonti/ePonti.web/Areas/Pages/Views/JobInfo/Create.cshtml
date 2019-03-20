@@ -1,0 +1,32 @@
+﻿@model ePonti.web.Models.JobModels.NewJob
+
+@{
+    ViewBag.Title = "New Job Info";
+    ViewBag.FormAction = "create";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-10 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-main-form"><img src="~/images/Save.png" width="20"></a>
+            <span><a href="javascript:history.go(-1)" onclick="return confirm('Do you want to cancel without saving data?')" class="homeLinks jobinfocreate"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    @Html.Partial("_MainForm", Model)
+</div>
+
+<input type="hidden" id="IsQBConnected" value="@ViewBag.IsQBConnected" />
+
+@section scripts{
+    <script>
+        var _nav = '@Request.QueryString["nav"]';
+        var _jobDetailUrl = '@Url.Action("details",new {id="JOBID",nav=Request.QueryString["nav"] })';
+        var _getContactDataUrl = '@Url.Action("GetContactData")';
+        var _isCreate = true;
+        var _getStageDetailsUrl = '@Url.Action("GetStageDetails")';
+        var _postStagesUrl = '@Url.Action("SaveProjectStages")';
+        var _postStagesDetailsUrl = '@Url.Action("SaveProjectStageDetails")';
+    </script>
+    <script src="@Url.Content("~/Scripts/pages/jobinfo.js?")" type="text/javascript"></script>
+}

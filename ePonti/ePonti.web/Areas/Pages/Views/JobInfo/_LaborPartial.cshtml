@@ -1,0 +1,26 @@
+﻿@using ePonti.BLL.Common
+@using ePonti.BOL;
+
+<table class="table table-hover grids stageDetails">
+    <tr>
+        <th>Labor</th>
+        <th class="col-sm-2 formLabelText">Cost/Hr</th>
+        <th class="col-sm-2 formLabelText">Price/Hr</th>
+        <th class="col-sm-2 formLabelText">%</th>
+        <th class="col-sm-2 formLabelText">Sell/Hr</th>
+    </tr>
+    <tr class="data-template stageDetail">
+        <td><span class="subName"></span><input type="hidden" class="substage-id" /><input type="hidden" class="projectstage-id" /><input type="hidden" class="item-id" /><input type="hidden" class="index" /></td>
+        <td><input type="text" class="subTextRight form-control format-decimal2 num-format costPerHour" /></td>
+        <td><input type="text" class="subTextRight form-control format-decimal2 num-format pricePerHour" /></td>
+        <td><input type="text" class="subTextRight form-control perc num-format" /></td>
+        <td class="subTextRight num-format sellPerHour"></td>
+    </tr>
+    <tr class="footer">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="formLabelText"><strong>Total/Hr</strong></td>
+        <td class="subTextRight totalPerHour num-format total-format"></td>
+    </tr>
+</table>

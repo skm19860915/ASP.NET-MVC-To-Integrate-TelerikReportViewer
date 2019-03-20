@@ -1,0 +1,21 @@
+﻿@model ePonti.web.Models.EventModels.NewEvent
+
+@{
+    ViewBag.Title = "Edit Event Info";
+    Layout = "~/Areas/Mobile/Views/Shared/_FormLayout.cshtml";
+    ViewBag.FormAction = "edit";
+    ViewBag.DateString = (Model.Date.HasValue ? Model.Date.Value.ToString("yyyy-MM-dd hh:mm tt") : "");
+}
+
+<div class="container-fluid" id="editableView">
+    <div class="pageHeader">
+        <div class="col-xs-9 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-case"><img src="~/images/Save.png" width="20"></a>
+            <span><a onclick="closeEdit()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    <div class="container-fluid">
+        @Html.Partial("_MainForm", Model)
+    </div>
+</div>

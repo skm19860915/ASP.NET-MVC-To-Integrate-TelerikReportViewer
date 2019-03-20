@@ -1,0 +1,113 @@
+﻿@using ePonti.BLL.Common
+@using ePonti.BOL
+@using System.Data.Entity.Core.Objects
+@using GridMvc.Html;
+@{
+    ViewBag.Title = " Add Items";
+}
+
+<div id="viewArea" class="page-items-add">
+    <div class="container-fluid">
+        <div class="col-sm-12 col-lg-12 pageHeader">
+            <div class="col-sm-10 col-lg-11 homeMenuText">@ViewBag.Title</div>
+            <div>
+                <a href="#" class="homeLinks update-items"><img src="~/images/Save.png" width="20"></a>
+                <span><a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+                <input type="hidden" Id="SOID" value="@ViewBag.SOID" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="col-sm-offset-2 custom-font">
+            <div class="main-form-alert alert soft-hide"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="col-sm-11 col-lg-11 row">
+            <div class="list-group">
+                <div class="item-list">
+@*This is erroring when on a Sales Order clicking [Add]*@
+                    @Html.Grid(ViewBag.Items as List<AddSoItemsByProjectID_Result>).Columns(columns =>
+           {
+               columns.Add().Encoded(false).Sanitized(false).SetWidth(20).RenderValueAs(s => "<input type=\"checkbox\" class=\"checkitem\" data-id=\"" + s.ViewID + "\" /><input type =\"hidden\" class=\"item-id\" value=\"" + s.ViewID + "\" />");
+               columns.Add(s => s.Area).Sortable(true).Css("subText col-sm-2").Titled("Area").Filterable(true);
+               columns.Add(s => s.Division).Sortable(true).Css("subText").Titled("Division");
+               columns.Add(s => s.Stage).Sortable(true).Css("subText col-sm-2").Titled("Stage").Filterable(true);
+               columns.Add(s => s.Item).Sortable(true).Css("subText").Titled("Model");
+               columns.Add(s => s.Qty).Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Qty").RenderValueAs(s => s.Qty.ToFormattedString(2));
+               columns.Add(s => s.Hrs).Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Hours").RenderValueAs(s => s.Hrs.ToFormattedString(2));
+               columns.Add(s => s.Price).Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Price").RenderValueAs(s => s.Price.ToFormattedString(2));
+               columns.Add(s => s.Labor).Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Labor").RenderValueAs(s => s.Labor.ToFormattedString(2));
+               columns.Add(s => s.Installed).Sortable(true).Css("subTextRight num-format").SetWidth(120).Titled("Installed").RenderValueAs(s => s.Installed.ToFormattedString(2));
+           }).SetRowCssClasses(s => "item-row")
+                </div>
+                @*<table class="table table-hover grids item-list">
+                    <tr>
+                        <th width="20"></th>
+                        <th class="col-sm-2 col-lg-2">Area</th>
+                        <th class="col-sm-2 col-lg-2">Division</th>
+                        <th class="col-sm-2 col-lg-1">Stage</th>
+                        <th>Model</th>
+                        <th width="80">Qty</th>
+                        <th width="80">Hours</th>
+                        <th width="100">Price</th>
+                        <th width="100">Labor</th>
+                        <th width="100">Installed</th>
+                    </tr>
+                    @if (ViewBag.Items != null)
+                    {
+                        foreach (AddSoItemsByProjectID_Result item in ViewBag.Items)
+                        {
+                            <tr class="item-row">
+                                <td height="50"><input type="hidden" class="item-id" value="@item.ViewID" /><input class="checkitem" type="checkbox" data-id="@item.ViewID" /></td>
+                                <td>@item.Area</td>
+                                <td>@item.Division</td>
+                                <td>@item.Stage</td>
+                                <td>@item.Item</td>
+                                <td>@item.Qty.ToFormattedString(2)</td>
+                                <td>@item.Hrs.ToFormattedString(2)</td>
+                                <td>@item.Price.ToFormattedString(2)</td>
+                                <td>@item.Labor.ToFormattedString(2)</td>
+                                <td>@item.Installed.ToFormattedString(2)</td>
+                            </tr>
+                        }
+                    }
+                </table>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $('.page-items-add .update-items').on('click', function () {
+
+            var items = $('.item-list').find('.item-row .checkitem:checked').siblings('.item-id').map(function () { return $(this).val() }).get();
+            if (items.length == 0) {
+                return;
+            }
+
+            var data = {
+                SOId: $('#SOID').val(),
+                projectid: queryString('projectID'),
+                quantity: $('#Qty').val() || 1,
+                items: items
+            };
+
+            $.post('@Url.Action("AddItems")', data, function (res) {
+                if (res && res.status === 'success') {
+                    document.location = '@Url.ActionPrev()';
+                } else {
+                    showAlert($('.main-form-alert').text('Some error occurred. Please retry.'),
+                        'danger', 3000);
+                }
+            });
+        });
+
+    </script>
+}

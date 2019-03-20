@@ -1,0 +1,466 @@
+﻿@using ePonti.BOL
+@using ePonti.BLL.Common
+@{
+    ViewBag.Title = "Accounting Options";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-11 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="@Url.Action("Index","../Sections/Dashboard")" class="homeLinks close-page"><img src="~/images/Cancel.png" width="20"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-5 row">
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Sales Order Status</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="sos-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="sos-grid"
+                           data-edit="@Url.Action("UpdateSalesOrderStatus")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_SalesOrderStatus.ToString() })">
+                        <tr>
+                            <th>Name</th>
+                            <th width="100">Order</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoSalesOrderStatus != null)
+                        {
+                            foreach (GetSalesOrderStatusBySiteCoID_Result item in ViewBag.CoSalesOrderStatus)
+                            {
+                                @NameOrderItems(item.Name, item.Order, item.ViewID)
+                            }
+                        }
+                        @NameOrderItems(IsTemplate: true)
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">POR Status</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="por-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="por-grid"
+                           data-edit="@Url.Action("UpdatePORStatus")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_PORStatus.ToString() })">
+                        <tr>
+                            <th>Name</th>
+                            <th width="100">Order</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoPorStatus != null)
+                        {
+                            foreach (GetPorStatusBySiteCoID_Result item in ViewBag.CoPorStatus)
+                            {
+                                @NameOrderItems(item.Name, item.Order, item.ViewID)
+                            }
+                        }
+                        @NameOrderItems(IsTemplate: true)
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Delivery Types</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="delivery-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="delivery-grid"
+                           data-edit="@Url.Action("UpdateDeliveryType")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_DeliveryTypes.ToString() })">
+                        <tr>
+                            <th>Type</th>
+                            <th width="100">Order</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoDeliveryTypes != null)
+                        {
+                            foreach (GetDeliveryTypesBySiteCoID_Result item in ViewBag.CoDeliveryTypes)
+                            {
+                                @NameOrderItems(item.Name, item.Order, item.ViewID)
+                            }
+                        }
+                        @NameOrderItems(IsTemplate: true)
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Shipping Methods</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="shipping-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="shipping-grid"
+                           data-edit="@Url.Action("UpdateShippingMethod")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_ShippingMethods.ToString() })">
+                        <tr>
+                            <th>Method</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoShippingMethods != null)
+                        {
+                            foreach (GetShippingMethodsBySiteCoID_Result item in ViewBag.CoShippingMethods)
+                            {
+                                <tr class="item-row">
+                                    <td data-name="name">@item.Name</td>
+                                    <td class="actions">
+                                        @actionButtons(@item.ViewID)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td data-name="name"></td>
+                            <td class="actions">
+                                @actionButtons(0)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Cost Codes</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="costcode-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="costcode-grid"
+                           data-edit="@Url.Action("UpdateCostCode")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_CostCodes.ToString() })">
+                        <tr>
+                            <th class="col-sm-1">Code</th>
+                            <th class="col-sm-9">Description</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoCostCodes != null)
+                        {
+                            foreach (GetCostCodesBySiteCoID_Result item in ViewBag.CoCostCodes)
+                            {
+                                <tr class="item-row">
+                                    <td data-name="code">@item.Code</td>
+                                    <td data-name="description">@item.Description</td>
+                                    <td class="actions">
+                                        @actionButtons(@item.ViewID)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td data-name="code"></td>
+                            <td data-name="description"></td>
+                            <td class="actions">
+                                @actionButtons(0)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Inventory Templates</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-gridx="invtempl-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="invtempl-grid"
+                           data-edit="@Url.Action("UpdateInventoryTemplate")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_InventoryTemplates.ToString() })">
+                        <tr>
+                            <th width="50">View</th>
+                            <th class="col-sm-3">Name</th>
+                            <th>Description</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoInventoryTemplates != null)
+                        {
+                            foreach (GetInventoryTemplatesBySiteCoID_Result item in ViewBag.CoInventoryTemplates)
+                            {
+                                <tr class="item-row">
+                                    <td data-name="actions">@item.ViewID</td>
+                                    <td data-name="name">@item.Name</td>
+                                    <td data-name="description">@item.Description</td>
+                                    <td class="actions">
+                                        @actionButtons(@item.ViewID)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td class="view"></td>
+                            <td class="name"></td>
+                            <td class="description"></td>
+                            <td class="actions">
+                                @actionButtons(0)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-5 row">
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Credit Memo Status</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="creditmemo-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="creditmemo-grid"
+                           data-edit="@Url.Action("UpdateCreditMemoStatus")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_CreditMemoStatus.ToString() })">
+                        <tr>
+                            <th>Name</th>
+                            <th width="100">Order</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoCreditMemoStatus != null)
+                        {
+                            foreach (GetCreditMemoStatusBySiteCoID_Result item in ViewBag.CoCreditMemoStatus)
+                            {
+                                @NameOrderItems(item.Name, item.Order, item.ViewID)
+                            }
+                        }
+                        @NameOrderItems(IsTemplate: true)
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Delivery Status</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="deliverystatus-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="deliverystatus-grid"
+                           data-edit="@Url.Action("UpdateDeliveryStatus")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_DeliveryStatus.ToString() })">
+                        <tr>
+                            <th>Name</th>
+                            <th width="100">Order</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoDeliveryStatus != null)
+                        {
+                            foreach (GetDeliveryStatusBySiteCoID_Result item in ViewBag.CoDeliveryStatus)
+                            {
+                                @NameOrderItems(item.Name, item.Order, item.ViewID)
+                            }
+                        }
+                        @NameOrderItems(IsTemplate: true)
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">RMA Status</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="rma-status" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="rma-status"
+                           data-edit="@Url.Action("UpdateRMAStatus")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_RMAStatus.ToString() })">
+                        <tr>
+                            <th>Name</th>
+                            <th width="100">Order</th>
+                            <th width="20"></th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoRmaStatus != null)
+                        {
+                            foreach (GetRmaStatusBySiteCoID_Result item in ViewBag.CoRmaStatus)
+                            {
+                                @NameOrderItems(item.Name, item.Order, item.ViewID)
+                            }
+                        }
+                        @NameOrderItems(IsTemplate: true)
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Ship To List</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="shipto-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="shipto-grid"
+                           data-edit="@Url.Action("UpdateShipToList")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_ShipToList.ToString() })">
+                        <tr>
+                            <th width="50">View</th>
+                            <th>Name</th>
+                            <th>Address1</th>
+                            <th>Address2</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip</th>
+                            <th>Option</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoShipToList != null)
+                        {
+                            foreach (GetShipToListBySiteCoID_Result item in ViewBag.CoShipToList)
+                            {
+                                <tr class="item-row">
+                                    <td class="actions"></td>
+                                    <td data-name="name">@item.Name</td>
+                                    <td data-name="address1">@item.Address1</td>
+                                    <td data-name="address2">@item.Address2</td>
+                                    <td data-name="city">@item.City</td>
+                                    <td data-name="state">@item.State</td>
+                                    <td data-name="zip">@item.Zip</td>
+                                    <td data-name="option">@item.Option</td>
+                                    <td class="actions">
+                                        @actionButtons(@item.ViewID)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td class="actions"></td>
+                            <td data-name="name"></td>
+                            <td data-name="address1"></td>
+                            <td data-name="address2"></td>
+                            <td data-name="city"></td>
+                            <td data-name="state"></td>
+                            <td data-name="zip"></td>
+                            <td data-name="option"></td>
+                            <td class="actions">
+                                @actionButtons(0)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Custody Locations</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="custody-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="custody-grid"
+                           data-edit="@Url.Action("UpdateCustodyLocation")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_CustodyLocations.ToString() })">
+                        <tr>
+                            <th>Name</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoCustodyLocations != null)
+                        {
+                            foreach (GetCustodyLocationsBySiteCoID_Result item in ViewBag.CoCustodyLocations)
+                            {
+                                <tr class="item-row">
+                                    <td data-name="name">@item.Name</td>
+                                    <td class="actions">
+                                        @actionButtons(@item.ViewID)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td data-name="name"></td>
+                            <td class="actions">
+                                @actionButtons(0)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Taxes</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" data-grid="tax-grid" role="button">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="tax-grid"
+                           data-edit="@Url.Action("UpdateTaxes")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.Accounting_Taxes.ToString() })">
+                        <tr>
+                            <th width="100">Code</th>
+                            <th>Description</th>
+                            <th width="100">Sales Rate(%)</th>
+                            <th width="100">Labor Rate(%)</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoTaxes != null)
+                        {
+                            foreach (GetTaxesBySiteCoID_Result item in ViewBag.CoTaxes)
+                            {
+                                <tr class="item-row">
+                                    <td data-name="code">@item.Code</td>
+                                    <td data-name="description">@item.Description</td>
+                                    <td data-name="sales">@item.SalesRate</td>
+                                    <td data-name="labor">@item.LaborRate</td>
+                                    <td class="actions">
+                                        @actionButtons(@item.ViewID)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td data-name="code"></td>
+                            <td data-name="description"></td>
+                            <td data-name="sales"></td>
+                            <td data-name="labor"></td>
+                            <td class="actions">
+                                @actionButtons(0)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@helper NameOrderItems(string Name = "", int? Order = null, int ItemID = 0, bool IsTemplate = false)
+{
+    <tr class="item-row @(IsTemplate?"data-template":"")">
+        <td class="name" data-name="name">@Name</td>
+        <td class="order" data-name="order">@(Order.HasValue ? Order.Value.ToString() : "")</td>
+        <td class="actions">
+            @actionButtons(ItemID)
+        </td>
+    </tr>
+}
+
+@helper actionButtons(int ItemID)
+{
+    <img class="delete" src="~/images/Delete.png" height="15" />
+    <img class="edit" src="~/images/Edit.png" height="15" />
+    <img class="save" src="~/images/Save.png" height="15" />
+    <img class="cancel" src="~/images/Cancel.png" height="15" />
+    <input type="hidden" class="item-id" value="@ItemID" />
+}

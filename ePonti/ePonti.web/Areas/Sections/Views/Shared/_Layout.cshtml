@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <title>@ViewBag.Title - ePonti.terms.Resource1.AppName</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Custom CSS -->
+    <link href="~/Content/ePontiV9Prototype.css" rel="stylesheet" type="text/css" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Special Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--Calendar -->
+    <link href='~/Content/fullcalendar.min.css' rel='stylesheet' />
+    <link href='~/Content/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <link href="~/Content/fancybox/jquery.fancybox.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/jquery")
+    <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+
+
+    <script src="~/Scripts/pages/jquery.fancybox.min.js"></script>
+</head>
+<body>
+    <div class="pageLayout">
+        @*This is the Navigation Menu which opens to the left*@
+        <div id="ePontiSideNav" class="sideNav">
+            <ul class="sidebarNav">
+                <li>
+                    <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+                </li>
+                <li>
+                    @if (Session["ImageData"] != null)
+                    {
+                      <img src="@Session["ImageData"]"/>
+                    }
+                    else
+                    {
+                      <img src="~/images/ePontiDecLogoV10.png">
+                    }
+                </li>
+                <li>@Html.ActionLink(Session["displayusername"].ToString(), "Index", "../Manage")</li>
+                <li>@Html.ActionLink("Dashboard", "Index", "Dashboard")</li>
+                <li>@Html.ActionLink("People", "Index", "People")</li>
+                <li>@Html.ActionLink("Leads", "Index", "Leads")</li>
+                <li>@Html.ActionLink("Quotes", "Index", "Quotes")</li>
+                <li>@Html.ActionLink("Jobs", "Index", "Jobs")</li>
+                <li>@Html.ActionLink("Service", "Index", "Service")</li>
+                <li>@Html.ActionLink("Scheduling", "Index", "Scheduling")</li>
+                <li>@Html.ActionLink("Procurement", "Index", "Procurement")</li>
+                <li>@Html.ActionLink("Reports", "Index", "Report")</li>
+                <li>@Html.ActionLink("PostIt", "Index", "PostIts")</li>
+                <li>@Html.ActionLink("Timekeeper", "Index", "Timekeeper")</li>
+                <li>
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "homeLinks" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div>
+                                <a href="javascript:document.getElementById('logoutForm').submit()" class="homeMenuText">Log off</a>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "homeLinks" })
+                        </div>
+                    }
+                </li>
+            </ul>
+        </div>
+        @*This is the Header above the Main body of the Page which opens the Side Navigation*@
+        <div class="col-sm-12 col-lg-12 container-fluid" id="header">
+            <div class="row">
+                @*Link to open Nav*@
+                <div class="col-sm-2 col-lg-2 dropdown">
+                    <a class="menuBtn" onclick="openNav()">
+                        <img src="~/images/ePontiDecLogoV10.png" height="30">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pageLayout">
+            @RenderBody()
+
+            <footer>
+                <div class="col-sm-11 pageFooter">&copy; @ePonti.terms.Resource1.AppStdFooter</div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/ePontiV9Prototype.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src='~/Scripts/moment.min.js'></script>
+    <script src='~/Scripts/fullcalendar.js'></script>
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>
+
+</body>
+</html>
