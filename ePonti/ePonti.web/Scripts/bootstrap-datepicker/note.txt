@@ -1,4 +1,0 @@
-Using bootstrap-datetimepicker everywhere. But that datepicker doesn't have option to select multiple dates.
-So, using this for selecting multiple dates.
-
-example: https://uxsolutions.github.io/bootstrap-datepicker/

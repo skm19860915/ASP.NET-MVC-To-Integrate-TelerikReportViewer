@@ -1,6 +1,0 @@
-﻿@model DateTimeOffset?
-@if (Model.HasValue) {
-    DateTime utc = Model.Value.UtcDateTime;
-    @Convert.ToDateTime(utc).ToString("MM/dd/yyyy")
-}
-
