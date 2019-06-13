@@ -1,0 +1,129 @@
+﻿@using ePonti.BOL
+@using GridMvc.Html
+@model List<GetJobsBySiteCoID_Result>
+
+@{
+    ViewBag.Title = "Jobs";
+    var nav = Url.Nav(ePonti.BLL.Common.EnumWrapper.Pages.JobGrid, null);
+}
+
+<div class="col-sm-12 container-fluid">
+    <div class="row">
+        <div class="col-sm-8 mainGridText">@ViewBag.Title</div>
+        <div class="buttons dropdown">
+            <a class="btn btn-default" href="@Url.Action("create", "jobinfo", new { area = "pages", nav }, null)" role="button" aria-haspopup="true" aria-expanded="false">New</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-lg-2 ">
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="leftfilters">
+                @using (Html.BeginForm("Index", "Jobs", FormMethod.Post, new { id = "LeftFiltersForm" }))
+                {
+                    @Html.TextBox("SearchText", "", new { id = "txtSearch", placeholder = "Enter search text", @class = "srch_text" })
+                    if (ViewBag.ContactCompanies != null)
+                    {
+                        <h4>Customer</h4>
+                        <div class="checklists">
+                            @Html.Hidden("SelectedCompanies", "", new { @class = "SelectedCompanies" })
+                            @foreach (var item in ViewBag.ContactCompanies)
+                            {
+                                <div class="filtercheckbox">
+                                    <label>
+                                        <input type="checkbox" value="@item.ViewID" /> @item.Customer
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    }
+                    if (ViewBag.ProjectStatus != null)
+                    {
+                        <h4>Status</h4>
+                        <div class="checklists">
+                            @Html.Hidden("SelectedProjectStatus", "", new { @class = "SelectedProjectStatus" })
+                            @foreach (var item in ViewBag.ProjectStatus)
+                            {
+                                <div class="filtercheckbox">
+                                    <label>
+                                        <input type="checkbox" value="@item.ViewID" /> @item.Name
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    }
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                    <div class="buttons formLabelText">
+                        <input type="button" class="btn btn-default clearleftfilter" value="Clear" />
+                        <input type="button" class="btn btn-default updateleftfilter" value="Update" />
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-sm-8 col-lg-7 sectionGrids">
+            @(Html.Kendo().Grid<ePonti.BOL.GetJobsBySiteCoID_Result>()
+                    .Name("Grid")
+
+                    .Columns(columns =>
+                    {
+                        columns.Bound(p => p.ContactID).Title("").ClientTemplate("<a href=\"" + Url.Action("details", "jobinfo", new { area = "pages", id = "#=ViewID#", nav }) + "\"><img src=\"" + Url.Content("~/images/Jobs.png") + "\" width=\"25\"></a>").Width(50);
+                        columns.Bound(p => p.Project).Title("Job");
+                        columns.Bound(p => p.Prospect).Title("Customer").Width("30em");
+                        columns.Bound(p => p.Status).Title("Status").Width("15em");
+                        columns.Bound(p => p.StartDate).Title("Date").Format("{0:MM/dd/yyyy}").Width("10em");
+                    })
+
+                   .Editable(editable => editable.Mode(GridEditMode.InLine))
+                    .Navigatable()
+                    .Pageable()
+                    //.Pageable(pageable =>
+                    //{
+                    //    pageable.PageSizes(new int[] {15, 20 });
+                    //})
+                    .Sortable()
+                    .Scrollable(scr => scr.Height("auto"))
+                    .DataSource(dataSource => dataSource  // Configure the grid data source
+                    .Ajax()
+                    .Model(model =>
+                    {
+                        model.Id(x => x.ViewID);
+                    })
+                      .Read(read => read.Action("GetJobs", "Jobs").Data("JobsFilterData")) // Set the action method which will return the data in JSON format
+                      .PageSize(20)
+                     )
+            )
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            loadFilterFunctions();
+        });
+        function JobsFilterData() {
+
+            var SearchText = $("#txtSearch").val();
+            var SelectedCompanies = $("#SelectedCompanies").val();
+            var SelectedProjectStatus = $("#SelectedProjectStatus").val();
+
+            return {
+                SearchText: SearchText,
+                SelectedCompanies: SelectedCompanies,
+                SelectedProjectStatus: SelectedProjectStatus,
+            };
+        }
+        $(".updateleftfilter").on("click", function () {
+
+            $('#Grid').data('kendoGrid').dataSource.read();
+            $('#Grid').data('kendoGrid').refresh();
+            return;
+        })
+    </script>
+}

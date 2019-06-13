@@ -1,0 +1,67 @@
+﻿@using ePonti.BOL
+@{
+    ViewBag.Title = "Kits Options";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-11 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="@Url.Action("Index","../Sections/Dashboard")" class="homeLinks close-page"><img src="~/images/Cancel.png" width="20"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 row">
+            <div class="row">
+                <div class="col-sm-offset-7 col-sm-2 dropdown buttons">
+                    <a class="btn btn-default" href="@Url.Action("create", "kits", new { area = "common" }, null)" role="button" aria-haspopup="true" aria-expanded="false">New</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <table class="table table-hover grids">
+                        <tr>
+                            <th width="50"></th>
+                            <th class="col-sm-4">Kit</th>
+                            <th>Description</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoKits != null)
+                        {
+                            foreach (GetKitsBySiteCoID_Result item in ViewBag.CoKits)
+                            {
+                                <tr class="item-row">
+                                    <td>
+                                        <a href="@Url.Action("details", "kits", new { area="common", id=item.ViewID })">
+                                            <img src="~/images/View.png" width="20">
+                                        </a>
+                                    </td>
+                                    <td>@item.Kit</td>
+                                    <td>@item.Description</td>
+                                    <td>
+                                        <img src="~/images/Delete.png" height="15" />
+                                        <input type="hidden" class="item-id" />
+                                        <input type="hidden" class="row-id" value="@item.ViewID" />
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td class="viewid"></td>
+                            <td class="kit"></td>
+                            <td class="description"></td>
+                            <td class="delete">
+                                <img src="~/images/Delete.png" height="15" />
+                                <input type="hidden" class="item-id" />
+                                <input type="hidden" class="row-id" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

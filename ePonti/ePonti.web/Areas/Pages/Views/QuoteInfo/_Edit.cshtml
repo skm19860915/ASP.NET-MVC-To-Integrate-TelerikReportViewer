@@ -1,0 +1,19 @@
+﻿@model ePonti.web.Models.QuoteModels.NewQuote
+
+@{
+    ViewBag.Title = "Edit Quote Info";
+    ViewBag.FormAction = "Create";
+    ViewBag.ClosedDateString = (Model.StartDate.HasValue ? Model.StartDate.Value.ToString("yyyy-MM-dd") : "");
+    Layout = null;
+}
+
+<div class="container-fluid" id="editableView">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-10 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-main-form"><img src="~/images/Save.png" width="20"></a>
+            <span><a onclick="closeEdit()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    @Html.Partial("_MainForm", Model)
+</div>

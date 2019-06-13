@@ -1,0 +1,47 @@
+﻿
+@using ePonti.BOL
+@{
+    ViewBag.Title = "Create Delivery Request";
+}
+
+<div class="container body-content create-delivery-page">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-10 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-main-form" data-save="@Url.Action("Create")" data-previous="@Url.ActionPrev()"><img src="~/images/Save.png" width="20"></a>
+            <span><a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="headerText"></div>
+    </div>
+    <div class="custom-font">
+        @Html.ValidationSummary()
+        <div class="main-form-alert alert soft-hide"></div>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 col-lg-2 control-label formLabelText">Delivery Date/Time</label>
+            <div class="col-sm-4 col-lg-3 formFeildText">
+                <input type="text" name="name" id="DeliveryDate" class="datetime-picker form-control" value="" />
+            </div>
+            <label class="col-sm-1 col-lg-1 control-label formLabelText">Type</label>
+            <div class="col-sm-4 col-lg-3 formFeildText">
+                @Html.DropDownList("DeliveryType", ViewBag.DeliveryTypes as SelectList, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script src="@Url.Content("~/Scripts/pages/delivery.js")"></script>
+
+}

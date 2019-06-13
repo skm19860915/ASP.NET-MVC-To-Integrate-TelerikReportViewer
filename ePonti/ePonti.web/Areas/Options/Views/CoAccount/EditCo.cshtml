@@ -1,0 +1,107 @@
+﻿@using ePonti.BOL
+@using ePonti.BLL.Common
+
+
+@{
+    ViewBag.Title = "Edit Company Info";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-10 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-main-form"><img src="~/images/Save.png" width="20"></a>
+            <span><a href="@Url.Action("Index","CoAccount")" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    <form class="form-horizontal" id="frm-editCo">
+        <div class="form-group">
+            <div class="main-form-alert alert soft-hide"></div>
+            <div class="headerText"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label formLabelText">Company</label>
+            <div class="col-sm-4 formFeildText">
+                <input class="form-control" value="@(!String.IsNullOrEmpty(Model.CoName) ? Model.CoName:"")" name="CoName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label formLabelText">Address</label>
+            <div class="col-sm-4 formFeildText">
+                <input class="form-control" for="coAddress1" name="CoAddress1" value="@(!String.IsNullOrEmpty(Model.CoAddress1) ? Model.CoAddress1:"")">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label formLabelText"></label>
+            <div class="col-sm-4 formFeildText">
+                <input class="form-control" for="coAddress2" value="@(!String.IsNullOrEmpty(Model.CoAddress2) ? Model.CoAddress2:"")" name="CoAddress2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label formLabelText">City</label>
+            <div class="col-sm-2 formFeildText">
+                <input class="form-control" for="coCity" value="@(!String.IsNullOrEmpty(Model.CoCity) ? Model.CoCity:"")" name="coCity">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label formLabelText">State</label>
+            <div class="col-sm-1 formFeildText">
+                <input class="form-control" for="coState" value="@(!String.IsNullOrEmpty(Model.CoState) ? Model.CoState:"")" name="coState">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label formLabelText">Zip</label>
+            <div class="col-sm-1 formFeildText">
+                <input class="form-control" for="coZip" value="@(!String.IsNullOrEmpty(Model.CoZip) ? Model.CoZip:"")" name="coZip">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label formLabelText">Country</label>
+            <div class="col-sm-2 formFeildText">
+                <input class="form-control" for="coCountry" value="@(!String.IsNullOrEmpty(Model.CoCountry) ? Model.CoCountry:"")" name="coCountry">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label formLabelText">Phone</label>
+            <div class="col-sm-2 formFeildText">
+                <input class="form-control" for="coPhone" name="coPhone" value="@(!String.IsNullOrEmpty(Model.CoPhone) ? Model.CoPhone:"")">
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts{
+    <script>
+        $(document).on('click', '.save-main-form', function () {
+
+            var $form = $('#frm-editCo');
+            if ($form.valid()) {
+                $('.validation-summary-errors').find('li').remove();
+                var $alert = $('.main-form-alert');
+
+                $.ajax({
+                    url: '@Url.Action("Edit","CoAccount")',
+                    type: 'POST',
+                    data: $form.serialize(),
+                    success: function (res) {
+                        console.log(res);
+                        if (res.status == 'error') {
+
+                            var errors = 'Enter correct data and retry.'
+                            if (res.errors && res.errors.length > 0) {
+                                errors = res.errors.join('<br>');
+                            }
+                            $alert.html(errors);
+                            showAlert($alert, 'danger', -1);
+                        }
+                        else if (res.status = 'success') {
+                            $alert.html('Company Info saved.');
+                            showAlert($alert, 'success');
+                            document.location = '/Options/CoAccount'
+                        }
+                    }
+                });
+            }
+        })
+    </script>
+}

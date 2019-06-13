@@ -1,0 +1,54 @@
+﻿@model ePonti.web.Models.PORModels.NewPOR
+@using ePonti.BOL
+@{
+    ViewBag.Title = "Create POR";
+    //ViewBag.RequestedDateString = (Model.RequestedDate.ToString("yyyy-MM-dd"));
+}
+
+<div class="container body-content create-por-page">
+    <div class="container-fluid">
+        <div class="col-sm-12 col-lg-12 pageHeader">
+            <div class="col-sm-10 col-lg-11 homeMenuText">@ViewBag.Title</div>
+            <div>
+                <a href="#" class="homeLinks save-main-form"><img src="~/images/Save.png" width="20"></a>
+                <span><a href="javascript:history.go(-1)" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm("create", "porinfo", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+    {
+        <div class="form-group">
+            <div class="headerText"></div>
+        </div>
+        <div class="custom-font">
+            @Html.ValidationSummary()
+            <div class="main-form-alert alert soft-hide"></div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-1 formLabelText"></div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(p => p.RequestedDate, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                    <div class="col-sm-3 col-lg-3 formFeildText">
+                        @Html.TextBoxFor(p => p.RequestedDate, new { @class = "form-control date-picker", data_value = ViewBag.RequestedDateString })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(p => p.ShipToID, new { @class = "col-sm-2 col-lg-2 control-label formLabelText" })
+                    <div class="col-sm-3 col-lg-3 formFeildText">
+                        @Html.DropDownListFor(p => p.ShipToID, ViewBag.ShipTo as SelectList, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section scripts{
+    <script>
+        var _previousUrl = '@Url.ActionPrev()';
+    </script>
+    <script src="@Url.Content("~/Scripts/pages/porinfo.js?")" type="text/javascript"></script>
+}

@@ -1,0 +1,305 @@
+﻿@model ePonti.BOL.GetContactCustomFieldsBySiteCoID_Result
+@using ePonti.BOL
+@using ePonti.BLL.Common
+@{
+    ViewBag.Title = "People Options";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="@Url.Action("Index","../Sections/Dashboard")" class="homeLinks close-page"><img src="~/images/Cancel.png" width="20"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="headerText"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-5 row">
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Types</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" role="button" data-grid="types-grid">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="types-grid"
+                           data-edit="@Url.Action("UpdatePeopleType")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.People_Types.ToString() })">
+                        <tr>
+                            <th>Name</th>
+                            <th width="100">Order</th>
+                            <th width="100">Vendor?</th>
+                            <th width="100">Builder?</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoPeopleTypes != null)
+                        {
+                            foreach (GetPeopleTypesBySiteCoID_Result item in ViewBag.CoPeopleTypes)
+                            {
+                                <tr class="item-row">
+                                    <td class="subText name" data-name="name">@item.Name</td>
+                                    <td class="subText order" data-name="order">@item.Order</td>
+                                    <td class="subText vendor" data-name="isvendor" data-type="check">@(item.Vendor == true ? "Yes" : "No")</td>
+                                    <td class="subText builder" data-name="isbuilder" data-type="check">@(item.Builder == true ? "Yes" : "No")</td>
+                                    <td class="actions">
+                                        @actionButtons(@item.ViewID)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td class="subText name" data-name="name"></td>
+                            <td class="subText order" data-name="order"></td>
+                            <td class="subText vendor" data-name="isvendor" data-type="check"></td>
+                            <td class="subText builder" data-name="isbuilder" data-type="check"></td>
+                            <td class="actions">@actionButtons(0) </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-5 row">
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Relationships</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" role="button" data-grid="relation-grid">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="relation-grid"
+                           data-edit="@Url.Action("UpdateRelationship")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.People_Relationship.ToString() })">
+                        <tr>
+                            <th>Name</th>
+                            <th width="100">Order</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoPeopleRelationship != null)
+                        {
+                            foreach (GetPeopleRelationshipsBySiteCoID_Result item in ViewBag.CoPeopleRelationship)
+                            {
+                                @NameOrderItems(item.Name, item.Order, item.ViewID)
+                            }
+                        }
+                        @NameOrderItems(IsTemplate: true)
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-5 row">
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Subtypes</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" class="btn btn-default add-item" role="button" data-grid="subtypes-grid">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11 list-group">
+                    <table class="table table-hover grids" id="subtypes-grid"
+                           data-edit="@Url.Action("UpdatePeopleSubType")"
+                           data-delete="@Url.Action("DeleteOption", new { type = EnumWrapper.OptionTypes.People_SubTypes.ToString() })">
+                        <tr>
+                            <th>Subtype</th>
+                            <th width="100">Order</th>
+                            <th width="20"></th>
+                        </tr>
+                        @if (ViewBag.CoPeopleSubTypes != null)
+                        {
+                            foreach (GetContactSubTypesBySiteCoID_Result item in ViewBag.CoPeopleSubTypes)
+                            {
+                                <tr class="item-row">
+                                    <td class="subText name" data-name="name">@item.Type</td>
+                                    <td class="subText order" data-name="order">@item.Order</td>
+                                    <td class="actions">
+                                        @actionButtons(@item.ViewID)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        <tr class="data-template item-row">
+                            <td class="subText name" data-name="name"></td>
+                            <td class="subText order" data-name="order"></td>
+                            <td class="actions">@actionButtons(0) </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-5 row">
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Import Contacts</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <form id="ContactUpload">
+                        <input type="file" name="Import" id="ContactFile" style="display:none;">
+                    </form>
+                    <input type="button" id="btnFileContact" value="Import">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Download Excel Template</div>
+                <div class="col-sm-2 dropdown buttons">
+                    <button type="button" onclick="location.href='@Url.Action("DownloadExcel", "PeopleOptions")'">Download</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText"><span id="spnText"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 row"></div>
+        <div class="col-sm-5 row">
+            <div class="row">
+                <div class="col-sm-8 optionGridHeaderText">Custon Fields</div>
+            </div>
+            <div class="row">
+@using (Html.BeginForm("UpdatePeopleCustom", "PeopleOptions", FormMethod.Post, htmlAttributes: new { id = "formContactCustom" }))
+{
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(p => p.ViewID)
+            <div class="col-xs-offset-1 col-sm-offset-1 custom-font">
+                @Html.ValidationSummary()
+                <div class="cotnact-custom-alert alert soft-hide"></div>
+            </div>
+                <div class="col-sm-11 list-group">
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label formLabelText" for="CustomField1">Field 1</label>
+                        <div class="col-xs-9 formFeildText">
+                            @Html.TextBoxFor(p => p.CustomField1, new { @class = "form-control formFeildText" })
+                        </div>
+                        <div class="col-xs-1">
+                            @Html.CheckBox("Show1", Model.Show1.Value ? new { @checked = Model.Show1.Value } : null)
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label formLabelText" for="CustomField2">Field 2</label>
+                        <div class="col-xs-9 formFeildText">
+                            @Html.TextBoxFor(p => p.CustomField2, new { @class = "form-control formFeildText" })
+                        </div>
+                        <div class="col-xs-1">
+                            @Html.CheckBox("Show2", Model.Show2.Value ? new { @checked = Model.Show2.Value } : null)
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label formLabelText" for="CustomField3">Field 3</label>
+                        <div class="col-xs-9 formFeildText">
+                            @Html.TextBoxFor(p => p.CustomField3, new { @class = "form-control formFeildText" })
+                        </div>
+                        <div class="col-xs-1">
+                            @Html.CheckBox("Show3", Model.Show3.Value ? new { @checked = Model.Show3.Value } : null)
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label formLabelText" for="CustomField4">Field 4</label>
+                        <div class="col-xs-9 formFeildText">
+                            @Html.TextBoxFor(p => p.CustomField4, new { @class = "form-control formFeildText" })
+                        </div>
+                        <div class="col-xs-1">
+                            @Html.CheckBox("Show4", Model.Show4.Value ? new { @checked = Model.Show4.Value } : null)
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-9 col-sm-2 dropdown buttons">
+                        <button type="button" class="btn btn-default update-payroll updatecontactcustom" data-grid="calendars-grid" role="button">Update</button>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@helper NameOrderItems(string Name = "", int? Order = null, int ItemID = 0, bool IsTemplate = false)
+        {
+    <tr class="item-row @(IsTemplate?"data-template":"")">
+        <td class="subText name" data-name="name">@Name</td>
+        <td class="subText order" data-name="order">@(Order.HasValue ? Order.Value.ToString() : "")</td>
+        <td class="actions">
+            @actionButtons(ItemID)
+        </td>
+    </tr>
+}
+
+@helper actionButtons(int ItemID)
+        {
+    <img class="delete" src="~/images/Delete.png" height="15" />
+    <img class="edit" src="~/images/Edit.png" height="15" />
+    <img class="save" src="~/images/Save.png" height="15" />
+        <img class="cancel" src="~/images/Cancel.png" height="15" />
+        <input type="hidden" class="item-id" value="@ItemID" />
+
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jquery")
+
+    <script>
+        $("#spnText").html("");
+
+        $("#btnFileContact").click(function () {
+            $('#ContactFile').trigger('click');
+        })
+
+        $('#ContactFile').on("change", function (e) {
+            CallService(e);
+        });
+
+        function CallService(e) {
+            var files = e.target.files;
+            var datastring = new FormData();
+            datastring.append("file", files[0]);
+
+            $.ajax({
+                url: '@Url.Action("UploadExcelContact", "PeopleOptions")',
+            type: 'POST',
+            data: datastring,
+            contentType: false,
+            processData: false,
+            cache: false,
+            success: function (data) {
+                $("#spnText").html(data);
+            },
+            error: function () {
+                alert('Error occured');
+            }
+        });
+        }
+
+        $('.updatecontactcustom').on('click', function () {
+            var $form = $('#formContactCustom');
+            $('.validation-summary-errors').find('li').remove();
+            var $alert = $('.cotnact-custom-alert');
+            $.ajax({
+                url: $form.attr('action'),
+                type: 'POST',
+                data: $form.serialize(),
+                success: function (res) {
+                    console.log(res);
+                    if (res.status == 'error') {
+                        var errors = 'Enter correct data and retry.'
+                        if (res.errors && res.errors.length > 0) {
+                            errors = res.errors.join('<br>');
+                        }
+                        $alert.html(errors);
+                        showAlert($alert, 'danger', -1);
+                    }
+                    else if (res.status = 'success') {
+                        $alert.html('Contact custom updated.');
+                        showAlert($alert, 'success');
+                    }
+                }
+            });
+        });
+    </script>
+}

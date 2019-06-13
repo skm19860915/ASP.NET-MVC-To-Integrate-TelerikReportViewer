@@ -1,0 +1,169 @@
+﻿
+@using ePonti.BLL.Common;
+@using ePonti.BOL
+@{
+    ViewBag.Title = "Return Info";
+
+}
+
+<div class="editableArea" id="editableArea"></div>
+<!-- This is the Viewable Area of the page -->
+<div id="viewArea">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-10 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-case"><img src="~/images/Save.png" width="20"></a>
+            <span><a onclick="closeEdit()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="row">
+                <div class="headerText">[Return#]</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6 subText">[Date]</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6 subText">[Status]</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6 subText">[Reason]</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-4 dropdown buttons">
+                    <button onclick="openEdit()" role="button">Edit</button>
+                    <span>
+                        <button data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="CallNew.html">Call</a></li>
+                            <li><a href="CaseNew.html">Case</a></li>
+                        </ul>
+                    </span>
+                    <span>
+                        <button role="button"><a href="Reports.html">Reports</a></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 list-group">
+            <div class="bs-component">
+                <ul class="nav nav-tabs tabText">
+                    <li class="active"><a href="#to" data-toggle="tab">From</a></li>
+                    <li><a href="#from" data-toggle="tab">To</a></li>
+                </ul>
+                <div id="contactInfoTabs" class="tab-content">
+                    <div class="tab-pane fade active in" id="from">
+                        <div class="form-group">
+                            <div class="headerText"></div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-md-1 control-label formLabelText">Project</label>
+                                <div class="col-md-4 formFeildText">
+                                    <select class="form-control">
+                                        <option>[JobName - Job#-1]</option>
+                                        <option>[JobName - Job#-2]</option>
+                                        <option>[JobName - Job#-3]</option>
+                                    </select>
+                                </div>
+                                <label class="col-md-1 control-label formLabelText">POR#</label>
+                                <div class="col-md-2 formFeildText">
+                                    <select class="form-control">
+                                        <option>[1001]</option>
+                                        <option>[1002]</option>
+                                        <option>[1003]</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11 list-group">
+                                <table class="table table-hover grids">
+                                    <tr>
+                                        <th width="50"></th>
+                                        <th>Item</th>
+                                        <th width="100">Qty</th>
+                                        <th class="col-md-1">POR#</th>
+                                        <th class="col-md-1">Custody</th>
+                                    </tr>
+                                    <tr>
+                                        <td>[]</td>
+                                        <td>Crestron DIM-RMC-100</td>
+                                        <td>1</td>
+                                        <td>1002</td>
+                                        <td>B202</td>
+                                    </tr>
+                                    <tr>
+                                        <td>[]</td>
+                                        <td>Crestron DIM-RMC-200</td>
+                                        <td>1</td>
+                                        <td>1002</td>
+                                        <td>B202</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="headerText"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="to">
+                        <div class="form-group">
+                            <div class="headerText"></div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-md-1 control-label formLabelText">Project</label>
+                                <div class="col-md-4 formFeildText">
+                                    <select class="form-control">
+                                        <option>[JobName - Job#-1]</option>
+                                        <option>[JobName - Job#-2]</option>
+                                        <option>[JobName - Job#-3]</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11 list-group">
+                                <table class="table table-hover grids">
+                                    <tr>
+                                        <th width="50"></th>
+                                        <th>Item</th>
+                                        <th width="100">Qty</th>
+                                        <th class="col-md-1">POR#</th>
+                                        <th class="col-md-1">Custody</th>
+                                    </tr>
+                                    <tr>
+                                        <td>[]</td>
+                                        <td>Crestron DIM-RMC-100</td>
+                                        <td>1</td>
+                                        <td>1002</td>
+                                        <td>B202</td>
+                                    </tr>
+                                    <tr>
+                                        <td>[]</td>
+                                        <td>Crestron DIM-RMC-200</td>
+                                        <td>1</td>
+                                        <td>1002</td>
+                                        <td>B202</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="headerText"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

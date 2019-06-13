@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\ePonti.web.csproj" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\AddItems\AddKitItems.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\AddItems\AddKitItems.cshtml" />
+  <event action="Analyze" type="Success" name="AddKitItems.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\AddItems\AddKitItems.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\AddItems\List.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\AddItems\List.cshtml" />
+  <event action="Analyze" type="Success" name="List.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\AddItems\List.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Calls\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Cases\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Events\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_ItemLaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_ItemLaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="_ItemLaborPartial.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_ItemLaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_ProjectLaborView.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_ProjectLaborView.cshtml" />
+  <event action="Analyze" type="Success" name="_ProjectLaborView.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\_ProjectLaborView.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Short.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Short.cshtml" />
+  <event action="Analyze" type="Success" name="Short.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Items\Short.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\ProjectDetails.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\ProjectDetails.cshtml" />
+  <event action="Analyze" type="Success" name="ProjectDetails.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Kits\ProjectDetails.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Notes\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PostItInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\PunchLists\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\TimeIts\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\web.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\AddItem.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\AddItem.cshtml" />
+  <event action="Analyze" type="Success" name="AddItem.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\AddItem.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Assign.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Assign.cshtml" />
+  <event action="Analyze" type="Success" name="Assign.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Assign.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\ItemInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\ItemInfo.cshtml" />
+  <event action="Analyze" type="Success" name="ItemInfo.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\ItemInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Report.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Report.cshtml" />
+  <event action="Analyze" type="Success" name="Report.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\Report.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\ReportViewer.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\ReportViewer.cshtml" />
+  <event action="Analyze" type="Success" name="ReportViewer.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Common\Views\WorkOrders\ReportViewer.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\Portal\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\Portal\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\Portal\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Customer\Views\web.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\SalezToolz\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\SalezToolz\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\SalezToolz\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Integrations\Views\web.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mActivities\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mActivities\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mActivities\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCalendar\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCalendar\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCalendar\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCall\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mCase\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mContactInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mEvent\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPeople\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPeople\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPeople\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mPunchList\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mTimeIt\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mWorkOrder\mDetails.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mWorkOrder\mDetails.cshtml" />
+  <event action="Analyze" type="Success" name="mDetails.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\mWorkOrder\mDetails.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_ContactInfoLayout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_ContactInfoLayout.cshtml" />
+  <event action="Analyze" type="Success" name="_ContactInfoLayout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_ContactInfoLayout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_DetailsLayout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_DetailsLayout.cshtml" />
+  <event action="Analyze" type="Success" name="_DetailsLayout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_DetailsLayout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_FormLayout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_FormLayout.cshtml" />
+  <event action="Analyze" type="Success" name="_FormLayout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_FormLayout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Mobile\Views\web.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\AccountingOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\AccountingOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\AccountingOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ActivitiesOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ActivitiesOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ActivitiesOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\AddingLicenses.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\AddingLicenses.cshtml" />
+  <event action="Analyze" type="Success" name="AddingLicenses.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\AddingLicenses.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\EditCo.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\EditCo.cshtml" />
+  <event action="Analyze" type="Success" name="EditCo.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\EditCo.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\ProfileInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\ProfileInfo.cshtml" />
+  <event action="Analyze" type="Success" name="ProfileInfo.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\ProfileInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\Upload.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\Upload.cshtml" />
+  <event action="Analyze" type="Success" name="Upload.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\Upload.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\UserInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\UserInfo.cshtml" />
+  <event action="Analyze" type="Success" name="UserInfo.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\CoAccount\UserInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\EmailOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\EmailOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\EmailOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\GroupsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\GroupsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\GroupsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\IntegrationsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\IntegrationsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\IntegrationsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ItemsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ItemsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ItemsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\JobOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\JobOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\JobOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\KitsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\KitsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\KitsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\LeadsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\LeadsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\LeadsOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ManufacturersOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ManufacturersOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ManufacturersOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\PeopleOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\PeopleOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\PeopleOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\QuoteOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\QuoteOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\QuoteOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ReportingOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ReportingOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ReportingOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ServiceOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ServiceOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\ServiceOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\StagesOptions\Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\StagesOptions\Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\StagesOptions\Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\StagesOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\StagesOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\StagesOptions\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Options\Views\web.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ContactInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\ListItems.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\ListItems.cshtml" />
+  <event action="Analyze" type="Success" name="ListItems.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\CORInfo\ListItems.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="_LaborPartial.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\JobInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\LeadInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="_LaborPartial.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\QuoteInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="_LaborPartial.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_LaborPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\ServiceInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_CORPartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_CORPartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="_CORPartsGrid.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_CORPartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_PartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_PartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="_PartsGrid.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\Shared\_PartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Pages\Views\web.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\DeliveryInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Update.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Update.cshtml" />
+  <event action="Analyze" type="Success" name="Update.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\Update.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\UpdateSelected.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\UpdateSelected.cshtml" />
+  <event action="Analyze" type="Success" name="UpdateSelected.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\PorInfo\UpdateSelected.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\ReturnInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\Shared\_PartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\Shared\_PartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="_PartsGrid.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\Shared\_PartsGrid.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="_MainForm.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\_MainForm.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\ListItems.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\ListItems.cshtml" />
+  <event action="Analyze" type="Success" name="ListItems.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\SoInfo\ListItems.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\TransferInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\TransferInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="_Edit.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\TransferInfo\_Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\TransferInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\TransferInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\TransferInfo\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Procurement\Views\web.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Dashboard\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Dashboard\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Dashboard\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Jobs\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Jobs\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Jobs\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Leads\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Leads\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Leads\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\People\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\People\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\People\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\PostIts\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\PostIts\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\PostIts\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Procurement\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Procurement\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Procurement\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Quotes\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Quotes\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Quotes\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Quotes\SessionFiles.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Quotes\SessionFiles.cshtml" />
+  <event action="Analyze" type="Success" name="SessionFiles.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Quotes\SessionFiles.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\BuildersView.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\BuildersView.cshtml" />
+  <event action="Analyze" type="Success" name="BuildersView.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\BuildersView.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ReportViewer.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ReportViewer.cshtml" />
+  <event action="Analyze" type="Success" name="ReportViewer.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ReportViewer.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ShortList.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ShortList.cshtml" />
+  <event action="Analyze" type="Success" name="ShortList.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ShortList.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ShortViewer.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ShortViewer.cshtml" />
+  <event action="Analyze" type="Success" name="ShortViewer.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Reports\ShortViewer.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Scheduling\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Scheduling\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Scheduling\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Service\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Service\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Service\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Shared\ProjectReportView.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Shared\ProjectReportView.cshtml" />
+  <event action="Analyze" type="Success" name="ProjectReportView.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Shared\ProjectReportView.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Employees.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Employees.cshtml" />
+  <event action="Analyze" type="Success" name="_Employees.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Employees.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Projects.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Projects.cshtml" />
+  <event action="Analyze" type="Success" name="_Projects.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Projects.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Timesheet.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Timesheet.cshtml" />
+  <event action="Analyze" type="Success" name="_Timesheet.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\_Timesheet.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayEmployeeInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayEmployeeInfo.cshtml" />
+  <event action="Analyze" type="Success" name="PayEmployeeInfo.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayEmployeeInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayItemInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayItemInfo.cshtml" />
+  <event action="Analyze" type="Success" name="PayItemInfo.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayItemInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayReasonInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayReasonInfo.cshtml" />
+  <event action="Analyze" type="Success" name="PayReasonInfo.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\Timekeeper\PayReasonInfo.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\Sections\Views\web.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\SubPortal\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\SubPortal\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\SubPortal\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Areas\SubContractor\Views\web.config" />
+  <event action="Analyze" type="Success" name="Binary References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\" />
+  <event action="Analyze" type="Success" name="Binary References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\.vs\bin\" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BLL.dll.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BLL.dll.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BLL.dll.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BLL.dll.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BLL.dll.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BLL.dll.config" />
+  <event action="Analyze" type="Success" name="ePonti.BLL.dll.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BLL.dll.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BOL.dll.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BOL.dll.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BOL.dll.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BOL.dll.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BOL.dll.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BOL.dll.config" />
+  <event action="Analyze" type="Success" name="ePonti.BOL.dll.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.BOL.dll.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.terms.dll.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.terms.dll.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.terms.dll.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.terms.dll.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.terms.dll.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.terms.dll.config" />
+  <event action="Analyze" type="Success" name="ePonti.terms.dll.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.terms.dll.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.web.dll.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.web.dll.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.web.dll.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.web.dll.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.web.dll.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.web.dll.config" />
+  <event action="Analyze" type="Success" name="ePonti.web.dll.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\ePonti.web.dll.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csc.exe.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csc.exe.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csc.exe.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csc.exe.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csc.exe.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csc.exe.config" />
+  <event action="Analyze" type="Success" name="csc.exe.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csc.exe.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csi.exe.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csi.exe.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csi.exe.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csi.exe.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csi.exe.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csi.exe.config" />
+  <event action="Analyze" type="Success" name="csi.exe.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\csi.exe.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\vbc.exe.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\vbc.exe.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\vbc.exe.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\vbc.exe.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\vbc.exe.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\vbc.exe.config" />
+  <event action="Analyze" type="Success" name="vbc.exe.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\vbc.exe.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\VBCSCompiler.exe.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\VBCSCompiler.exe.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\VBCSCompiler.exe.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\VBCSCompiler.exe.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\VBCSCompiler.exe.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\VBCSCompiler.exe.config" />
+  <event action="Analyze" type="Success" name="VBCSCompiler.exe.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\roslyn\VBCSCompiler.exe.config" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\packages.config" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Project_Readme.html" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Project_Readme.html" />
+  <event action="Analyze" type="Success" name="Project_Readme.html" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Project_Readme.html" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\_ExternalLoginsListPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\_ExternalLoginsListPartial.cshtml" />
+  <event action="Analyze" type="Success" name="_ExternalLoginsListPartial.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\_ExternalLoginsListPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ConfirmEmail.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ConfirmEmail.cshtml" />
+  <event action="Analyze" type="Success" name="ConfirmEmail.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ConfirmEmail.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ExternalLoginConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ExternalLoginConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="ExternalLoginConfirmation.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ExternalLoginConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ExternalLoginFailure.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ExternalLoginFailure.cshtml" />
+  <event action="Analyze" type="Success" name="ExternalLoginFailure.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ExternalLoginFailure.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ForgotPassword.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ForgotPassword.cshtml" />
+  <event action="Analyze" type="Success" name="ForgotPassword.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ForgotPassword.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ForgotPasswordConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ForgotPasswordConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="ForgotPasswordConfirmation.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ForgotPasswordConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Invite.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Invite.cshtml" />
+  <event action="Analyze" type="Success" name="Invite.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Invite.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Login.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Login.cshtml" />
+  <event action="Analyze" type="Success" name="Login.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Login.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Register.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Register.cshtml" />
+  <event action="Analyze" type="Success" name="Register.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Register.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ResetPassword.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ResetPassword.cshtml" />
+  <event action="Analyze" type="Success" name="ResetPassword.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ResetPassword.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ResetPasswordConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ResetPasswordConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="ResetPasswordConfirmation.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\ResetPasswordConfirmation.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\SendCode.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\SendCode.cshtml" />
+  <event action="Analyze" type="Success" name="SendCode.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\SendCode.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\VerifyCode.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\VerifyCode.cshtml" />
+  <event action="Analyze" type="Success" name="VerifyCode.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\VerifyCode.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Welcome.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Welcome.cshtml" />
+  <event action="Analyze" type="Success" name="Welcome.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Account\Welcome.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\blog.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\blog.cshtml" />
+  <event action="Analyze" type="Success" name="blog.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\blog.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Contact.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Contact.cshtml" />
+  <event action="Analyze" type="Success" name="Contact.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Contact.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\pricingbox.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\pricingbox.cshtml" />
+  <event action="Analyze" type="Success" name="pricingbox.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\pricingbox.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Solution.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Solution.cshtml" />
+  <event action="Analyze" type="Success" name="Solution.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Home\Solution.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\AddPhoneNumber.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\AddPhoneNumber.cshtml" />
+  <event action="Analyze" type="Success" name="AddPhoneNumber.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\AddPhoneNumber.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\ChangePassword.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\ChangePassword.cshtml" />
+  <event action="Analyze" type="Success" name="ChangePassword.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\ChangePassword.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Index.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\Index.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\ManageLogins.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\ManageLogins.cshtml" />
+  <event action="Analyze" type="Success" name="ManageLogins.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\ManageLogins.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\SetPassword.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\SetPassword.cshtml" />
+  <event action="Analyze" type="Success" name="SetPassword.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\SetPassword.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\VerifyPhoneNumber.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\VerifyPhoneNumber.cshtml" />
+  <event action="Analyze" type="Success" name="VerifyPhoneNumber.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Manage\VerifyPhoneNumber.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_Grid.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_Grid.cshtml" />
+  <event action="Analyze" type="Success" name="_Grid.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_Grid.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_GridPager.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_GridPager.cshtml" />
+  <event action="Analyze" type="Success" name="_GridPager.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_GridPager.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_LoginPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_LoginPartial.cshtml" />
+  <event action="Analyze" type="Success" name="_LoginPartial.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\_LoginPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\DisplayTemplates\ShortDateTimeOffset.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\DisplayTemplates\ShortDateTimeOffset.cshtml" />
+  <event action="Analyze" type="Success" name="ShortDateTimeOffset.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\DisplayTemplates\ShortDateTimeOffset.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Boolean.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Boolean.cshtml" />
+  <event action="Analyze" type="Success" name="Boolean.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Boolean.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Currency.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Currency.cshtml" />
+  <event action="Analyze" type="Success" name="Currency.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Currency.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Date.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Date.cshtml" />
+  <event action="Analyze" type="Success" name="Date.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Date.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\DateTime.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\DateTime.cshtml" />
+  <event action="Analyze" type="Success" name="DateTime.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\DateTime.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Email.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Email.cshtml" />
+  <event action="Analyze" type="Success" name="Email.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Email.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+  <event action="Analyze" type="Success" name="EmailAddress.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+  <event action="Analyze" type="Success" name="GridForeignKey.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Integer.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Integer.cshtml" />
+  <event action="Analyze" type="Success" name="Integer.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Integer.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Number.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Number.cshtml" />
+  <event action="Analyze" type="Success" name="Number.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Number.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Password.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Password.cshtml" />
+  <event action="Analyze" type="Success" name="Password.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Password.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\String.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\String.cshtml" />
+  <event action="Analyze" type="Success" name="String.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\String.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Time.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Time.cshtml" />
+  <event action="Analyze" type="Success" name="Time.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Time.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Url.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Url.cshtml" />
+  <event action="Analyze" type="Success" name="Url.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\EditorTemplates\Url.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\Error.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\Error.cshtml" />
+  <event action="Analyze" type="Success" name="Error.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\Error.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\Lockout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\Lockout.cshtml" />
+  <event action="Analyze" type="Success" name="Lockout.cshtml" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Shared\Lockout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Web.config" />
+  <event action="Analyze" type="Success" name="Web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Views\Web.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.config" />
+  <event action="Analyze" type="Success" name="Web.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Web.Debug.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Web.Release.config" path="G:\Project\EPontiWeb\ePonti\ePonti.web\Web.Release.config" />
+  <event action="Analyze" type="Success" name="ePonti.web" path="G:\Project\EPontiWeb\ePonti\ePonti.web\ePonti.web.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\ePonti.BOL.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\App.Config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\App.Config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\App.Config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\App.Config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\App.Config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\App.Config" />
+  <event action="Analyze" type="Success" name="App.Config" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\App.Config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\packages.config" />
+  <event action="Analyze" type="Success" name="ePonti.BOL" path="G:\Project\EPontiWeb\ePonti\ePonti.BOL\ePonti.BOL.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\ePonti.BLL.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\app.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\app.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\app.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\app.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\app.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\app.config" />
+  <event action="Analyze" type="Success" name="app.config" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\app.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\packages.config" />
+  <event action="Analyze" type="Success" name="ePonti.BLL" path="G:\Project\EPontiWeb\ePonti\ePonti.BLL\ePonti.BLL.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\ePonti.terms.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\app.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\app.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\app.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\app.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\app.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\app.config" />
+  <event action="Analyze" type="Success" name="app.config" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\app.config" />
+  <event action="Analyze" type="Success" name="Resource1.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\Resource1.resx" />
+  <event action="Analyze" type="Success" name="ePonti.terms" path="G:\Project\EPontiWeb\ePonti\ePonti.terms\ePonti.terms.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\ePonti.Reports.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\App.config" />
+  <event action="Analyze" type="Success" name="ChangeRequest.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\ChangeRequest.resx" />
+  <event action="Analyze" type="Success" name="Contract.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\Contract.resx" />
+  <event action="Analyze" type="Success" name="CrItemDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\CrItemDetail.resx" />
+  <event action="Analyze" type="Success" name="CrLaborDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\CrLaborDetail.resx" />
+  <event action="Analyze" type="Success" name="CrMaterialsDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\CrMaterialsDetail.resx" />
+  <event action="Analyze" type="Success" name="CrTotal.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\CrTotal.resx" />
+  <event action="Analyze" type="Success" name="DeliveryRequest.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\DeliveryRequest.resx" />
+  <event action="Analyze" type="Success" name="DeliveryRequestItemsDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\DeliveryRequestItemsDetail.resx" />
+  <event action="Analyze" type="Success" name="ItemDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\ItemDetail.resx" />
+  <event action="Analyze" type="Success" name="LaborDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\LaborDetail.resx" />
+  <event action="Analyze" type="Success" name="MaterialDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\MaterialDetail.resx" />
+  <event action="Analyze" type="Success" name="Por.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\Por.resx" />
+  <event action="Analyze" type="Success" name="PorItemDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\PorItemDetail.resx" />
+  <event action="Analyze" type="Success" name="QuoteReport.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\QuoteReport.resx" />
+  <event action="Analyze" type="Success" name="SystemDetail.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\SystemDetail.resx" />
+  <event action="Analyze" type="Success" name="WoItems.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\WoItems.resx" />
+  <event action="Analyze" type="Success" name="WorkOrder.resx" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\Defaults\WorkOrder.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\packages.config" />
+  <event action="Analyze" type="Success" name="ePonti.Reports" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\ePonti.Reports.csproj" />
+  <event action="Analyze" type="Success" name="ePonti.web" path="G:\Project\EPontiWeb\ePonti\ePonti.web.sln" />
+  <event action="Backup" type="Success" name="ePonti.web" path="G:\Project\EPontiWeb\ePonti\ePonti.web\ePonti.web.csproj" />
+  <event action="Backup" type="Success" name="ePonti.Reports" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\ePonti.Reports.csproj" />
+  <event action="Upgrade" type="Success" name="Binary References" path="G:\Project\EPontiWeb\ePonti\ePonti.web\bin\" />
+  <event action="Upgrade" type="Success" name="ePonti.web" path="G:\Project\EPontiWeb\ePonti\ePonti.web\ePonti.web.csproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\ePonti.Reports.csproj" />
+  <event action="Upgrade" type="Success" name="ePonti.Reports" path="G:\Project\EPontiWeb\ePonti\ePonti.Reports\ePonti.Reports.csproj" />
+  <event action="Upgrade" type="Success" name="ePonti.web" path="G:\Project\EPontiWeb\ePonti\ePonti.web.sln" />
+</log>

@@ -1,0 +1,234 @@
+﻿@using ePonti.BOL
+@using GridMvc.Html;
+@using System.Data.Entity.Core.Objects
+@{
+    ViewBag.Title = "Select Items";
+    Layout = "~/Areas/Pages/Views/Shared/_Layout.cshtml";
+}
+
+<div id="viewArea" class="col-sm-12 container-fluid">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-10 col-lg-10 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks update-items"><img src="~/images/Save.png" width="20"></a>
+            <span><a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <div class="headerText"></div>
+        </div>
+        <div class="row">
+            <label class="col-sm-1 col-lg-1 control-label formLabelText">Division</label>
+            <div class="col-sm-5 col-lg-4 formFeildText">
+                @Html.DropDownList("Division", ViewBag.Divisions as SelectList, new { @class = "form-control" })
+            </div>
+            <label class="col-sm-1 col-lg-1 control-label formLabelText">Area</label>
+            <div class="col-sm-4 col-lg-3 formFeildText" title="Press and hold ctrl to select multiple">
+                @Html.ListBox("Area", ViewBag.Areas as MultiSelectList, new { @class = "form-control", style = "height:100px;" })
+            </div>
+            <label class="col-sm-1 col-lg-1 control-label formLabelText">Qty</label>
+            <div class="col-sm-1 col-lg-1 formFeildText">
+                <input class="form-control" id="Qty" type="number" value="1">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-lg-2 ">
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="leftfilters">
+                @using (Html.BeginForm("List", "AddItems", FormMethod.Post, new { id = "LeftFiltersForm", ProjectID = 1, onsubmit = "loadPagingForm(this)" }))
+    {
+            <div class="row">
+                @Html.TextBox("SearchText", "", new { id = "txtSearch", placeholder = "Enter Model", @class = "srch_text" })
+                @Html.Hidden("Post", "")
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <h4>Group</h4>
+            <div class="row">
+                <div class="checklists">
+                    @Html.Hidden("SelectedGroups", "", new { @class = "SelectedCompanies" })
+                    @foreach (var item in ViewBag.GroupList)
+        {
+            <div class="filtercheckbox">
+                <label>
+                    <input type="checkbox" value="@item.Group" /> @item.Group
+                </label>
+            </div>
+}
+                </div>
+            </div>
+            <h4>Manufacturer</h4>
+            <div class="row">
+                <div class="checklists">
+                    @Html.Hidden("SelectedManufacturers", "", new { @class = "SelectedCompanies" })
+                    @foreach (var item in ViewBag.ManufacturerList)
+        {
+            <div class="filtercheckbox">
+                <label>
+                    <input type="checkbox" value="@item.Name" /> @item.Name
+                </label>
+            </div>
+}
+                </div>
+            </div>
+            <h4>Stage</h4>
+            <div class="row">
+                <div class="checklists">
+                    @Html.Hidden("SelectedStages", "", new { @class = "SelectedCompanies" })
+                    @foreach (var item in ViewBag.StageList)
+        {
+            <div class="filtercheckbox">
+                <label>
+                    <input type="checkbox" value="@item.Stage" /> @item.Stage
+                </label>
+            </div>
+}
+                </div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="buttons formLabelText">
+                <input type="button" class="btn btn-default clearleftfilter" value="Clear" />
+                <input type="button" class="btn btn-default updateleftfilter" value="Update" />
+            </div>
+}
+            </div>
+        </div>
+        <div class="col-sm-8 col-lg-9 sectionGrids item-list">
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                @(Html.Kendo().Grid<ePonti.BOL.GetItemsBySiteCoID_Result>()
+                    .Name("GridParts")
+                    .Columns(columns =>
+                    {
+                        columns.Bound(p => p.ViewID).Title("").ClientTemplate("<input type=\"hidden\" class=\"item-id\" value=\"#=ViewID#\" /><input class=\"checkitem\" type=\"checkbox\" data-id=\"#=ViewID#\" />").Width(50);
+                        columns.Bound(p => p.Group).Title("Group").Width("15em");
+                        columns.Bound(p => p.Manufacturer).Title("Manufacturer").Width("15em");
+                        columns.Bound(p => p.Model).Title("Model");
+                        columns.Bound(p => p.Model).Title("Item");
+                        columns.Bound(p => p.Stage).Title("Stage").Width("10em");
+                    })
+                        .Editable(editable => editable.Mode(GridEditMode.InLine))
+                        .Navigatable()
+                        .Pageable()
+                        //.Pageable(pageable =>
+                        //{
+                        //    pageable.PageSizes(new int[] {15, 20 });
+                        //})
+                        .Sortable()
+                        .Scrollable(scr => scr.Height("auto"))
+                        .DataSource(dataSource => dataSource  // Configure the grid data source
+                        .Ajax()
+                        .Model(model =>
+                        {
+                            model.Id(x => x.ViewID);
+                        })
+                        .Read(read => read.Action("GetList", "AddItems").Data("FilterData")) // Set the action method which will return the data in JSON format
+                        .PageSize(25)
+                        )
+                )
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+        $('.update-items').on('click', function () {
+        debugger
+
+        var areaids = $("#Area").val();
+        var items = $('.item-list').find('.checkitem:checked').siblings('.item-id').map(function () { return $(this).val() }).get();
+        if (areaids.length ==0 ){
+            $('#Area').addClass('input-validation-error');
+            return;
+        } else {
+            $('#Area').removeClass('input-validation-error');
+        }
+        if (items.length == 0) {
+            return;
+        }
+
+        var data = {
+            projectid: queryString('projectID'),
+            areaids: areaids,
+            divisionid: $('#Division').val(),
+            quantity: $('#Qty').val() || 1,
+            items: items
+        };
+
+        //Repplace items
+        var replaceItems = queryString('replace');
+        if (replaceItems != null && replaceItems.length > 0)
+        {
+            data.ReplaceItems = replaceItems.split(',');
+        }
+
+        $.post('@Url.Action("UpdateProjectItems")', data, function (res) {
+            if (res && res.status === true ) {
+                document.location = '@Url.ActionPrev()';
+            }
+        });
+        });
+
+        $(document).ready(function () {
+            loadFilterFunctions();
+            loadPagingForm();
+
+        });
+
+        function FilterData() {
+
+            var ProjectID =  parseInt(@ViewBag.ProjectID)  //'@ViewBag.ProjectID';
+            var SearchText = $("#txtSearch").val();
+            var SelectedGroups = $("#SelectedGroups").val();
+            var SelectedManufacturers = $("#SelectedManufacturers").val();
+            var SelectedStages = $("#SelectedStages").val();
+
+            return {
+                ProjectID: ProjectID,
+                SearchText: SearchText,
+                SelectedGroups: SelectedGroups,
+                SelectedManufacturers: SelectedManufacturers,
+                SelectedStages: SelectedStages,
+            };
+        }
+
+        $(".updateleftfilter").on("click", function () {
+
+            $('#GridParts').data('kendoGrid').dataSource.read();
+            $('#GridParts').data('kendoGrid').refresh();
+            return;
+        })
+    </script>
+}

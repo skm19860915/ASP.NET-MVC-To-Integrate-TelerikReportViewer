@@ -1,0 +1,102 @@
+﻿@model ePonti.web.Models.StageModels.StageMasterEdit
+@using ePonti.BOL
+@using ePonti.BLL.Common
+@using ePonti.web.Models
+
+@{
+    ViewBag.Title = "Edit Stage Info";
+}
+
+<div class="container body-content" id="editableView">
+    <div class="col-sm-12 col-lg-12 pageHeader">
+        <div class="col-sm-10 col-lg-11 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="#" class="homeLinks save-main-form"><img src="~/images/Save.png" width="20"></a>
+            <span><a href="@Url.Action("Index","StagesOptions")" class="homeLinks close-page"><img src="~/images/Cancel.png" width="20"></a></span>
+        </div>
+    </div>
+    @using (Html.BeginForm("Edit", "StagesOptions", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(p => p.StageMasterID)
+        <div class="form-group">
+            <div class="headerText"></div>
+        </div>
+        <div class="form-group">
+            <div class="headerText">@Model.StageName</div>
+        </div>
+        <div class="col-sm-offset-2 custom-font">
+            @Html.ValidationSummary()
+            <div class="main-form-alert alert soft-hide"></div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.Order, new { @class = "col-sm-2 control-label formLabelText" })
+            <div class="col-sm-1 formFeildText">
+                @Html.TextBoxFor(p => p.Order, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.CostCodeId, new { @class = "col-sm-2 control-label formLabelText" })
+            <div class="col-sm-5 formFeildText">
+                @Html.DropDownListFor(p => p.CostCodeId, ViewBag.CostCodes as SelectList, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.MiscEquip, new { @class = "col-sm-2 control-label formLabelText" })
+            <div class="col-sm-2 formFeildText">
+                @Html.TextBoxFor(p => p.MiscEquip, new { @class = "form-control perc num-format format-perc", data_value= Model.MiscEquip.ToFormattedString(0), data_val="false" })
+            </div>
+        </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.MiscParts, new { @class = "col-sm-2 control-label formLabelText" })
+                <div class="col-sm-2 formFeildText">
+                    @Html.TextBoxFor(p => p.MiscParts, new { @class = "form-control perc num-format format-perc", data_value = Model.MiscParts.ToFormattedString(0), data_val = "false" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="headerText"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1 col-lg-1 list-group"></div>
+                <div class="col-sm-8 col-lg-8 list-group">
+                    <table class="table table-hover grids stageDetails">
+                        <tr>
+                            <th>Labor</th>
+                            <th class="col-sm-2 col-lg-2 formLabelText">Cost/Hr</th>
+                            <th class="col-sm-2 col-lg-2 formLabelText">Price/Hr</th>
+                            <th class="col-sm-2 col-lg-2 formLabelText">%</th>
+                            <th class="col-sm-2 col-lg-2 formLabelText">Sell/Hr</th>
+                        </tr>
+                        @{int stageSubIndex = 0; }
+                        @foreach (StageModels.StageDetails stage in Model.StageSubDetails)
+                        {
+                            <tr class="stageDetail">
+                                <td>
+                                    <span class="subName">@stage.SubName</span>
+                                    <input type="hidden" class="substage-id" value="@stage.SubStageID" />
+                                    <input type="hidden" class="stagemaster-id" value="@stage.StageMasterID" />
+                                    <input type="hidden" class="index" value="@(stageSubIndex++)" />
+                                </td>
+                                <td><input type="text" class="form-control format-decimal2 num-format costPerHour" value="@stage.CostPerHour.ToFormattedString(2)" /></td>
+                                <td><input type="text" class="form-control format-decimal2 num-format pricePerHour" value="@stage.PricePerHour.ToFormattedString(2)" /></td>
+                                <td><input type="text" class="form-control perc num-format" value="@((stage.Percent*100).ToFormattedString(0))%" /></td>
+                                <td class="num-format sellPerHour">@stage.SellPerHour.ToFormattedString(2)</td>
+                            </tr>
+                        }
+                        <tr class="footer">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total/Hr</strong></td>
+                            <td class="totalPerHour num-format total-format">@(Model.StageSubDetails.Sum(p => p.SellPerHour).ToFormattedString(2))</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+                            }
+
+</div>
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/pages/options-stages.js")" type="text/javascript"></script>
+}

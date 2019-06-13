@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="htmlTextBox2.Value" xml:space="preserve">
+    <value>&lt;p&gt;&lt;span style="font-family: roboto condensed light"&gt;{Fields.CoName} has significant experience in all aspects of residential industry and therefore is able to provide a&amp;nbsp;this proposal. This significantly benefits our clients, protecting them from labor cost overruns and allowing them a more precise budget for their overall construction project. Any changes in scope will be documented by change orders and will update the fixed contract amount.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-family: roboto condensed light"&gt;&lt;span style="font-size: 12pt"&gt;&lt;span style="font-size: 12pt"&gt;&lt;strong&gt;&lt;span style="font-size: 12pt; color: #808080"&gt;Equipment&lt;/span&gt;&lt;/strong&gt; &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;Like many industries, standard pricing is clearly defined. Product manufacturers establish and publish minimum advertisedpricing (MAP), which is adhered to by {Fields.CoName} as well as “Big Box” retailers. Prior to purchasing equipment, an equipment review is held to refresh the equipment list with updated models and prices before ordering.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-family: roboto condensed light"&gt;&lt;span style="font-size: 12pt"&gt;&lt;span style="font-size: 12pt"&gt;&lt;strong&gt;&lt;span style="font-size: 12pt; color: #808080"&gt;Labor&lt;/span&gt;&lt;/strong&gt; &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;The laborchargesinclude all laborcategories required for a full installationand,unlessotherwise indicated,include: Design, Documentation, Project Management, Installation, Calibration and Programming.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-family: roboto condensed light"&gt;&lt;span style="font-size: 12pt; color: #808080"&gt;&lt;strong&gt;Sales Tax &lt;br /&gt;&lt;/strong&gt;&lt;/span&gt;Sales tax is included in our fixed price and charged in accordance with state laws.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-family: roboto condensed light"&gt;&lt;span style="font-size: 12pt; color: #808080"&gt;&lt;strong&gt;Reimbursable Expenses&lt;/strong&gt;&lt;/span&gt; &lt;br /&gt;From time to time, {Fields.CoName} incurs costs that are outside the scope of our contract. These expenses are billed to the client at Cost + 10%, unless otherwise noted, and include the following: &lt;br /&gt;Travel costs - for projects greater than 150 miles from the {Fields.CoAddress2} office&lt;br /&gt;Air travel - arrangements will be made in advance to take advantage of lower fares whenever possible&amp;nbsp;&amp;nbsp; &lt;br /&gt;Car rental - corporate account and other discounts will be used whenever possible&amp;nbsp;&amp;nbsp; &lt;br /&gt;Lodging - standard business hotels or condos&lt;br /&gt;Per diem - employees are granted a per diem of $42 for meals, etc. &lt;br /&gt;Restocking Fees -&amp;nbsp; result from a request by the client or client’s representative for a product change or return after the item has been ordered and received; &lt;br /&gt;Freight Charges - standard freight charges will be passed through to the client at cost with no additional fees; &lt;br /&gt;Expedited Freight Charges&amp;nbsp; - when specifically requested by the client or client’s representative; &lt;br /&gt;Equipment Rentals - as&amp;nbsp; required to perform installation work and not provided by the general contractor; &lt;br /&gt;Special Contract Administration - specifically requested by the client or client’s representative.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-family: roboto condensed light"&gt;&lt;span style="font-size: 12pt; color: #808080"&gt;&lt;strong&gt;Change Orders &lt;br /&gt;&lt;/strong&gt;&lt;/span&gt;The client or the client’s representative(s) is entitled to modifyEngineered Environments’scopeofworkat anytime during the course of construction by way of written directive. Upon receipt and acceptance of such request, Engineered Environments will issue a contract change order which details the labor and equipment price adjustmentsalongwith any associatedcosts for project management, revised documentationand manufacturer restocking fees.&amp;nbsp; All changes shall be priced using this standard pricing policy. &lt;p&gt;&lt;/p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</value>
+  </data>
+  <metadata name="ContractData.ParameterValues" xml:space="preserve">
+    <value>{"@ProjectID":"2059"}</value>
+  </metadata>
+  <data name="JobInfo.Value" xml:space="preserve">
+    <value>&lt;span style="font-family: roboto"&gt;{Fields.Customer}&lt;br /&gt;{Fields.Job}&lt;br /&gt;{Fields.ProjectAddress1}&amp;nbsp; {Fields.ProjectAddress2}&lt;br /&gt;{Fields.ProjectCity}, {Fields.ProjectState} {Fields.ProjectZip}&lt;/span&gt;</value>
+  </data>
+  <metadata name="$this.Zoom" type="System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>1.5</value>
+  </metadata>
+</root>

@@ -1,0 +1,106 @@
+﻿@using ePonti.BOL
+@using ePonti.BLL.Common
+@model GetWorkOrderInfoByWoID_Result
+
+
+@{
+    ViewBag.Title = "Work Order Item Info";
+    var item = ViewBag.WoItem as GetWorkOrderItemInfoByItemID_Result;
+    var assignments = ViewBag.Assignments as List<GetItemInfoAssignmentsByItemID_Result>;
+}
+
+<div class="editableArea" id="editableArea"></div>
+<!-- This is the Viewable Area of the page -->
+<div id="viewArea" class="wo-details-page">
+    <div class="col-sm-12 pageHeader">
+        <div class="col-sm-10 homeMenuText">@ViewBag.Title</div>
+        <div>
+            <a href="@Url.ActionPrev()" class="homeLinks"><img src="~/images/Cancel.png" width="20"></a>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="col-sm-11 row">
+                <div class="col-sm-10 headerText">@item.Item</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-sm-8 subText">@item.Group</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8 subText">@item.Manufacturer</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9 subText">@item.Description</div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                        <div class="col-sm-7 subText">@item.Area</div>
+                        <div class="subText">@item.POR_</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 subText">@item.Division</div>
+                        <div class="subText">@item.CustodyLocation</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 subText">@item.Stage</div>
+                        <div class="subText">@item.Serial_</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 subText num-format">@item.ProjectHours.ToFormattedString(4)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 subText">@item.Status</div>
+                    </div>
+                    <div class="row">
+                        <div class="headerText"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-5 headerText">Assignments</div>
+            <div>
+                <div class="custom-font">
+                    <div class="tasks-alert alert soft-hide"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 list-group">
+                <table class="table table-hover grids tasks">
+                    <tr>
+                        <td width="20"></td>
+                        <th class="tabText">Assigned To</th>
+                        <th class="col-sm-4 tabText">Wo#</th>
+                        <th class="col-sm-1 tabText">Est Hrs</th>
+                        <th class="col-sm-2 tabText">Act Date</th>
+                        <th class="col-sm-1 tabText">Act Hrs</th>
+                        <td width="20"></td>
+                    </tr>
+                    @foreach (var assignment in assignments)
+                    {
+                        <tr class="task">
+                            <td></td>
+                            <td class="subText">@assignment.Resource</td>
+                            <td class="subText">@assignment.Wo_</td>
+                            <td class="subText num-format">@assignment.EstHrs.ToFormattedString(4)</td>
+                            <td class="subText num-format">@assignment.ActDate.ToCustomDateString()</td>
+                            <td class="subText num-format">@assignment.ActHrs.ToFormattedString(4)</td>
+                            <td></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/pages/workorder.js")"></script>
+}

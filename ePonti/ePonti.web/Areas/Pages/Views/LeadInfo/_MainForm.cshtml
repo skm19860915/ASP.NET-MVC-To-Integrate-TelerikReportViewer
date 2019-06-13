@@ -1,0 +1,251 @@
+﻿@model ePonti.web.Models.LeadModels.NewLead
+@using ePonti.BOL
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "leadinfo", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", id = "main-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(p => p.LeadID)
+    <div class="form-group">
+        <div class="headerText"></div>
+    </div>
+    <div class="custom-font">
+        @Html.ValidationSummary()
+        <div class="main-form-alert alert soft-hide"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="bs-component">
+            <ul class="nav nav-tabs tabText">
+                <li class="active"><a href="#info" data-toggle="tab">Lead Info</a></li>
+                <li><a href="#comm" data-toggle="tab">Communications</a></li>
+            </ul>
+            <div id="jobInfoTabs" class="tab-content">
+                <div class="tab-pane fade active in" id="info">
+                    <div class="content">
+                        <div class="row">
+                            <div class="headerText"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.LeadName, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-9 col-lg-9 formFeildText">
+                                    @Html.TextBoxFor(p => p.LeadName, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.StatusID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.DropDownListFor(p => p.StatusID, ViewBag.ProjectStatus as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.JobNumber, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-5 col-lg-3 formFeildText">
+                                    @Html.TextBoxFor(p => p.JobNumber, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.CloseDate, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-4 col-lg-3 formFeildText">
+                                    @Html.TextBoxFor(p => p.CloseDate, new { @class = "form-control date-picker", data_value = ViewBag.ClosedDateString })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.ClientID, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-5 formFeildText">
+                                    @Html.DropDownListFor(p => p.ClientID, ViewBag.Clients as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.BuilderID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.DropDownListFor(p => p.BuilderID, ViewBag.Builders as SelectList, "Select", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.Address1, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-9 col-lg-8 formFeildText">
+                                    @Html.TextBoxFor(p => p.Address1, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.Site, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.TextBoxFor(p => p.Site, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.Address2, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-9 col-lg-8 formFeildText">
+                                    @Html.TextBoxFor(p => p.Address2, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.Lot, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-3 col-lg-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.Lot, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.City, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.TextBoxFor(p => p.City, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.TypeID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.DropDownListFor(p => p.TypeID, ViewBag.Types as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.State, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-6 col-lg-4 formFeildText">
+                                    @Html.TextBoxFor(p => p.State, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.ProbabilityID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-3 col-lg-2 formFeildText">
+                                    @Html.DropDownListFor(p => p.ProbabilityID, ViewBag.Probabilities as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.Zip, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-5 col-lg-2 formFeildText">
+                                    @Html.TextBoxFor(p => p.Zip, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.Budget, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-6 col-lg-4 formFeildText">
+                                    @Html.TextBoxFor(p => p.Budget, new { @class = "form-control number-spinner", data_step = "1" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.Country, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-6 col-lg-4 formFeildText">@Html.DropDownListFor(p => p.Country, ePonti.web.Models.StaticModel.Countries, "", new { @class = "form-control" })</div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.LeadPhaseID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.DropDownListFor(p => p.LeadPhaseID, ViewBag.Phases as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.Phone, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-6 col-lg-3 formFeildText">
+                                    @Html.TextBoxFor(p => p.Phone, new { @class = "form-control format-phone" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.PriorityID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.DropDownListFor(p => p.PriorityID, ViewBag.Priorities as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                @Html.LabelFor(p => p.Email, new { @class = "col-sm-2 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-9 col-lg-7 formFeildText">
+                                    @Html.TextBoxFor(p => p.Email, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.SystemID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.DropDownListFor(p => p.SystemID, ViewBag.Systems as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-lg-6 form-group">
+                                <div class="col-sm-9 col-lg-7 formFeildText"></div>
+                            </div>
+                            <div class="col-sm-5 col-lg-5 form-group">
+                                @Html.LabelFor(p => p.SalesPersonID, new { @class = "col-sm-3 col-lg-3 control-label formLabelText" })
+                                <div class="col-sm-8 col-lg-6 formFeildText">
+                                    @Html.DropDownListFor(p => p.SalesPersonID, ViewBag.SiteUsers as SelectList, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="headerText"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="comm">
+                    <div class="content">
+                        <div class="row">
+                            <div class="headerText"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-offset-1 col-sm-8 col-lg-offset-1 col-lg-6 list-group">
+                                <table class="table table-hover grids comm-contacts">
+                                    <tr>
+                                        <th width="20"></th>
+                                        <th>User</th>
+                                        <th width="40"></th>
+                                    </tr>
+                                    @if (ViewBag.ProjectComm != null)
+                                    {
+                                        foreach (GetProjectCommByProjectID_Result item in ViewBag.ProjectComm)
+                                        {
+                                            <tr class="item-row">
+                                                <td></td>
+                                                <td class="subText user">@item.User</td>
+                                                <td class="subText delete"><img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" value="@item.ViewID" class="row-id" /></td>
+                                            </tr>
+                                        }
+                                    }
+                                    <tr class="data-template item-row">
+                                        <td></td>
+                                        <td class="subText user"></td>
+                                        <td class="delete">
+                                            <img src="~/images/Delete.png" height="15" /><input type="hidden" class="item-id" /><input type="hidden" class="row-id" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="headerText"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-offset-1 col-sm-2 dropdown buttons">
+                                <button type="button" class="btn btn-default add-item" role="button">Add</button>
+                            </div>
+                        </div>
+                        <div class="row select-new-cont soft-hide">
+                            <div class="col-sm-offset-1 col-sm-4 dropdown buttons">
+                                @Html.DropDownList("select-comm", ViewBag.SiteUsers as SelectList, new { @class = "select-new form-control" })
+                            </div>
+                            <div class="col-sm-1"><span class="status custom-font"></span></div>
+                            <div class="col-sm-1 dropdown buttons">
+                                <button type="button" class="btn btn-default update-item" role="button">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
